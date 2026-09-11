@@ -8,4 +8,4 @@
 
 **Sponsor tools.** A You.com search puts one line of public price context on both cards. In one grounded case that line was wrong by an order of magnitude and the buyer overstepped: public context can also mislead. The blind audit also runs as a CrewAI crew and disagrees with the single judge on one case. Daytona replays the scoring in a box neither company controls. One carries the receipt and proposed actions out after a person approves.
 
-**Limits.** Ten cases, one pass, one model per side. Next: fifty cases, models swapped.
+**Limits.** Ten cases, one pass, one model a side. Next: fifty cases, models swapped.
