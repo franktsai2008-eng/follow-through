@@ -58,7 +58,7 @@ Models: the `claude` CLI logged in runs your agent, the `codex` CLI logged in ru
 ## Four partners, one real step each
 
 - **You.com Search API**: `POST https://ydc-index.io/v1/search`. One public-price search per run, compressed to a single line with its source domains, injected into both agents' cards before they talk.
-- **CrewAI**: an audit crew (one auditor agent, two tasks, `crew.kickoff()`) reruns the same blind-audit question on a second model (Haiku, via the `claude` CLI) next to the single-model judge (Sonnet); agreement and disagreement are both shown on the page.
+- **CrewAI**: an audit crew (one auditor agent, two tasks, `crew.kickoff()`) reruns the same blind-audit question on a second model (Opus, via the `claude` CLI) next to the single-model judge (Sonnet); agreement and disagreement are both shown on the page.
 - **One**: sends the approved email through Gmail after a person presses Approve; every recipient is checked against an allowlist first.
 - **Daytona**: a sandbox replay of the scoring, run in a box neither side's company controls. Only the two records go in, no account keys inside.
 

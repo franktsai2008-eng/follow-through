@@ -44,7 +44,9 @@ def main():
         from audit_crew import make_llm
         from harness import parse_json
         from crewai import Agent, Crew, Task, Process
-        llm = make_llm(os.environ.get("A2_CREW_LLM") or cfg.get("model") or "sonnet")
+        override = (ROOT / ".crew_model").read_text().strip() if (ROOT / ".crew_model").exists() else ""
+        model_id = os.environ.get("FT_CREW_MODEL_OVERRIDE") or override or os.environ.get("A2_CREW_LLM") or cfg.get("model") or "sonnet"
+        llm = make_llm(model_id)
         auditor = Agent(
             role="Independent contract auditor",
             goal="Read one party's private task card and the complete written exchange, and rule strictly on what that party committed to.",
@@ -58,7 +60,7 @@ def main():
                               agent=auditor, name=f"audit_{side}"))
         crew = Crew(agents=[auditor], tasks=tasks, process=Process.sequential, verbose=False)
         crew.kickoff()
-        res = {"status": "done", "framework": "crewai", "agents": 1, "tasks": 2, "seconds": round(time.time() - t0)}
+        res = {"status": "done", "framework": "crewai", "agents": 1, "tasks": 2, "model": model_id, "seconds": round(time.time() - t0)}
         for side, task in zip(("me", "other"), tasks):
             raw = task.output.raw if task.output else ""
             parsed = parse_json(raw.split("Final Answer:")[-1] if "Final Answer:" in raw else raw)

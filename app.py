@@ -66,7 +66,7 @@ SEND_TIMES = []
 SEND_LIMIT = 10
 RUN_TIMES = []
 RUN_LIMIT = int(os.environ.get("FT_RUN_LIMIT", "12"))
-os.environ.setdefault("A2_CREW_LLM", os.environ.get("FT_CREW_MODEL", "haiku"))  # crew audits with a different model than the single judge
+os.environ.setdefault("A2_CREW_LLM", os.environ.get("FT_CREW_MODEL", "opus"))  # crew audits with a different model than the single judge
 JID_RE = re.compile(r"^[0-9a-f]{10}$")
 APPROVAL_RE = re.compile(r"\b(approval|approve|sign[- ]?off|director|manager|authoriz|not able to|can't commit|cannot commit|can’t commit|outside my|beyond my)\b", re.I)
 PROBE = {"youcom": {"ok": False, "detail": "checking"}, "one": {"ok": False, "detail": "checking"},
