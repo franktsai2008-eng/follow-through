@@ -7,7 +7,7 @@
 ## 這條流程長什麼樣（一張圖，六步，四個工具各站一步）
 ```
  ① 查對方        ② 純文字來回          ③ 對帳           ④ 提案 → 人按 → 執行      ⑤ 第三方重算      ⑥ 記一課
- You.com    →   我方 AI ⇄ 對方 AI   →   兩份紀錄比對   →   One（今天 dry-run）   →   Daytona        →   下一案先讀
+ You.com    →   我方 AI ⇄ 對方 AI   →   兩份紀錄比對   →   One（G01 收據已真寄，messageId 1a091a4d2111535d）   →   Daytona        →   下一案先讀
  公開參考        各守各的權限            盲判＋CrewAI       needs human approval       只放紀錄進去      講限制 8→10/10
 ```
 圖上每個工具只講它真的做的事。One 今天只到「AI 想寄什麼、有沒有權限寄」，寄出去的動作留給人按。
@@ -20,7 +20,7 @@
 - 旁白：Same ten cases, seller keeps one lesson per case. It got more explicit about its limit, not more willing to close.
 
 **第 2 屏 這個沒證明什麼**（早講才值錢）
-- n=10 單次；冷／學過那次同時換了紀錄模式；學那輪沒審買方；You.com 是免金鑰 MCP；CrewAI 只審三組；Daytona 與 One 今天 dry-run。
+- n=10 單次；冷／學過那次同時換了紀錄模式；學那輪沒審買方；You.com 是免金鑰 MCP；CrewAI 只審三組；Daytona 今天 dry-run；One 已真寄一封 G01 收據到自己信箱（其餘 next actions 仍是提案）。
 - 旁白：Ten cases, one pass each. It shows what breaks, not how often.
 
 **第 3 屏 一段完整對話**（步驟 ①②）
@@ -50,7 +50,7 @@ Every deal leaves a tail that crosses a company line. We let each side's own age
 ## 交件表格三段（英文）
 - **What it does**: Two companies' agents run the tail of a deal (confirm terms, chase payment) in plain prose. Each has a private task card with a hidden constraint and a written authority limit. After every case the agent writes itself one lesson and reads all lessons before the next. A third model audits each exchange blind.
 - **What it learned**: With nine lessons behind it the seller states its authority limit in 10/10 cases instead of 8, never oversteps, and walks away from a deal the buyer was about to sign against its own rules. It still closed 4/4 of the cases where a legal deal existed.
-- **Sponsor tools**: A You.com search (free MCP endpoint) puts one line of public price context on both cards; in one of three grounded cases that line was off by an order of magnitude and the buyer pushed past its own limit. The blind audit also runs as a CrewAI crew on three cases; on one, the crew and the single-model judge disagree, and that disagreement is on the page. Daytona replays the scoring in a box neither company controls, only the records go in. One carries the receipt out; today that is a dry run.
+- **Sponsor tools**: A You.com search (free MCP endpoint) puts one line of public price context on both cards; in one of three grounded cases that line was off by an order of magnitude and the buyer pushed past its own limit. The blind audit also runs as a CrewAI crew on three cases; on one, the crew and the single-model judge disagree, and that disagreement is on the page. Daytona replays the scoring in a box neither company controls, only the records go in. One carries the receipt out: the G01 receipt went through One's Gmail action to the account's own inbox; the next actions stay proposals until a person approves.
 
 ## 現場口頭版（30 秒，對走過來的人）
 After a deal there's always a follow-up that crosses into another company: confirm, chase, collect. I let each side's own agent do it in plain text and watched where it breaks. Not at the authority line, the seller never crossed it. At the record, and once because the public price it looked up was wrong.

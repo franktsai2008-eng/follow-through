@@ -53,6 +53,15 @@ def tr_row(r):
             f"<td>{'⚠ yes' if r['judge_beyond'] else 'no'}</td><td>{'yes' if r['judge_flagged'] else 'no'}</td>"
             f"<td>{'⚠ yes' if r.get('judge_buyer_beyond') else ('no' if r.get('judge_buyer_beyond') is not None else 'not audited')}</td></tr>")
 
+def one_delivery():
+    """Receipts that actually left through One (receipt_one.py writes receipt_delivery.json)."""
+    out = []
+    for f in sorted((ROOT / "runs").glob("*/*/receipt_delivery.json")):
+        d = json.load(open(f))
+        if d.get("ok"):
+            out.append((f.parent.parent.name, f.parent.name, d.get("messageId"), d.get("to")))
+    return out
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--baseline", required=True); ap.add_argument("--learn"); ap.add_argument("--grounded"); ap.add_argument("--invoice")
@@ -96,6 +105,13 @@ def main():
         ground_note = (f"<p class=m>Grounded run, n = {gb['groups_scored'].split()[0]}: seller beyond authority {gb['judge: seller committed beyond authority (all judged groups)']}, "
                        f"buyer beyond authority {gb['judge: buyer committed beyond authority']}. The buyer breach is G01, the case whose reference line read “{esc(g01.get('line',''))}” against a card in the $40s.</p>")
 
+    dl = one_delivery()
+    if dl:
+        one_line = f"One carries the receipt out of the harness: the {dl[0][1]} receipt went through One's Gmail action to the account's own inbox (messageId {dl[0][2]}), no model in the loop for delivery. The next actions above stay proposals until a person approves."
+        one_bullet = f"the receipt leaves through One's Gmail action, {len(dl)} sent today (messageId {dl[0][2]}). Next actions are proposed; a person approves before anything else leaves."
+    else:
+        one_line = "One carries the receipt and these actions out of the harness. Today that is a dry run."
+        one_bullet = "the agent proposes the next actions and drafts the receipt. A person approves. Dry run today."
     page = f"""<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Follow-Through</title>
 <style>
 :root{{--bg:#fbfaf7;--ink:#161616;--mute:#6b6b66;--line:#e2dfd8;--warn:#a4400f;--ok:#1f6f43;--a:#f3efe6;--b:#eef2f5}}
@@ -171,7 +187,7 @@ ul{{max-width:76ch}} details{{margin:10px 0}} summary{{cursor:pointer;color:var(
 <li>create task: close invoice #4519 on receipt — <span class="tag need">requires human approval</span></li>
 <li>log 2% early-payment discount on the account — <span class="tag need">requires human approval</span></li>
 </ul>
-<p class=m>One carries the receipt and these actions out of the harness. Today that is a dry run.</p>
+<p class=m>{one_line}</p>
 <details><summary>the ten lessons the seller wrote itself</summary><pre>{lessons}</pre></details>
 
 <h2>Four tools, one job each</h2>
@@ -179,7 +195,7 @@ ul{{max-width:76ch}} details{{margin:10px 0}} summary{{cursor:pointer;color:var(
 <li><b>You.com</b> — one line of public context on both cards, source domains shown. In one of three cases it was wrong, and that is the case where the buyer overstepped.</li>
 <li><b>CrewAI</b> — the blind audit as a crew on three cases. On one it disagrees with the single-model judge. The disagreement is on the page.</li>
 <li><b>Daytona</b> — the scoring replayed in a box neither company controls. Only records go in.</li>
-<li><b>One</b> — the agent proposes the next actions and drafts the receipt. A person approves. Dry run today.</li>
+<li><b>One</b> — {one_bullet}</li>
 </ul>
 <p class=m>Built with claude -p and codex exec as the two companies, a third Claude call as blind auditor. Source: a2-harness (scenarios.json · harness.py · judge.py · score.py · grounding.py · audit_crew.py · sandbox_daytona.py · receipt_one.py).</p>
 """

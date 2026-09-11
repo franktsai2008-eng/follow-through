@@ -2,13 +2,14 @@
 """Portable receipt delivered through One (sponsor tool #4; formerly Pica).
 
 After a run, every closed deal gets one receipt: run tag, group, terms as each side recorded them, the blind
-verdicts, and the sha256 of the transcript. The receipt leaves the harness through One's MCP (Gmail, Sheets,
-Slack: whatever the account has connected); the harness never holds a mailbox token. Claude Code is the MCP
-client (`claude -p` + One's stdio server), so nothing new is installed.
+verdicts, and the sha256 of the transcript. The receipt leaves the harness through the One CLI (`one --agent
+actions execute gmail send-email`), which holds the Gmail credential; the harness never sees a mailbox token
+and no model is in the loop for delivery.
 
-  ONE_SECRET=... ONE_RECEIPT_TO=you@example.com python3 receipt_one.py --run baseline-2026-09-11 --groups G01
-  python3 receipt_one.py --run baseline-2026-09-11 --dry-run       # prints receipts + command, no network
+  ONE_RECEIPT_TO=you@example.com python3 receipt_one.py --run baseline-2026-09-11 --groups G01
+  python3 receipt_one.py --run baseline-2026-09-11 --dry-run       # receipts + One's own --dry-run preview, nothing sent
 Output: runs/<tag>/<GID>/receipt.md (the receipt) and receipt_delivery.json (what One reported back).
+Requires: `one` CLI logged in with a gmail connection (`one --agent connection list`).
 """
 import argparse, hashlib, json, os, subprocess, sys
 from pathlib import Path
@@ -41,16 +42,25 @@ def receipt(run_tag, gdir):
              "Either side can verify this receipt by hashing its own copy of the transcript."]
     return "\n".join(lines), sha
 
-def deliver(text, subject, to, secret, timeout=300):
-    mcp = {"mcpServers": {"one": {"command": "npx", "args": ["-y", "@withone/mcp"], "env": {"ONE_SECRET": secret}}}}
-    prompt = (f"Using only the One tools available to you, send an email to {to} with subject \"{subject}\" and this exact plain-text body "
-              f"(do not reword it):\n\n{text}\n\nUse Gmail if it is connected; otherwise use whatever messaging platform is connected. "
-              f"When done, reply with one line: DELIVERED via <platform>, id <message or thread id>. If it cannot be sent, reply FAILED: <reason>.")
-    env = {k: v for k, v in os.environ.items() if k not in ("CLAUDECODE", "CLAUDE_CODE_ENTRYPOINT")}
-    cmd = ["claude", "-p", "--model", "sonnet", "--setting-sources", "", "--strict-mcp-config", "--mcp-config", json.dumps(mcp),
-           "--allowedTools", "mcp__one__*", "--no-session-persistence", "--output-format", "text", prompt]
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, env=env)
-    return r.stdout.strip(), r.stderr[-500:], cmd
+SEND_ACTION = "conn_mod_def::GGXAjWkZO8U::uMc1LQIHTTKzeMm3rLL5gQ"   # gmail · Send Email (one --agent actions search gmail "send email")
+
+def gmail_connection():
+    r = subprocess.run(["one", "--agent", "connection", "list"], capture_output=True, text=True, timeout=60)
+    d = json.loads(r.stdout or "{}")
+    for c in d.get("connections", []):
+        if c.get("platform") == "gmail" and c.get("state") == "operational":
+            return c["key"]
+    raise SystemExit("no operational gmail connection in `one --agent connection list`; run `one add gmail`")
+
+def deliver(text, subject, to, key, dry_run=False, timeout=120):
+    body = {"connectionKey": key, "to": to, "subject": subject, "body": text}
+    cmd = ["one", "--agent", "actions", "execute", "gmail", SEND_ACTION, key, "-d", json.dumps(body)] + (["--dry-run"] if dry_run else [])
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    try:
+        out = json.loads(r.stdout)
+    except json.JSONDecodeError:
+        out = {"error": "non-JSON output", "stdout": r.stdout[-500:], "stderr": r.stderr[-500:]}
+    return out
 
 def main():
     ap = argparse.ArgumentParser()
@@ -59,7 +69,8 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     run_dir = ROOT / "runs" / a.run
-    secret, to = os.environ.get("ONE_SECRET"), os.environ.get("ONE_RECEIPT_TO")
+    to = os.environ.get("ONE_RECEIPT_TO")
+    key = None
     for gdir in sorted(p for p in run_dir.iterdir() if p.is_dir() and (p / "transcript.json").exists()):
         if a.groups and gdir.name not in a.groups:
             continue
@@ -71,15 +82,21 @@ def main():
         (gdir / "receipt.md").write_text(text)
         subject = f"A2 receipt {a.run}/{gdir.name} sha256:{sha[:12]}"
         print(f"[{gdir.name}] receipt written ({len(text)} chars)  subject: {subject}")
-        if a.dry_run:
-            print("   " + text.replace("\n", "\n   "))
-            print(f"   would send via: claude -p --mcp-config '{{one: npx -y @withone/mcp, ONE_SECRET}}' --allowedTools mcp__one__*  → {to or '<ONE_RECEIPT_TO unset>'}")
+        if not to:
+            print("   ONE_RECEIPT_TO not set: receipt kept locally, nothing sent." + ("" if a.dry_run else " Set it to your own address to deliver."))
             continue
-        if not (secret and to):
-            sys.exit("ONE_SECRET and ONE_RECEIPT_TO must be set (secret from app.withone.ai → API keys, and connect Gmail there first). Use --dry-run to preview.")
-        out, err, _ = deliver(text, subject, to, secret)
-        (gdir / "receipt_delivery.json").write_text(json.dumps({"subject": subject, "to": to, "result": out, "stderr": err}, indent=2))
-        print(f"[{gdir.name}] {out or 'no output'}{('  stderr: ' + err) if err and not out else ''}")
+        key = key or gmail_connection()
+        out = deliver(text, subject, to, key, dry_run=a.dry_run)
+        if a.dry_run:
+            print(f"   one --dry-run preview: {json.dumps(out.get('request', out))[:300]}")
+            continue
+        ok = "error" not in out
+        resp = out.get("response", out)
+        em = resp.get("email", resp) if isinstance(resp, dict) else {}
+        summary = {"subject": subject, "to": to, "ok": ok and bool(em.get("sent", True)), "via": "one-cli gmail send-email",
+                   "messageId": em.get("messageId") or em.get("id"), "threadId": em.get("threadId"), "raw": out}
+        (gdir / "receipt_delivery.json").write_text(json.dumps(summary, indent=2))
+        print(f"[{gdir.name}] {'DELIVERED' if ok else 'FAILED'} via One → {to}  id={summary['messageId']}" + ("" if ok else f"  {json.dumps(out)[:300]}"))
 
 if __name__ == "__main__":
     main()

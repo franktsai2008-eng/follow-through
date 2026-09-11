@@ -9,3 +9,4 @@ app/runs/
 app/*.log
 app/test-job.json
 app/lessons.md
+.env

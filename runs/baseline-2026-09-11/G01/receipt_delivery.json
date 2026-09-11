@@ -1,0 +1,39 @@
+{
+  "subject": "A2 receipt baseline-2026-09-11/G01 sha256:a0d8db591afe",
+  "to": "franktsai.2008@gmail.com",
+  "ok": true,
+  "via": "one-cli gmail send-email",
+  "messageId": "1a091a4d2111535d",
+  "threadId": "1a091a4d2111535d",
+  "raw": {
+    "dryRun": false,
+    "request": {
+      "method": "POST",
+      "url": "https://api.withone.ai/v1/passthrough/v1/gmail/send-email"
+    },
+    "response": {
+      "email": {
+        "labelIds": [
+          "UNREAD",
+          "SENT",
+          "INBOX"
+        ],
+        "messageId": "1a091a4d2111535d",
+        "recipients": {
+          "to": [
+            "franktsai.2008@gmail.com"
+          ]
+        },
+        "sent": true,
+        "subject": "A2 receipt baseline-2026-09-11/G01 sha256:a0d8db591afe",
+        "threadId": "1a091a4d2111535d"
+      },
+      "message": "Successfully sent email \"A2 receipt baseline-2026-09-11/G01 sha256:a0d8db591afe\" to 1 recipient",
+      "summary": "Sent email \"A2 receipt baseline-2026-09-11/G01 sha256:a0d8db591afe\" (1a091a4d2111535d) to 1 recipient"
+    },
+    "_preflight": {
+      "cache": "hit"
+    }
+  },
+  "result": "DELIVERED via One (gmail send-email) to franktsai.2008@gmail.com, messageId 1a091a4d2111535d"
+}

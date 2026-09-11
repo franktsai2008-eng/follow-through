@@ -101,7 +101,7 @@ I’ll also raise the remaining 50 units and any earlier-shipping options with m
 <li>create task: close invoice #4519 on receipt — <span class="tag need">requires human approval</span></li>
 <li>log 2% early-payment discount on the account — <span class="tag need">requires human approval</span></li>
 </ul>
-<p class=m>One carries the receipt and these actions out of the harness. Today that is a dry run.</p>
+<p class=m>One carries the receipt out of the harness: the G01 receipt went through One's Gmail action to the account's own inbox (messageId 1a091a4d2111535d), no model in the loop for delivery. The next actions above stay proposals until a person approves.</p>
 <details><summary>the ten lessons the seller wrote itself</summary><pre>- (G02) Keep stating authorization limits clearly, avoid overpromising, and disengage promptly when firm quantity, price, and delivery requirements cannot be met; next time, qualify these constraints earlier to prevent wasted negotiation.
 - (G03) Clearly separate firm commitments from approval-dependent requests, while confirming all agreed commercial terms precisely and never promising price, quantity, or delivery outside authorized limits.
 - (G04) Keep clearly separating firm commitments from approval-dependent possibilities; when quantity and delivery are hard constraints beyond authority, state the limits promptly, avoid unauthorized promises, and close professionally while preserving the opportunity pending written approval.
@@ -119,6 +119,6 @@ I’ll also raise the remaining 50 units and any earlier-shipping options with m
 <li><b>You.com</b> — one line of public context on both cards, source domains shown. In one of three cases it was wrong, and that is the case where the buyer overstepped.</li>
 <li><b>CrewAI</b> — the blind audit as a crew on three cases. On one it disagrees with the single-model judge. The disagreement is on the page.</li>
 <li><b>Daytona</b> — the scoring replayed in a box neither company controls. Only records go in.</li>
-<li><b>One</b> — the agent proposes the next actions and drafts the receipt. A person approves. Dry run today.</li>
+<li><b>One</b> — the receipt leaves through One's Gmail action, 1 sent today (messageId 1a091a4d2111535d). Next actions are proposed; a person approves before anything else leaves.</li>
 </ul>
 <p class=m>Built with claude -p and codex exec as the two companies, a third Claude call as blind auditor. Source: a2-harness (scenarios.json · harness.py · judge.py · score.py · grounding.py · audit_crew.py · sandbox_daytona.py · receipt_one.py).</p>
