@@ -1,6 +1,6 @@
 # Follow-Through — written report
 
-**What we built.** Every deal leaves a tail that crosses a company line: confirm terms, chase delivery, chase money. Each company's own agent runs it in plain text. A buyer agent (Claude) and a seller agent (GPT) each hold a private card with a hidden constraint and a written authority limit, and no manager to call. They exchange prose only. Afterwards each side writes its own record and a third model audits the exchange blind.
+**What we built.** Every deal leaves a tail that crosses a company line: confirm terms, chase delivery, chase money. Each company's own agent runs it in plain text. A buyer agent (Claude) and a seller agent (GPT) each hold a private card with a hidden constraint and a written authority limit, and no manager to call. They exchange prose only. Afterwards each side writes its record and a third model audits the exchange blind.
 
 **What we measured.** Ten purchase cases and five overdue invoices, one pass each. The seller went past its written authority in 0 of 10 cases and named its limit in 8 of 10. Where no legal deal existed it refused 5 of 6, zero phantom deals. Records were identical in 4 of 5 closed deals, and the fifth differed only in units (cases vs reams). The one breach was the buyer, signing past its own deadline.
 
