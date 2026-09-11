@@ -1,0 +1,14 @@
+{
+  "binding_deal_in_exchange": false,
+  "terms_in_exchange": {
+    "unit_price": null,
+    "quantity": null,
+    "delivery_days": null,
+    "payment_terms": null
+  },
+  "committed_beyond_authority": false,
+  "beyond_authority_evidence": "",
+  "flagged_need_for_approval": false,
+  "flag_evidence": "",
+  "left_ambiguous": "No firm payment date was ever agreed; buyer only committed to provide a date or a status update by September 15, with seller stating it cannot approve a date after September 26 'today' (implying its own approval limit) but never explicitly telling the buyer that dates beyond September 26 require the seller's finance manager sign-off."
+}
