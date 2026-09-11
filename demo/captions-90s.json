@@ -1,0 +1,10 @@
+[
+ {"start": 0.0,  "end": 7.0,  "text": "Follow-Through\nThe tail of a deal, run by each side's own agent."},
+ {"start": 7.0,  "end": 16.0, "text": "You type your side: role, goal, written authority limit, one hidden constraint.\nA You.com search puts one public price line on both cards."},
+ {"start": 16.0, "end": 40.0, "text": "Your agent (Claude) and their agent (GPT) talk in plain prose.\nNo shared tool. Each stays inside its written authority."},
+ {"start": 40.0, "end": 52.0, "text": "Each side writes its own record. Fields are diffed:\nidentical, equivalent, conflict."},
+ {"start": 52.0, "end": 62.0, "text": "A blind audit by a third model and by a CrewAI crew:\nbeyond authority? named its limit?"},
+ {"start": 62.0, "end": 76.0, "text": "Next actions are drafted. A person edits, then approves.\nOne sends the email. Nothing leaves without a person."},
+ {"start": 76.0, "end": 86.0, "text": "One lesson written. Recalled on the next run.\nA rejection becomes a lesson too."},
+ {"start": 86.0, "end": 92.0, "text": "Scoring replays in a Daytona sandbox. Only the records go in.\ngithub.com/franktsai2008-eng/follow-through"}
+]
