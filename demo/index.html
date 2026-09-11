@@ -17,15 +17,27 @@ ul{max-width:76ch} details{margin:10px 0} summary{cursor:pointer;color:var(--mut
 
 <h1>Follow-Through</h1>
 <p>The tail of a deal, run by each side's own agent. After the handshake someone still has to confirm the terms, chase the delivery and chase the money across a company line. Here each company's own agent does it in plain text, stays inside its written authority, keeps its own record, and gets more explicit about its limits with every case.</p>
+
+<div class=card style="margin:14px 0 6px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:14px">
+<b>Try it</b>
+<a href="https://outputs-wisconsin-produce-bibliography.trycloudflare.com">Live app (type your side, watch two agents run the tail)</a>
+<a href="https://github.com/franktsai2008-eng/follow-through">Code and README</a>
+<a href="#demo-video">Demo video (105 s)</a>
+</div>
+<img src="how-it-runs.png" alt="How a run works: task card, two agents talk, two records, blind audit, human approves, learn" style="width:100%;height:auto;border:1px solid var(--line);margin:8px 0 4px">
 <div class=flow>
 <div><b>① look up</b>one public reference line on both cards · You.com</div>
 <div><b>② talk</b>my agent ⇄ their agent, plain prose, each inside its authority</div>
 <div><b>③ reconcile</b>two records compared · blind audit, CrewAI crew</div>
-<div><b>④ propose → approve → act</b>actions listed, a person approves · One (dry run today)</div>
+<div><b>④ propose → approve → act</b>actions drafted, a person edits and approves, One sends the email</div>
 <div><b>⑤ re-check</b>scoring replayed in a box neither company controls · Daytona</div>
 <div><b>⑥ learn</b>one lesson per case, read before the next</div>
 </div>
 
+
+<h2 id="demo-video">Demo video</h2>
+<video controls preload="metadata" style="width:100%;max-width:960px;border:1px solid var(--line);background:#000" src="follow-through-demo.mp4"></video>
+<p class=m>105 seconds, one real run: You.com line on both cards, two agents in plain prose, records diffed, blind audit, a person approves and One sends the email, a rejection becomes a lesson, Daytona replays the scoring.</p>
 <div class=stats>
 <div class=stat><div class=big>0/10</div><div class=m>seller went past its written authority (blind audit)</div></div>
 <div class=stat><div class=big>8/10→10/10</div><div class=m>cases where the seller names its limit, cold → with lessons</div></div>
