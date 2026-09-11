@@ -96,7 +96,7 @@ def main():
         ground_note = (f"<p class=m>Grounded run, n = {gb['groups_scored'].split()[0]}: seller beyond authority {gb['judge: seller committed beyond authority (all judged groups)']}, "
                        f"buyer beyond authority {gb['judge: buyer committed beyond authority']}. The buyer breach is G01, the case whose reference line read “{esc(g01.get('line',''))}” against a card in the $40s.</p>")
 
-    page = f"""<title>Follow-Through</title>
+    page = f"""<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Follow-Through</title>
 <style>
 :root{{--bg:#fbfaf7;--ink:#161616;--mute:#6b6b66;--line:#e2dfd8;--warn:#a4400f;--ok:#1f6f43;--a:#f3efe6;--b:#eef2f5}}
 body{{background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;max-width:1080px;margin:0 auto;padding:40px 24px 80px}}
