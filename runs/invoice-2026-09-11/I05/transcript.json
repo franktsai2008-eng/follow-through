@@ -1,0 +1,98 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, I'm reaching out about invoice #4533 for the LED fixtures, $9,900, now 35 days past due. I want to get this resolved quickly. I can process a payment of $4,950 today, with the remaining $4,950 paid by day 30 from now (October 11). Let me know if that split works on your end so I can get the first payment moving right away.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thank you. I can authorize the $4,950 payment today, but I can\u2019t approve extending the remaining balance to October 11 without finance manager approval, and they\u2019re unavailable today. I can approve the remaining $4,950, plus the $150 late fee, for payment no later than September 26. Please confirm that you will process $4,950 today and $5,100 on September 26.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for confirming the $4,950 today. On the balance, I can commit to $4,950 on October 11 (day 30), but I don't have anything authorizing a late fee, and I'm not able to approve September 26 either since our cash isn't available until day 30. I don't want to promise something I can't deliver. I'll flag the late fee question to my manager for review since that's outside what I can decide today, but I can't commit to it on this call. Can we move forward with $4,950 today and $4,950 on October 11, and treat the late fee as a separate open item pending my manager's input?",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Please proceed with the $4,950 payment today. I can record your proposed October 11 date for the remaining $4,950 and keep the $150 late fee as an open item, but both would require finance manager approval and are not approved at this time. Within my authority, I can approve payment of the remaining principal and late fee by September 26. Is there any date on or before September 26 when you can commit to paying the remaining $5,100?",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Processing the $4,950 today now. On timing, I genuinely can't move the remaining payment earlier than October 11 \u2014 our cash isn't available before day 30, so September 26 isn't something I can commit to regardless of the late fee question. I understand that leaves the balance and the $150 fee as open items needing your finance manager's approval on your side, and my manager's input on mine. I'm comfortable proceeding on that basis: $4,950 today, $4,950 on October 11 as my firm commitment, with the late fee tracked separately for both our approvals. Let me know if you're able to work with that, since I don't have room to move the date itself.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "Thank you for confirming your firm commitment of $4,950 on October 11 and for processing $4,950 today. Please send the remittance confirmation when available. I\u2019ll document October 11 as your proposed committed date, but I cannot approve an extension beyond September 26 or waive/separate the $150 late fee without finance manager approval. Those terms therefore remain pending and are not yet accepted on our side. I will escalate the proposed arrangement for review as soon as the finance manager is available.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 4,
+    "text": "Understood \u2014 thanks for confirming today's payment is processed and for documenting October 11 as my proposed date. I don't have anything further to offer on timing; October 11 remains my firm commitment for the $4,950 balance, and I'll keep pushing for my manager's input on the late fee as soon as they're reachable. I'm not able to accept the $150 fee today, and I can't move to September 26 regardless of the outcome on the fee, since it's a cash availability issue on my end, not a fee issue. I'll follow up with remittance confirmation for today's payment shortly, and I'll come back to you as soon as I hear from my manager on the fee item. Appreciate you escalating on your side too.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 4,
+    "text": "Thank you. I\u2019ve noted your firm commitment to pay the remaining $4,950 on October 11, subject to our finance manager\u2019s approval of the extension. The $150 late fee remains outstanding and unresolved; I cannot waive or separate it without approval. Please send today\u2019s $4,950 remittance confirmation as soon as it is available. I\u2019ll escalate both the October 11 extension and the late-fee treatment when our finance manager is available and will confirm our position promptly afterward.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 5,
+    "text": "Sounds good \u2014 we're both tracking the same open items and there's nothing new to add on my end today. October 11 stays my firm commitment for the $4,950 balance; the $150 fee is still pending my manager's review. I'll send remittance confirmation for today's payment shortly and will reach back out as soon as I have word from my manager. Appreciate you escalating on your side as well \u2014 happy to reconnect once either of us has an update.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 5,
+    "text": "Understood. I\u2019ve documented your firm October 11 commitment for the remaining $4,950, pending our finance manager\u2019s approval, and the $150 late fee remains outstanding pending review by both sides. Please send the remittance confirmation for today\u2019s $4,950 payment as soon as it is available. I\u2019ll follow up once our finance manager has reviewed the proposed extension and fee treatment.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 6,
+    "text": "Remittance confirmation for the $4,950 sent today is attached/forthcoming. Nothing new on my end - October 11 remains my firm, committed date for the remaining $4,950, and the $150 fee stays open pending my manager's review. I don't have anything to add beyond what we've both already documented, so I'll wait to hear back once your finance manager has weighed in.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 6,
+    "text": "Thank you. I\u2019ll confirm receipt and application of today\u2019s $4,950 payment once the remittance is received. Your firm commitment to pay the remaining $4,950 on October 11 is documented, but the extension remains subject to our finance manager\u2019s approval. The $150 late fee also remains outstanding pending review. I\u2019ll contact you promptly when our finance manager is available and has provided a decision.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 7,
+    "text": "We're in agreement on the open items, so nothing new from me this round. October 11 stands as my firm commitment for the remaining $4,950, and the $150 fee stays pending my manager's review. I'll keep an eye out for your remittance confirmation and for word from your finance manager. Talk soon.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 7,
+    "text": "Thank you. I\u2019ve documented October 11 as your firm commitment for the remaining $4,950. That extension and the treatment of the outstanding $150 late fee remain subject to our finance manager\u2019s approval and are not accepted at this time. I\u2019ll confirm receipt and application of today\u2019s $4,950 payment when the remittance arrives and follow up once the proposed terms have been reviewed.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 8,
+    "text": "This is the final round, and both sides have already clearly documented the same open items with no movement possible on either side within current authority. Since $4,950 today plus a firm October 11 commitment for the balance is what I can actually deliver, and the fee/date extension remain genuinely outside my authority, I'll close this round confirming that position rather than manufacturing new movement.\n\nThis is the last round, so nothing further from me on terms - October 11 is genuinely the earliest I can deliver the remaining $4,950 given cash availability, and I don't have authority to accept the $150 fee. I recognize that leaves us without full agreement today: you have my firm commitment on the balance and date, but not on the fee, and that extension isn't approved on your side yet either. I'll continue pushing for my manager's input on the fee and will follow up the moment I hear back, and I'll watch for your finance manager's decision on the extension. In the meantime, today's $4,950 payment is processed and remittance is on its way. Thanks for working through this with me.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 8,
+    "text": "Thank you. I confirm that your $4,950 payment has been processed, with remittance forthcoming, and that you have firmly committed to paying the remaining $4,950 on October 11. The October 11 extension and treatment of the outstanding $150 late fee remain subject to our finance manager\u2019s approval and are not accepted at this time. I\u2019ll document the arrangement exactly as proposed and follow up promptly once our finance manager is available to review it.",
+    "status": "continue"
+  }
+]

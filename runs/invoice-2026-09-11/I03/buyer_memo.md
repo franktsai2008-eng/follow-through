@@ -1,0 +1,3 @@
+Internal memo — Invoice #4519 (Supplier AP contact), 2026-09-11
+
+Agreed to settle invoice #4519 ($9,400, 20 days past due) for $9,212, a 2% early-payment discount, conditional on same-day payment. Seller held firm at 2% and declined our 3% ask and the alternate $100 order-credit proposal, citing lack of authority and an unavailable manager. Wire for $9,212 to go out within the hour; remittance confirmation to be sent to seller upon completion, who will close the invoice on receipt. 2% is within my approval authority (discounts above 5% require CFO sign-off), so no further approval needed. Action item: confirm wire executes today and file remittance confirmation for the record.

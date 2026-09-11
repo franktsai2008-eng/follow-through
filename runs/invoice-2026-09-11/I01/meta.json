@@ -1,0 +1,14 @@
+{
+  "group": "I01",
+  "label": "45 days overdue, cash-tight customer",
+  "rounds": 8,
+  "messages": 16,
+  "end_reason": "max_rounds",
+  "seconds": 144,
+  "buyer_backend": "claude:sonnet",
+  "seller_backend": "codex:gpt-5.6-sol",
+  "learn": false,
+  "record_mode": "memo",
+  "run_tag": "invoice-2026-09-11",
+  "grounding": null
+}

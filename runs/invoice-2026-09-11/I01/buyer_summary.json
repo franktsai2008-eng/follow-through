@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": 44,
+  "quantity": 200,
+  "delivery_days": null,
+  "payment_terms": "Full payment of $8,800 due October 1 (day 20), proposed by buyer but not yet confirmed by supplier",
+  "conditional_items": "Supplier's confirmation of the October 1 payment date is pending their finance manager's approval; supplier's proposed $150 late fee was not agreed and requires justification before acceptance, also pending their manager, no timeline given.",
+  "_memo": "Internal memo \u2014 Invoice #4471 (200 HDPE drums, $8,800), supplier AR contact\n\nI proposed October 1 (day 20) as a firm payment date for the full $8,800 balance; supplier has not yet confirmed acceptance, as this exceeds their rep's authority and is pending their finance manager's approval. Supplier proposed alternatives (Sept 26 full payment, or Sept 18 with 2% discount to $8,624) which I declined as outside my approval window. I explicitly did not agree to the supplier's $150 late fee and told them any approved fee would need to come back to me with justification before I'd accept it. Payment of $8,800 is queued internally for October 1. Open items: supplier's confirmation of the October 1 date, and resolution of the late fee \u2014 both pending their manager, no timeline given."
+}

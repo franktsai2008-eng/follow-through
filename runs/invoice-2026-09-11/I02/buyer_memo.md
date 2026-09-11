@@ -1,0 +1,3 @@
+Internal Memo – Invoice #4502 (Label Rolls)
+
+Confirmed with supplier AR: we will pay $5,300 (undisputed portion) by September 21, applied against invoice #4502, not as full settlement. Damage photos and receiving notes for the 30 damaged rolls ($900) go out to supplier today for their warehouse review. Supplier pushed repeatedly for a committed payment date (September 26) on the disputed $900; I declined, as settling or dating a disputed line item exceeds my authority and requires CFO sign-off. No agreement on late fees was discussed or conceded. Open items: supplier's damage investigation outcome, CFO approval needed before committing to any $900 payment date or accepting/rejecting a credit. Will escalate to CFO once supplier responds with findings.

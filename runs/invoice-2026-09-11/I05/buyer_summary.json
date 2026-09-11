@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": null,
+  "quantity": null,
+  "delivery_days": null,
+  "payment_terms": "50% ($4,950) paid today; remaining $4,950 balance disputed \u2014 payer intends October 11, supplier countered September 26",
+  "conditional_items": "Final balance due date (October 11 vs. supplier's countered September 26) unresolved, pending supplier's finance manager approval; $150 late fee asserted by supplier, not accepted, pending internal manager review",
+  "_memo": "Internal memo \u2014 Invoice #4533 (LED fixtures, $9,900, supplier AR)\n\nPaid $4,950 today per authority. Remaining $4,950 committed firmly for October 11 (day 30), our stated cash-availability limit; supplier has not accepted this date and is treating it as pending their finance manager's approval, having countered for September 26. Supplier is also asserting a $150 late fee, unsupported by anything on our side \u2014 not accepted, flagged for manager review. No agreement reached on final balance date or fee; both remain open/conditional pending approvals on both sides. Action items: escalate late fee to manager for decision; confirm October 11 payment stays on track regardless of supplier's response; watch for supplier's finance manager reply, which may reopen the date discussion."
+}

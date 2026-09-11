@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": null,
+  "quantity": null,
+  "delivery_days": null,
+  "payment_terms": "$8,800 balance for invoice #4471 to be paid October 1",
+  "conditional_items": "Extension of payment terms to October 1 (beyond September 26 authority limit) is subject to finance manager approval; $150 late fee waiver is subject to finance manager approval and customer has not agreed to pay it; 2% early-payment discount does not apply",
+  "_memo": "Customer confirmed the $8,800 balance for invoice #4471 is undisputed and firmly committed to payment on October 1; payment is queued, with remittance confirmation to follow when processed. October 1 is 20 days from today and exceeds my authority to extend terms beyond September 26, so the extension remains subject to finance manager approval. Customer declined earlier payment and did not have authority to offer a partial payment before October 1. The 2% early-payment discount does not apply. The $150 late fee remains outstanding under our terms, but the customer has not agreed to pay it and requested its basis. Any waiver requires finance manager approval. Follow up when the manager is available to decide the extension and fee waiver, then communicate the decision and fee basis to the customer."
+}

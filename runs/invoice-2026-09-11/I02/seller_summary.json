@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": null,
+  "quantity": null,
+  "delivery_days": null,
+  "payment_terms": "$5,300 by September 21, applied against invoice #4502, not full settlement",
+  "conditional_items": "Remaining $900 balance is disputed and unresolved: pending internal damage review and customer's AP approval; no payment date secured; customer lacks authority to commit to September 26; no credit, write-off, settlement, or undated split arrangement approved; any credit/partial-payment arrangement requires finance manager approval; unresolved balance and proposed split referred to finance management",
+  "_memo": "Customer unconditionally committed to pay $5,300 by September 21, to be applied against invoice #4502 and not treated as full settlement. They will send damage photos and receiving notes today regarding the disputed $900. No payment date was secured for that balance; the customer lacks authority to commit to September 26 and has escalated internally. The $900 remains outstanding pending our damage review and their AP approval. No credit, write-off, settlement, or undated split arrangement was approved. Any credit or partial-payment arrangement requires finance manager approval when available. We will prioritize the damage review after receiving documentation and refer the unresolved balance and proposed split to finance management."
+}

@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": null,
+  "quantity": null,
+  "delivery_days": null,
+  "payment_terms": "$9,212 by wire today, full settlement of invoice #4519 with 2% discount",
+  "conditional_items": "Settlement is conditional on receipt of payment today; payment receipt and remittance confirmation remain outstanding; $100 future-order credit and 3% discount were not approved",
+  "_memo": "Customer agreed to pay $9,212 today by wire as full settlement of invoice #4519 ($9,400), reflecting the authorized 2% discount. Customer stated the wire would be sent within one hour and will forward remittance confirmation. Settlement remains conditional on receipt of payment today. Upon receipt, document the discount and close the invoice. No additional $100 future-order credit or 3% discount was approved. Payment receipt and remittance confirmation remain outstanding."
+}
