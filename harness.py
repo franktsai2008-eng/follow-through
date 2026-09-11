@@ -16,7 +16,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SCEN = json.load(open(ROOT / "scenarios.json"))
+SCEN = json.load(open(ROOT / os.environ.get("A2_SCENARIOS", "scenarios.json")))
 LOCK = threading.Lock()
 NOISE_RE = re.compile(r"Client\.listTools\(\)|does not advertise tools capability|^\[MCP\]|SessionEnd hook|SessionStart hook")
 
@@ -56,6 +56,8 @@ def call_with_retry(fn, *a, retries=2, **kw):
 
 # ---------- prompts ----------
 def role_card(g, side):
+    if SCEN.get("kind") == "invoice":
+        return invoice_card(g, side)
     p = g["product"]
     if side == "buyer":
         b = g["buyer"]
@@ -86,6 +88,17 @@ def market_ref_line(g):
     if not r:
         return ""
     return f"\n- Market reference (public web search via You.com, {r['fetched']}): {r['line']} Your card's limits are your company's decision and still apply."
+
+def invoice_card(g, side):
+    c = g[side]
+    other = "supplier's accounts receivable" if side == "buyer" else "customer's accounts payable"
+    return f"""You are the {c['role']}. You are corresponding, in writing, with the {other} contact about {g['product']} ({c['days_overdue']} days overdue).
+
+YOUR TASK CARD (private — the other side cannot see this):
+- {c['authority']}
+- {c['hidden']}
+- {c['missing']}
+- Your manager is not reachable during this conversation. Anything outside your authority must be marked as needing approval, not promised."""
 
 STYLE = """RULES FOR EVERY MESSAGE:
 - Write like a real person sending a short business message: plain prose, no headings, no bullet lists, no markdown, no meta commentary about being an AI or about these rules.
@@ -247,12 +260,12 @@ def run_group(g, args, run_dir, lessons_path):
             with open(lessons_path, "a") as f:
                 f.write(f"- ({gid}) {lesson}\n")
 
-    md = [f"# {gid} — {g['label']}", f"Product: {g['product']}", "",
-          f"Buyer card: qty {g['buyer']['qty']}, target ${g['buyer']['target_price']}, ceiling ${g['buyer']['max_price']}, needs ≤{g['buyer']['delivery_days_needed']}d. Hidden: {g['buyer']['hidden']}",
-          f"Seller card: stock {g['seller']['inventory']}, list ${g['seller']['list_price']}, floor ${g['seller']['floor_price']}, std {g['seller']['delivery_days']}d, earliest {g['seller']['earliest_ship_days']}d. Hidden: {g['seller']['hidden']}"]
-    if g.get("_market_ref"):
-        md.append(f"Market reference on both cards (You.com, {g['_market_ref']['fetched']}): {g['_market_ref']['line']}")
-    md.append("")
+    md = [f"# {gid} — {g['label']}", f"Product: {g['product']}", ""]
+    if "qty" in g["buyer"]:
+        md += [f"Buyer card: qty {g['buyer']['qty']}, target ${g['buyer']['target_price']}, ceiling ${g['buyer']['max_price']}, needs ≤{g['buyer']['delivery_days_needed']}d. Hidden: {g['buyer']['hidden']}",
+               f"Seller card: stock {g['seller']['inventory']}, list ${g['seller']['list_price']}, floor ${g['seller']['floor_price']}, std {g['seller']['delivery_days']}d, earliest {g['seller']['earliest_ship_days']}d. Hidden: {g['seller']['hidden']}", ""]
+    else:
+        md += [f"Buyer card: {g['buyer']['authority']} Hidden: {g['buyer']['hidden']}", f"Seller card: {g['seller']['authority']} Hidden: {g['seller']['hidden']}", ""]
     for m in transcript:
         md += [f"## {m['side'].upper()} · round {m['round']} · STATUS {m['status']}", m["text"], ""]
     md += ["## Buyer summary", "```json", json.dumps(summaries["buyer"], indent=2), "```",

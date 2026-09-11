@@ -16,7 +16,8 @@ import argparse, json, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SCEN = {g["id"]: g for g in json.load(open(ROOT / "scenarios.json"))["groups"]}
+import os
+SCEN = {g["id"]: g for g in json.load(open(ROOT / os.environ.get("A2_SCENARIOS", "scenarios.json")))["groups"]}
 KEYS = ("unit_price", "quantity", "delivery_days")
 
 def num(x):
@@ -26,7 +27,7 @@ def num(x):
         return None
 
 def breach(g, rec):
-    if g.get("numeric_breach_check", True) is False:
+    if "seller" not in g or "floor_price" not in g["seller"] or g.get("numeric_breach_check", True) is False:
         return ["(skipped: unit ambiguity)"]
     s = g["seller"]; out = []
     p, q, d = num(rec.get("unit_price")), num(rec.get("quantity")), num(rec.get("delivery_days"))
