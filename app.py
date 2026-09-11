@@ -349,9 +349,9 @@ def crew_thread(jid, card_me, card_other, hist):
         env = dict(os.environ, CREWAI_DISABLE_TELEMETRY="true", CREWAI_TRACING_ENABLED="false", OTEL_SDK_DISABLED="true")
         try:
             subprocess.run([str(VENV_PY), str(BASE / "crew_audit_job.py"), str(inp), str(outp)],
-                           capture_output=True, text=True, timeout=90, env=env, cwd=str(BASE))
+                           capture_output=True, text=True, timeout=150, env=env, cwd=str(BASE))
         except subprocess.TimeoutExpired:
-            J["crew_audit"] = {"status": "error", "me": None, "other": None, "agrees": None, "detail": "crew timed out at 90s"}
+            J["crew_audit"] = {"status": "error", "me": None, "other": None, "agrees": None, "detail": "crew timed out at 150s"}
             return save(jid)
         res = json.loads(outp.read_text()) if outp.exists() else {"status": "error", "detail": "no output"}
         if res.get("status") == "done":
