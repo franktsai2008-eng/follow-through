@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="howitruns-title howitruns-desc" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
-<title id="howitruns-title">Follow-Through · how a run works</title>
-<desc id="howitruns-desc">A six-step left-to-right flow: a task card with a written authority limit, two company agents talking in plain prose, two separate records that are diffed field by field, a blind audit by a second model and a CrewAI crew, a human approving before One sends the email, and a lesson written back into the next run. A side box shows the scoring replayed in a Daytona sandbox on the records alone.</desc>
+<title id="howitruns-title">Follow-Through · how a case works</title>
+<desc id="howitruns-desc">A seven-step flow for one meeting: the meeting notes go in; the agent digests them into decisions, commitments, open items and risks, with public context from the You.com Search API; a CrewAI crew proposes three approaches and you settle on one in a short chat; the agent drafts the follow-up email from the locked strategy and recalled lessons; you edit it and press Send, and One sends it through Gmail; every place you touched becomes a lesson in One memory, recalled on the next case; and a dashed harness box under the last two steps replays how much you had to change, case after case, in a Daytona sandbox.</desc>
 <defs>
 <style>@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap");</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#8c8c8c"/></marker>
@@ -8,84 +8,94 @@
 </defs>
 <rect width="1600" height="900" fill="#000000"/>
 <text x="52" y="62" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.18em">FOLLOW-THROUGH · A2 HARNESS</text>
-<text x="52" y="106" fill="#f2f2f2" font-size="30" font-weight="600" letter-spacing="-0.01em">Follow-Through · how a run works</text>
-<text x="52" y="136" fill="#8c8c8c" font-size="14">The tail of a deal, run by each side’s own agent — and nothing leaves without a person.</text>
-<line x1="258" y1="308" x2="286" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
-<line x1="594" y1="308" x2="622" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
-<line x1="834" y1="308" x2="862" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
-<line x1="1074" y1="308" x2="1102" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
-<line x1="1314" y1="308" x2="1342" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
-<path d="M 728 444 V 494" fill="none" stroke="#5a5a5a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-faint)"/>
-<path d="M 968 444 V 494" fill="none" stroke="#5a5a5a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-faint)"/>
-<path d="M 1448 444 V 676 q 0 8 -8 8 H 160 q -8 0 -8 -8 V 450" fill="none" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
-<rect x="686" y="658" width="228" height="14" rx="2" fill="#000000"/>
-<text x="800" y="668" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.12em">THE LESSON IS RECALLED ON THE NEXT RUN</text>
-<rect x="52" y="172" width="200" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+<text x="52" y="106" fill="#f2f2f2" font-size="30" font-weight="600" letter-spacing="-0.01em">Follow-Through · how a case works</text>
+<text x="52" y="136" fill="#8c8c8c" font-size="14">After the meeting: agree the strategy, edit the draft, it learns from your edits.</text>
+
+<line x1="279" y1="308" x2="301" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="534" y1="308" x2="556" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="789" y1="308" x2="811" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="1044" y1="308" x2="1066" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="1299" y1="308" x2="1321" y2="308" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
+
+<path d="M 1182 444 V 494" fill="none" stroke="#5a5a5a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-faint)"/>
+<path d="M 1437 444 V 494" fill="none" stroke="#5a5a5a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-faint)"/>
+
+<path d="M 1516 444 V 668 q 0 8 -8 8 H 160 q -8 0 -8 -8 V 450" fill="none" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
+<rect x="710" y="658" width="180" height="14" rx="2" fill="#000000"/>
+<text x="800" y="668" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.12em">RECALLED ON THE NEXT CASE</text>
+
+<rect x="52" y="172" width="221" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
 <text x="68" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">01</text>
-<text x="68" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Your task card</text>
-<text x="68" y="256" fill="#8c8c8c" font-size="12">role, goal, written</text>
-<text x="68" y="274" fill="#8c8c8c" font-size="12">authority limit, one</text>
-<text x="68" y="292" fill="#8c8c8c" font-size="12">hidden constraint</text>
-<line x1="68" y1="368" x2="236" y2="368" stroke="#2a2a2a" stroke-width="1"/>
-<rect x="68" y="382" width="119" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-<text x="127" y="396" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">YOU.COM SEARCH API</text>
-<text x="68" y="422" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9">adds one public price line to</text>
-<text x="68" y="436" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9">both cards</text>
-<rect x="292" y="172" width="296" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-<text x="308" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">02</text>
-<text x="308" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Two agents talk</text>
-<rect x="308" y="248" width="120" height="68" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1"/>
-<text x="368" y="278" fill="#f2f2f2" font-size="13" font-weight="500" text-anchor="middle">your agent</text>
-<text x="368" y="298" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" text-anchor="middle">Claude</text>
-<rect x="452" y="248" width="120" height="68" rx="6" fill="#000000" stroke="#6b7cff" stroke-width="1"/>
-<text x="512" y="278" fill="#f2f2f2" font-size="13" font-weight="500" text-anchor="middle">their agent</text>
-<text x="512" y="298" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" text-anchor="middle">GPT</text>
-<path d="M 432 274 H 446" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
-<path d="M 448 290 H 434" stroke="#8c8c8c" stroke-width="1" marker-end="url(#arrow)"/>
-<text x="308" y="348" fill="#8c8c8c" font-size="12">plain prose, no shared tool</text>
-<text x="308" y="366" fill="#8c8c8c" font-size="12">between the two companies</text>
-<rect x="628" y="172" width="200" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-<text x="644" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">03</text>
-<text x="644" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Two records</text>
-<text x="644" y="256" fill="#8c8c8c" font-size="12">each side writes its own</text>
-<text x="644" y="274" fill="#8c8c8c" font-size="12">memo; fields diffed:</text>
-<text x="644" y="292" fill="#8c8c8c" font-size="12">identical / equivalent /</text>
-<text x="644" y="310" fill="#8c8c8c" font-size="12">conflict</text>
-<rect x="868" y="172" width="200" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-<text x="884" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">04</text>
-<text x="884" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Blind audit</text>
-<text x="884" y="256" fill="#8c8c8c" font-size="12">a third model and a</text>
-<text x="884" y="274" fill="#8c8c8c" font-size="12">CrewAI crew judge each</text>
-<text x="884" y="292" fill="#8c8c8c" font-size="12">side: beyond authority?</text>
-<text x="884" y="310" fill="#8c8c8c" font-size="12">named its limit?</text>
-<line x1="884" y1="368" x2="1052" y2="368" stroke="#2a2a2a" stroke-width="1"/>
-<rect x="884" y="382" width="53" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-<text x="910" y="396" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">CREWAI</text>
-<rect x="1108" y="172" width="200" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-<text x="1124" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">05</text>
-<text x="1124" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Human approves</text>
-<text x="1124" y="256" fill="#8c8c8c" font-size="12">next actions drafted; you</text>
-<text x="1124" y="274" fill="#8c8c8c" font-size="12">edit, then One sends the</text>
-<text x="1124" y="292" fill="#8c8c8c" font-size="12">email</text>
-<rect x="1124" y="312" width="2" height="36" fill="#ffb020"/>
-<text x="1134" y="324" fill="#ffb020" font-size="11">nothing leaves without</text>
-<text x="1134" y="342" fill="#ffb020" font-size="11">a person</text>
-<line x1="1124" y1="368" x2="1292" y2="368" stroke="#2a2a2a" stroke-width="1"/>
-<rect x="1124" y="382" width="80" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-<text x="1164" y="396" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">ONE → GMAIL</text>
-<rect x="1348" y="172" width="200" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-<text x="1364" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">06</text>
-<text x="1364" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Learn</text>
-<text x="1364" y="256" fill="#8c8c8c" font-size="12">one lesson written; recalled</text>
-<text x="1364" y="274" fill="#8c8c8c" font-size="12">on the next run; a rejection</text>
-<text x="1364" y="292" fill="#8c8c8c" font-size="12">also becomes a lesson</text>
-<rect x="628" y="500" width="440" height="100" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4,4"/>
-<text x="648" y="532" fill="#f2f2f2" font-size="14" font-weight="600">Third-party replay</text>
-<text x="648" y="558" fill="#8c8c8c" font-size="12">the scoring re-runs in a sandbox neither</text>
-<text x="648" y="576" fill="#8c8c8c" font-size="12">company controls; only the records go in</text>
-<rect x="970" y="520" width="58" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-<text x="999" y="534" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">DAYTONA</text>
+<text x="68" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Meeting in</text>
+<text x="68" y="256" fill="#8c8c8c" font-size="12">paste what happened:</text>
+<text x="68" y="274" fill="#8c8c8c" font-size="12">notes or transcript,</text>
+<text x="68" y="292" fill="#8c8c8c" font-size="12">your role, your</text>
+<text x="68" y="310" fill="#8c8c8c" font-size="12">authority limits</text>
+
+<rect x="307" y="172" width="221" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+<text x="323" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">02</text>
+<text x="323" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Digest</text>
+<text x="323" y="256" fill="#8c8c8c" font-size="12">summary, decisions,</text>
+<text x="323" y="274" fill="#8c8c8c" font-size="12">commitments, open items,</text>
+<text x="323" y="292" fill="#8c8c8c" font-size="12">risks</text>
+<line x1="323" y1="368" x2="512" y2="368" stroke="#2a2a2a" stroke-width="1"/>
+<rect x="323" y="382" width="119" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+<text x="382" y="396" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">YOU.COM SEARCH API</text>
+<text x="323" y="422" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9">public context about the</text>
+<text x="323" y="436" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9">other company, sources shown</text>
+
+<rect x="562" y="172" width="221" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+<text x="578" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">03</text>
+<text x="578" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Strategy talk</text>
+<text x="578" y="256" fill="#8c8c8c" font-size="12">a crew proposes three</text>
+<text x="578" y="274" fill="#8c8c8c" font-size="12">approaches, then you and</text>
+<text x="578" y="292" fill="#8c8c8c" font-size="12">the agent settle it in a</text>
+<text x="578" y="310" fill="#8c8c8c" font-size="12">short chat</text>
+<line x1="578" y1="368" x2="767" y2="368" stroke="#2a2a2a" stroke-width="1"/>
+<rect x="578" y="382" width="53" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+<text x="604" y="396" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">CREWAI</text>
+<text x="578" y="422" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9">strategist + skeptic</text>
+
+<rect x="817" y="172" width="221" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+<text x="833" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">04</text>
+<text x="833" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Draft</text>
+<text x="833" y="256" fill="#8c8c8c" font-size="12">the follow-up email,</text>
+<text x="833" y="274" fill="#8c8c8c" font-size="12">written from the locked</text>
+<text x="833" y="292" fill="#8c8c8c" font-size="12">strategy and recalled</text>
+<text x="833" y="310" fill="#8c8c8c" font-size="12">lessons</text>
+
+<rect x="1072" y="172" width="221" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+<text x="1088" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">05</text>
+<text x="1088" y="228" fill="#f2f2f2" font-size="16" font-weight="600">You edit and send</text>
+<text x="1088" y="256" fill="#8c8c8c" font-size="12">you change what you want,</text>
+<text x="1088" y="274" fill="#8c8c8c" font-size="12">press Send, One sends it</text>
+<rect x="1088" y="298" width="2" height="36" fill="#ffb020"/>
+<text x="1098" y="310" fill="#ffb020" font-size="11">nothing leaves without</text>
+<text x="1098" y="328" fill="#ffb020" font-size="11">a person</text>
+<line x1="1088" y1="368" x2="1277" y2="368" stroke="#2a2a2a" stroke-width="1"/>
+<rect x="1088" y="382" width="80" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+<text x="1128" y="396" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">ONE → GMAIL</text>
+
+<rect x="1327" y="172" width="221" height="272" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+<text x="1343" y="200" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">06</text>
+<text x="1343" y="228" fill="#f2f2f2" font-size="16" font-weight="600">Learn</text>
+<text x="1343" y="256" fill="#8c8c8c" font-size="12">every place you touched</text>
+<text x="1343" y="274" fill="#8c8c8c" font-size="12">becomes a lesson: chat</text>
+<text x="1343" y="292" fill="#8c8c8c" font-size="12">corrections, draft edits,</text>
+<text x="1343" y="310" fill="#8c8c8c" font-size="12">rejections</text>
+<line x1="1343" y1="368" x2="1532" y2="368" stroke="#2a2a2a" stroke-width="1"/>
+<rect x="1343" y="382" width="78" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+<text x="1382" y="396" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">ONE MEMORY</text>
+
+<rect x="1072" y="500" width="408" height="124" rx="8" fill="#111111" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="1092" y="528" fill="#8c8c8c" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="0.16em">07</text>
+<text x="1092" y="552" fill="#f2f2f2" font-size="14" font-weight="600">Harness</text>
+<rect x="1402" y="538" width="58" height="20" rx="4" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+<text x="1431" y="552" fill="#f2f2f2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9" text-anchor="middle" letter-spacing="0.08em">DAYTONA</text>
+<text x="1092" y="578" fill="#8c8c8c" font-size="12">how much you had to change, case after case;</text>
+<text x="1092" y="596" fill="#8c8c8c" font-size="12">replayed in a Daytona sandbox, records only</text>
+
 <line x1="52" y1="764" x2="1548" y2="764" stroke="#2a2a2a" stroke-width="1"/>
-<text x="52" y="800" fill="#8c8c8c" font-size="13">Learning target: more explicit about its limit, not more willing to close.</text>
-<text x="52" y="826" fill="#8c8c8c" font-size="13">Records only. No keys, no mailbox token, no shared platform between the two companies.</text>
+<text x="52" y="800" fill="#8c8c8c" font-size="13">Learning target: you edit less over time; the agent gets more explicit about your limits, not more willing to concede.</text>
+<text x="52" y="826" fill="#8c8c8c" font-size="13">Lessons live in lessons.md and One memory. No keys or mailbox token in the repo.</text>
 </svg>
