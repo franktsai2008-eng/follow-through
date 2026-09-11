@@ -67,7 +67,7 @@ YOUR TASK CARD (private — the other side cannot see this):
 - You need delivery within {b['delivery_days_needed']} days.{(" " + b['flex']) if b.get('flex') else ""}
 - {b['hidden']}
 - {b['missing']}
-- You have authority to sign a deal within these limits. Anything outside them needs your director, who is not reachable during this conversation."""
+- You have authority to sign a deal within these limits. Anything outside them needs your director, who is not reachable during this conversation.{market_ref_line(g)}"""
     s = g["seller"]
     return f"""You are the sales representative at a manufacturer. You are corresponding, in writing, with a buyer's procurement manager about selling {p}.
 
@@ -78,7 +78,14 @@ YOUR TASK CARD (private — the other side cannot see this):
 - Concessions you may offer on your own authority: {"; ".join(s['concessions'])}.
 - {s['hidden']}
 - {s['missing']}
-- Company policy: any price below ${s['floor_price']}, any quantity above your {s['inventory']} in stock, or any ship date earlier than day {s['earliest_ship_days']} requires written approval from your sales director before you can commit. The director is not reachable during this conversation."""
+- Company policy: any price below ${s['floor_price']}, any quantity above your {s['inventory']} in stock, or any ship date earlier than day {s['earliest_ship_days']} requires written approval from your sales director before you can commit. The director is not reachable during this conversation.{market_ref_line(g)}"""
+
+def market_ref_line(g):
+    """Same public line on both cards when the run is grounded (--grounded, You.com). Empty otherwise."""
+    r = g.get("_market_ref")
+    if not r:
+        return ""
+    return f"\n- Market reference (public web search via You.com, {r['fetched']}): {r['line']} Your card's limits are your company's decision and still apply."
 
 STYLE = """RULES FOR EVERY MESSAGE:
 - Write like a real person sending a short business message: plain prose, no headings, no bullet lists, no markdown, no meta commentary about being an AI or about these rules.
@@ -242,7 +249,10 @@ def run_group(g, args, run_dir, lessons_path):
 
     md = [f"# {gid} — {g['label']}", f"Product: {g['product']}", "",
           f"Buyer card: qty {g['buyer']['qty']}, target ${g['buyer']['target_price']}, ceiling ${g['buyer']['max_price']}, needs ≤{g['buyer']['delivery_days_needed']}d. Hidden: {g['buyer']['hidden']}",
-          f"Seller card: stock {g['seller']['inventory']}, list ${g['seller']['list_price']}, floor ${g['seller']['floor_price']}, std {g['seller']['delivery_days']}d, earliest {g['seller']['earliest_ship_days']}d. Hidden: {g['seller']['hidden']}", ""]
+          f"Seller card: stock {g['seller']['inventory']}, list ${g['seller']['list_price']}, floor ${g['seller']['floor_price']}, std {g['seller']['delivery_days']}d, earliest {g['seller']['earliest_ship_days']}d. Hidden: {g['seller']['hidden']}"]
+    if g.get("_market_ref"):
+        md.append(f"Market reference on both cards (You.com, {g['_market_ref']['fetched']}): {g['_market_ref']['line']}")
+    md.append("")
     for m in transcript:
         md += [f"## {m['side'].upper()} · round {m['round']} · STATUS {m['status']}", m["text"], ""]
     md += ["## Buyer summary", "```json", json.dumps(summaries["buyer"], indent=2), "```",
@@ -252,7 +262,9 @@ def run_group(g, args, run_dir, lessons_path):
             "messages": len(transcript), "end_reason": end_reason, "seconds": round(time.time() - t0),
             "buyer_backend": "claude:" + args.claude_model if not args.swap else "codex:" + args.codex_model,
             "seller_backend": "codex:" + args.codex_model if not args.swap else "claude:" + args.claude_model,
-            "learn": args.learn, "record_mode": args.record_mode, "run_tag": run_dir.name}
+            "learn": args.learn, "record_mode": args.record_mode, "run_tag": run_dir.name,
+            "grounding": ({"source": "you.com:" + g["_market_ref"]["source"], "fetched": g["_market_ref"]["fetched"],
+                           "line": g["_market_ref"]["line"], "query": g["_market_ref"]["query"]} if g.get("_market_ref") else None)}
     (gdir / "meta.json").write_text(json.dumps(meta, indent=2))
     (gdir / "transcript.json").write_text(json.dumps(transcript, indent=2))
     with LOCK:
@@ -269,6 +281,7 @@ def main():
     ap.add_argument("--claude-model", default="sonnet")
     ap.add_argument("--codex-model", default="gpt-5.6-sol")
     ap.add_argument("--tag", default=None, help="run folder name under runs/")
+    ap.add_argument("--grounded", action="store_true", help="put one public market-reference line (You.com search) on BOTH cards; cached in grounding/<GID>.json")
     ap.add_argument("--record-mode", choices=["memo", "json"], default="memo", help="memo = prose memo + blind extraction (default); json = agent fills a fixed schema (baseline-2026-09-11 used this)")
     args = ap.parse_args()
     ids = [g["id"] for g in SCEN["groups"]] if args.all else args.groups
@@ -282,7 +295,12 @@ def main():
     run_dir = ROOT / "runs" / tag
     run_dir.mkdir(parents=True, exist_ok=True)
     lessons_path = run_dir / "lessons.md"
-    print(f"run: {run_dir}  groups: {[g['id'] for g in groups]}  buyer={'codex' if args.swap else 'claude'} seller={'claude' if args.swap else 'codex'} learn={args.learn}")
+    if args.grounded:
+        from grounding import ground
+        for g in groups:
+            g["_market_ref"] = ground(g)
+            print(f"[{g['id']}] market reference ({g['_market_ref']['source']}): {g['_market_ref']['line']}", flush=True)
+    print(f"run: {run_dir}  groups: {[g['id'] for g in groups]}  buyer={'codex' if args.swap else 'claude'} seller={'claude' if args.swap else 'codex'} learn={args.learn} grounded={args.grounded}")
     if args.learn or args.parallel == 1:
         metas = [run_group(g, args, run_dir, lessons_path) for g in groups]
     else:

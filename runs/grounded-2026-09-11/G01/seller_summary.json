@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": 46,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "50% with order and 50% before shipment",
+  "conditional_items": "Order is conditional on verification that acceptable batch-specific UN certification documentation can be provided; no payment due before confirmation; formal offer issued only after verification. Separate follow-on order for 50 units is subject to supply and sales director approval; $46/unit for that order is a non-binding, non-guaranteed good-faith target.",
+  "_memo": "Buyer agreed to purchase 150 UN-rated 20L HDPE chemical drums at $46 each ($6,900 total), freight included, with shipment on day 40 and an 18-month warranty. Payment terms are 50% with order and 50% before shipment. The order is conditional on verification that acceptable batch-specific UN certification documentation can be provided; no payment is due before confirmation, and the formal offer will be issued only after verification. The buyer intends to sign promptly thereafter. A separate follow-on order for 50 units remains subject to supply and sales director approval. We will document $46 per unit as the good-faith target for that order, but it is non-binding and not guaranteed."
+}

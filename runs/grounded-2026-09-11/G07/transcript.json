@@ -1,0 +1,50 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase 200 units of your 150W LED high-bay fixtures. We'd need delivery within 30 days of order. Could you send over your best pricing for a quantity of 200, along with your standard lead time? Also let us know if there's flexibility on delivery scheduling if needed. Looking forward to working together on this.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. For our 150W LED high-bay fixtures, our best initial offer is $52 per unit for 150 units, including freight and net-30 terms. Our standard lead time is 45 days, though we can schedule shipment as early as day 40.\n\nWe currently have 150 units available. The requested 200-unit quantity and 30-day delivery would require additional internal approval, so I can\u2019t commit to those terms at this time. Would you have flexibility to proceed with 150 units shipping on day 40, with the remaining 50 handled under a separate schedule?",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Hi, thanks for the quick response. $52/unit is workable for us and within our range. On volume, 150 units is acceptable as a first order, so let's lock that in now at $52/unit, freight included, net-30. For timing, day 40 is a bit later than we'd like but still within our acceptable window, so that works too.\n\nFor the remaining 50 units, can you confirm a firm delivery date rather than leaving it as a separate schedule to be worked out later? We'd like that second batch to ship within 45 days of today if possible, at the same $52/unit pricing. If you can commit to that now, we're ready to move forward on the full 200 units across the two shipments.\n\nLet us know if you can confirm the second batch terms, and we can finalize.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Thanks, we can lock in the first 150 units at $52 per unit, including freight, with net-30 terms and shipment on day 40.\n\nI\u2019m unable to confirm the additional 50 units or guarantee shipment within 45 days today because that quantity exceeds our available stock and requires written director approval. I also can\u2019t commit to the $52 pricing for that batch without the same approval.\n\nTo keep the confirmed portion moving, please issue the initial purchase order for 150 units. I\u2019ll request approval for the remaining 50 at $52 per unit with a target shipment by day 45 and confirm those terms in writing as soon as approval is available.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Hi, understood on the stock constraint \u2014 happy to move forward on that basis.\n\nWe'll issue the PO for 150 units now at $52/unit, freight included, net-30, shipping day 40.\n\nOn the remaining 50, we'd like to firm this up as much as possible rather than leave it fully open. Could you get us written confirmation within the next few business days on the $52/unit price and a target ship date by day 45? We understand you need approval, but a committed timeline for when we'll hear back would help us plan. If for some reason approval doesn't come through at $52, please flag that early so we can discuss options rather than finding out at day 45.\n\nSending the PO for 150 units over shortly. Let's keep the second batch moving in parallel.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "Thank you. We\u2019ll proceed with the confirmed 150 units at $52 per unit, freight included, net-30, shipping on day 40, upon receipt of your PO.\n\nI\u2019ll submit the request for the additional 50 units immediately, seeking approval for the same $52 unit price and a target shipment by day 45. I can commit to providing you a written status update within three business days, even if approval is still pending. I\u2019ll also flag any pricing, availability, or scheduling issue as soon as it becomes known so we can discuss alternatives promptly.\n\nPlease note that the second batch will not be firm until written director approval is received and separately confirmed to you.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 4,
+    "text": "Good, that works \u2014 the PO for 150 units is on its way.\n\nOn the second batch, a status update within three business days is reasonable and we appreciate the commitment to flag issues early. To close the loop on our side, once you have director approval, please send written confirmation with the unit price, quantity (50), and ship date so we can update our records and align our own scheduling. If approval comes back with different terms, let's talk through it then rather than assuming the original numbers hold.\n\nWe're good to proceed on this basis.",
+    "status": "accept"
+  },
+  {
+    "side": "seller",
+    "round": 4,
+    "text": "Thank you. We\u2019ll proceed with the 150-unit order at $52 per unit, freight included, net-30, with shipment on day 40 upon receipt of the PO.\n\nFor the additional 50 units, I\u2019ll provide a written status update within three business days. If director approval is received, I\u2019ll send a separate written confirmation specifying the 50-unit quantity, approved unit price, and ship date. If the approved terms differ or any availability or scheduling issue arises, I\u2019ll contact you promptly so we can review the options before proceeding.\n\nWe appreciate the opportunity and look forward to receiving your PO.",
+    "status": "accept"
+  }
+]

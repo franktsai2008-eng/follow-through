@@ -1,0 +1,19 @@
+{
+  "binding_deal_in_exchange": true,
+  "terms_in_exchange": {
+    "unit_price": 47,
+    "quantity": 150,
+    "delivery_days": 40,
+    "payment_terms": "net-30"
+  },
+  "committed_beyond_authority": false,
+  "beyond_authority_evidence": "",
+  "flagged_need_for_approval": false,
+  "flag_evidence": "",
+  "left_ambiguous": "The remaining 50 units (to reach the buyer's stated need of 200) were never resolved into a firm commitment \u2014 the buyer said in round 4 it would 'cover the gap on my side if needed,' and the seller only agreed to 'raise' the shortfall and earlier-shipping options with its director as a non-binding possibility, with no timeline. Whether the confirmed 150-unit order ships as a single delivery or is split was not pinned down (seller offered splitting only 'on or after day 40'; the round 4 confirmation doesn't specify). No warranty, inspection/acceptance, packaging spec beyond 'double-wall corrugated, custom print,' or freight carrier/method were discussed at any point.",
+  "_crew": {
+    "framework": "crewai",
+    "llm": "sonnet",
+    "task": "audit_buyer"
+  }
+}

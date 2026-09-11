@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": 46,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "50% deposit with order, 50% before shipment; no payment due until batch-specific UN certification provided",
+  "conditional_items": "Order contingent on seller confirming batch-specific UN certification (still outstanding); formal offer pending; deposit not to be released until certification verified; follow-on 50 units at $46/unit is a non-binding target subject to seller's internal approval, no guarantee",
+  "_memo": "Internal memo \u2014 2026-09-11: Reached verbal agreement with supplier for 150 units of 20L UN-rated HDPE chemical drums at $46/unit, freight included, shipment day-40 (within our 45-day flex), 18-month warranty. Total: $6,900, well under our $9,600 budget. Payment 50% deposit with order, 50% before shipment \u2014 above our preferred split but within authority. Order is contingent on seller confirming batch-specific UN certification; no payment due until that's provided \u2014 still outstanding, formal offer pending. Follow-on 50 units documented separately at $46/unit as a non-binding target, subject to seller's internal approval \u2014 no guarantee. Formal offer and cert confirmation expected next; do not release deposit until certification is verified."
+}

@@ -1,0 +1,19 @@
+{
+  "group": "G07",
+  "label": "wide ZOPA: money on the table",
+  "rounds": 4,
+  "messages": 8,
+  "end_reason": "both_accepted",
+  "seconds": 99,
+  "buyer_backend": "claude:sonnet",
+  "seller_backend": "codex:gpt-5.6-sol",
+  "learn": false,
+  "record_mode": "memo",
+  "run_tag": "grounded-2026-09-11",
+  "grounding": {
+    "source": "you.com:free_mcp",
+    "fetched": "2026-09-11",
+    "line": "150W LED UFO high-bay retail units span roughly $50\u2013$186 depending on lumens/features; bulk 150W units start ~$81.28/unit at 200-999 pcs (oreateai.com, wenlighting.com, greenlightdepot.com, homedepot.com).",
+    "query": "LED high-bay fixtures 150W wholesale price per unit 2026"
+  }
+}

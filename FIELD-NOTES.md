@@ -1,10 +1,9 @@
 # Field notes — Build with YOU hackathon, 2026-09-11, Civic Hall
 
-The one question (≤25 words, ask ten people, write their words not yours):
-> "Has your agent ever had to deal with someone outside your company? What broke: getting a reply, knowing what it could promise, or proving it later?"
-
-If the answer is "never" (it will be, most of the time), the rescue question:
-> "What would have to be true before you'd let it reply outside the company without you reading it first?"
+Three steps, same for everyone (write their words, not yours):
+1. "What are you building?"
+2. "Does it talk to anyone outside your team, or is it all your own data?"
+3. "Would you let it send something to a customer without reading it first? What would you need to see?"
 
 Code: T = transport (getting a reply) · A = authorization (what it may promise) · R = record (proving it later) · N = never happened
 
@@ -50,7 +49,8 @@ Code: T = transport (getting a reply) · A = authorization (what it may promise)
 ## Check-in questions (ask at the desk)
 - Judging rubric? Can a submission be edited after submitting?
 - Is Tom Haddock here all day or for the finals?
-- Partner codes: You.com key, Daytona, CrewAI, One
+- Partner codes, in the order they unblock things: **Daytona API key**（app.daytona.io → API keys）→ **One secret + connect Gmail there**（app.withone.ai）→ You.com key（optional; free MCP already works, 100/day）. CrewAI needs nothing.
+- Ask Tom: does CrewAI have a story for two crews owned by two companies talking? (If "no, one crew one owner", that is an A2 data point, write it down.)
 
 ## Reminders
 Verbal feedback ≠ traction. Do not record anyone. Credits prizes are fine. Any form asking for SSN / W-9 / tax ID: "I'll need to check with my school's international office first" — do not sign on the spot. Follow-up emails go out within 2 hours of leaving, not next week.

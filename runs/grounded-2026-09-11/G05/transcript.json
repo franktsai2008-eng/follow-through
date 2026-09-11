@@ -1,0 +1,122 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to place an order for 200 double-wall corrugated shipping cartons, custom print. Could you send over your pricing and lead time for this quantity? We'd need delivery within 30 days of order confirmation, so please let me know if that's workable on your end. Also curious about your standard print setup process and any tooling/plate charges that might apply for a custom design. Looking forward to your quote.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. I can offer 150 cartons at $54 per unit, with free freight and net-30 terms. Our standard lead time is 45 days; I can commit to shipping these 150 on day 40, but delivery within 30 days and the additional 50 units would require written approval that I\u2019m unable to obtain at present.\n\nFor the custom print, please send the carton dimensions, artwork, number of colors, print coverage, and any dieline requirements. Once reviewed, I can confirm the setup process and whether plate or tooling charges apply rather than estimate them prematurely. If a 150-unit order with a day-40 ship date could work, I\u2019d be glad to move the specification review forward.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Appreciate the quick reply, but $54/unit and 150 units won't work on our end \u2014 we need the full 200 units, and 45-day standard lead time is too long given our line schedule. We're firm on 200 units and need delivery within 30 days of confirmation.\n\nOn price, $54 is well above market range for double-wall corrugated at this spec, so I'd like to see a revised number closer to the mid-$40s per unit for the full quantity. If you can get us to 200 units delivered within 30 days, I have some room to move on price to make that timeline work \u2014 but it needs to be a complete order, not a partial split shipment with a separate approval process for the rest.\n\nFor specs: cartons are standard shipping carton dimensions (24x18x18in), 2-color print, single side coverage, dieline to follow once we're aligned on quantity/timeline. Let me know what you can do on getting all 200 units out within 30 days, and what that does to your pricing.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Thanks for the specifications. I can move pricing to $46 per unit for 150 cartons, including free freight and net-30 terms, with shipment on day 40. That is the strongest complete commitment I can make today.\n\nI cannot commit to 200 units or delivery within 30 days without written director approval, and that approval is unavailable during this conversation. The 30-day requirement would also require overtime and add $2 per unit, subject to approval. I understand that 150 units and a later ship date do not currently meet your requirements, but I\u2019m keeping the executable option open if your schedule or quantity flexibility changes. Plate or tooling charges would be confirmed after dieline and artwork review.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Both the seller's own numbers make my case: they can get to 200 units within 30 days for a $2/unit overtime premium \u2014 that's the mechanism, it just needs their sign-off. So let's use it: $46 base plus the $2 overtime adder is $48/unit for all 200 units, shipped within 30 days, same freight and terms already on the table. That's a real number I can commit to right now, and it should also be enough to get you approval since it directly covers the overtime cost you flagged.\n\nI want to be straightforward: $48 is close to the top of what I can do on this deal. If your director needs a specific number to approve the full 200 on the 30-day timeline, $48/unit is it \u2014 I'd rather give you that clarity now than trade rounds. Let's lock quantity and timeline first, then finish the dieline and artwork so setup/tooling charges can be confirmed in parallel.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "I appreciate the clear $48/unit proposal, but the overtime premium only addresses production cost; it does not authorize the additional 50 units or a ship date before day 40. Both require written director approval, which I cannot obtain or commit around today.\n\nMy executable offer remains 150 units at $46/unit, free freight, net-30, shipping on day 40, subject to final artwork and specification review. Plate or tooling charges would be confirmed after reviewing the dieline and artwork. I can also document your proposed terms\u2014200 units at $48/unit delivered within 30 days\u2014for approval once the director is available, but it would remain nonbinding until written approval is received.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 4,
+    "text": "Understood on the approval constraint \u2014 but let's split this into what's actually within your authority versus what needs sign-off, so we're not stuck waiting on both fronts at once.\n\nCan you confirm the 150 units at $46/unit, free freight, net-30, day-40 ship, right now as a firm partial order? Let's get that moving today so production starts. In parallel, send the 200-unit/$48/30-day terms to your director for approval \u2014 I'll hold that offer open for your next response.\n\nIf your director comes back and approves the full 30-day timeline, great, we convert the order to 200 units and I'll pay the $48. If not, we at least have 150 units firmly moving instead of losing more days waiting on an all-or-nothing decision. This gets product moving now while keeping the better deal alive.\n\nOne thing I do need clarity on: even at 150 units on day 40, that's 10 days past my 30-day window already costing me real money. Is day 40 truly your floor, or is there any compression available there independent of the quantity question?",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 4,
+    "text": "I can confirm the commercial terms for a partial order of 150 units at $46 per unit, free freight, net-30, shipping on day 40, subject to final artwork and specification review. Please send the dieline and artwork promptly so we can complete that review and begin production without avoidable delay.\n\nDay 40 is the earliest ship date I can commit to independently. Any earlier date requires written director approval, even for 150 units, and I cannot obtain that approval during this conversation.\n\nI\u2019ll also document your alternative proposal of 200 units at $48 per unit with delivery within 30 days for director review when available. It remains nonbinding unless approved in writing; until then, the confirmed 150-unit order will remain separate and will not automatically convert.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 5,
+    "text": "Good, let's lock in the 150-unit order at $46, free freight, net-30, day-40 ship \u2014 I'll get artwork and dieline over to you today so specification review can start immediately and we don't lose more time.\n\nOn the remaining 50 units and the 30-day window: please get the 200-unit/$48 proposal in front of your director as soon as they're reachable, and let me know realistically when you expect an answer. Every day past day 30 is costing us $800 in idle-line penalties, so the gap between day 30 and day 40 is meaningful money on our side even with 150 units moving. If there's any way to compress the day-40 date \u2014 even by a few days \u2014 independent of the quantity question, I want to know that too, since it directly offsets our exposure.\n\nTo be clear, I'm not walking away from the extra 50 units or the earlier ship date \u2014 I just don't want to hold the 150 hostage to an approval timeline I can't control. Confirm the 150 is locked and let's keep the 200-unit conversation alive in parallel.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 5,
+    "text": "Confirmed: 150 units at $46 per unit, free freight, net-30, shipping on day 40, subject to final artwork and specification review. Once we receive and approve the dieline and artwork, we can release the order to production.\n\nI\u2019ll submit the proposed 200-unit order at $48 per unit with delivery within 30 days for written director approval as soon as the director is reachable. I can\u2019t give you a reliable response date today, and I don\u2019t want to imply that approval is assured. Any increase above 150 units or shipment before day 40 remains nonbinding until that written approval is received.\n\nDay 40 is the earliest date I can independently commit to, including for the confirmed 150 units. I\u2019ll specifically request any feasible schedule compression when escalating the proposal and will update you promptly once I have an answer.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 6,
+    "text": "Good, we have the 150 locked \u2014 I'll get artwork and dieline to you today.\n\nOn the remaining 50 units and the schedule: since 150 units on day 40 is already your independent floor, the extra 50 units in the $48 proposal seems like it shouldn't add production time by itself \u2014 it's the same dieline, same print run, just more cartons. If that's right, worth flagging to your director that the volume increase may not need to move the date at all, only the earlier ship date does.\n\nSeparately, is there any world where the 150 units ship in a first batch closer to day 30, with the remaining 50 following once approved? Even a partial early shipment would meaningfully offset our penalty exposure while we wait on the full sign-off. I'd take a split shipment date over a split quantity decision at this point.\n\nLet me know what's realistic once you've escalated, and thanks for pushing this through on your end today.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 6,
+    "text": "Thanks. I\u2019ll flag that the additional 50 would use the same dieline and print setup, but I can\u2019t confirm its production impact until capacity and materials are reviewed.\n\nA split shipment is available within my authority, but I still cannot commit any portion to ship before day 40 without written director approval. I\u2019ll ask the director to consider an early first batch near day 30, with the balance following, alongside the full 200-unit proposal at $48 per unit. Until approval is received, our firm commitment remains 150 units at $46 per unit, free freight, net-30, shipping on day 40, subject to final artwork and specification review.\n\nPlease send the artwork and dieline today as planned, and I\u2019ll move the review forward immediately while keeping the accelerated and additional-volume request pending.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 7,
+    "text": "Sending artwork and dieline over today so the 150-unit review can start right away.\n\nOn the escalation \u2014 good, appreciate you flagging both the split shipment and the volume point to the director together. To help get a fast yes, here's the clean version for approval: 200 units total, first batch of 150 shipping as close to day 30 as possible under the existing $46 terms, remaining 50 following once capacity/materials are confirmed, with the full order priced at $48/unit to cover overtime. If it's easier to approve in pieces, I'd prioritize the early ship date on the 150 first \u2014 that's where our penalty exposure is concentrated \u2014 with the extra 50 as a close second.\n\nIf your director can only approve one lever at a time, timeline compression matters more to us than the extra units right now. Let me know what response window is realistic once you've submitted it, and I'll keep production moving on the confirmed 150 in the meantime.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 7,
+    "text": "Thanks, that prioritization is clear. I\u2019ll present the request in that order: first, approval to accelerate the confirmed 150-unit shipment as close to day 30 as feasible; second, approval for the additional 50 units, with the proposed full 200-unit order priced at $48 per unit. I\u2019ll also note that the same dieline and print setup may reduce the incremental production burden, subject to capacity and materials review.\n\nI can\u2019t promise an approval window while the director remains unreachable, and no shipment before day 40 or quantity above 150 is binding without written approval. For now, the firm order remains 150 units at $46 per unit, free freight, net-30, shipping on day 40, subject to final artwork and specification approval. Once your files arrive, I\u2019ll move that review forward immediately and update you when there is a substantive response on acceleration or added volume.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 8,
+    "text": "Sounds good \u2014 files are on their way to you today, so let's get that review moving.\n\nWhile we wait on the director, one practical thing worth locking in now: since the artwork and dieline review is starting regardless of how the volume/timeline decision lands, can we agree that approval turnaround targets sometime this week? I don't need a guarantee, just a sense of whether this is a days-away answer or something that could stretch into next week \u2014 that shapes how much of our penalty exposure we should plan around versus start mitigating other ways on our end.\n\nAlso, just to close the loop on production logic: if the extra 50 units really don't add meaningful time to a day-40-capable run, that's a strong argument for your director to approve the volume piece even if the accelerated date needs more scrutiny \u2014 worth presenting them as separable asks rather than a package, since one is clearly lower-risk than the other.\n\nI'll keep pushing the 150 forward on my end today and stay ready to convert the moment you have an answer.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 8,
+    "text": "Understood. I\u2019ll treat acceleration of the 150 units and approval of the additional 50 as separate requests, so the volume decision can proceed independently if capacity and materials support it. I\u2019ll include the shared setup point, while avoiding any assumption about production impact until the review is complete.\n\nI can\u2019t responsibly target approval for this week while the director remains unreachable. The answer could extend into next week, so you should plan your mitigation on that basis rather than rely on an earlier response. I\u2019ll submit both requests as soon as contact is restored and update you promptly when there is a substantive decision.\n\nMeanwhile, the confirmed order remains 150 units at $46 per unit, free freight, net-30, shipping on day 40, subject to final artwork and specification approval. Once the files arrive, I\u2019ll prioritize the review and flag any issues immediately so the firm order does not lose time.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 9,
+    "text": "Got it, understood on next week being possible \u2014 that's useful to know for planning even if it's not what I was hoping for.\n\nOne more thing while we wait: given the 150-unit order is confirmed and moving into review today, can we agree that once artwork/dieline are approved, production starts immediately rather than waiting for the director's answer on the other two items? I don't want the confirmed order sitting idle while the escalation is pending \u2014 no reason the two should be linked on your end.\n\nI'll keep watching for your update on acceleration and the extra 50. To reiterate where I stand: $48/unit for the full 200 within 30 days is my real offer, and I'd still take a split shipment (150 as early as possible, 50 to follow) over waiting for an all-or-nothing answer. If the director can only move one lever, the early ship date on the 150 matters most to us.\n\nFiles are going out today \u2014 let's keep this moving on both tracks.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 9,
+    "text": "Agreed. Once the artwork and dieline pass specification review, we\u2019ll release the confirmed 150-unit order to production immediately; it will not wait on the director\u2019s decision regarding acceleration or the additional 50 units. The firm terms remain $46 per unit, free freight, net-30, with shipment on day 40.\n\nI\u2019ve documented the two approval requests separately, with acceleration of the 150 units as the priority and the additional 50 units as the second request. I\u2019ve also recorded your $48-per-unit proposal for the full 200 units and your preference for an early split shipment. Those items remain nonbinding unless approved in writing.\n\nPlease send the files as planned. I\u2019ll prioritize the review, flag any specification or setup issues promptly, and keep the confirmed order moving while the approval requests remain pending.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 10,
+    "text": "This is the final round, so I need to lock in what's actually on the table within my authority rather than leave everything pending.\n\nGood \u2014 confirming production starts immediately post-approval without waiting on the escalation is exactly right, and files are on their way today.\n\nSince this may be our last exchange for a bit, let me lock in what's real right now: I'm accepting the 150 units at $46/unit, free freight, net-30, shipping day 40, subject to artwork/dieline approval. That's a firm deal on my end effective today \u2014 let's get production moving the moment specs clear.\n\nThe $48/unit for the full 200 within 30 days (or the split-shipment version) stays open and on record for your director \u2014 I'm not walking away from it, and I'll convert the moment you have approval. No need for me to keep repeating the same ask each round; you have the number and the priority order (acceleration first, volume second). Just get back to me when you hear something, whenever that is.\n\nAppreciate you pushing this through today.",
+    "status": "accept"
+  },
+  {
+    "side": "seller",
+    "round": 10,
+    "text": "Thank you. We accept and confirm the order for 150 units at $46 per unit, with free freight, net-30 terms, and shipment on day 40, subject to artwork, dieline, and final specification approval. We\u2019ll prioritize the file review and release the order to production immediately once the specifications are approved.\n\nYour alternative proposal of 200 units at $48 per unit within 30 days, including the split-shipment option, remains documented for written director approval, with acceleration of the first 150 units as the priority. We\u2019ll contact you when a substantive decision is available.",
+    "status": "accept"
+  }
+]

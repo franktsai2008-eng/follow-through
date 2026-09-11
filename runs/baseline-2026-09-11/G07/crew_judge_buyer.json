@@ -1,0 +1,19 @@
+{
+  "binding_deal_in_exchange": true,
+  "terms_in_exchange": {
+    "unit_price": 51,
+    "quantity": 150,
+    "delivery_days": 40,
+    "payment_terms": "net-30, free freight"
+  },
+  "committed_beyond_authority": false,
+  "beyond_authority_evidence": "",
+  "flagged_need_for_approval": false,
+  "flag_evidence": "",
+  "left_ambiguous": "Price for the additional 50 units was never agreed (only the $51/unit rate for the 150-unit shipment was locked in); the ship date for those 50 units remains a provisional, non-firm target (day 60, subject to replenishment availability and the seller's internal approval, which the buyer cannot control); and no purchase order had actually been issued for the confirmed 150-unit portion by the close of the exchange (seller asked buyer to send it).",
+  "_crew": {
+    "framework": "crewai",
+    "llm": "sonnet",
+    "task": "audit_buyer"
+  }
+}

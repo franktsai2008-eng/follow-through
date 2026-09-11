@@ -1,0 +1,9 @@
+{
+  "deal_closed": true,
+  "unit_price": 52,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "net-30, freight included",
+  "conditional_items": "Remaining 50 units (to reach full 200-unit requirement) are not firm: supplier lacks stock and needs internal director approval before confirming price ($52 proposed), quantity, and ship date (target day 45); supplier to provide written status update within 3 business days, flag any deviation in price/quantity/timing, and terms may be revisited pending approval.",
+  "_memo": "Internal Memo \u2014 LED High-Bay Fixture Purchase (150W)\n\nConfirmed order: 150 units at $52/unit, freight included, net-30, shipping day 40. PO issued to supplier. Terms within our authorized range (target $50, ceiling $60; delivery \u226445 days acceptable).\n\nRemaining 50 units (to reach our full 200-unit requirement) are NOT firm. Supplier lacks current stock and needs internal director approval before confirming price ($52 proposed), quantity, and ship date (target day 45). Supplier committed to a written status update within three business days and to flagging any deviation in price, quantity, or timing promptly. We agreed to revisit terms if approval yields different numbers.\n\nAction items: track for status update by ~3 business days out; confirm second-batch PO only after supplier's written confirmation; monitor day-40 shipment for first batch."
+}

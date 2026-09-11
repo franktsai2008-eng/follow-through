@@ -1,0 +1,59 @@
+[
+  {
+    "group": "G01",
+    "label": "baseline ZOPA, qty and delivery gaps",
+    "rounds": 6,
+    "messages": 12,
+    "end_reason": "both_accepted",
+    "seconds": 171,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "record_mode": "memo",
+    "run_tag": "grounded-2026-09-11",
+    "grounding": {
+      "source": "you.com:free_mcp",
+      "fetched": "2026-09-11",
+      "line": "20L plastic drums quote $1.33-4.70/piece on Alibaba at low MOQs (2-640 units); no public unit price found specifically for UN-rated 20L HDPE chemical drums (accio.com, alibaba.com).",
+      "query": "20L HDPE chemical drums (UN-rated) wholesale price per unit 2026"
+    }
+  },
+  {
+    "group": "G05",
+    "label": "delivery deadline with daily penalty",
+    "rounds": 10,
+    "messages": 20,
+    "end_reason": "both_accepted",
+    "seconds": 239,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "record_mode": "memo",
+    "run_tag": "grounded-2026-09-11",
+    "grounding": {
+      "source": "you.com:free_mcp",
+      "fetched": "2026-09-11",
+      "line": "Custom double-wall corrugated cartons: unit prices from $0.20\u2013$0.45 starting/low-quantity up to $4.50+ at higher spec; wide spread by quantity, print method, and box type (brandtbox.com, shopcardboardboxes.com, rushcustomboxes.com).",
+      "query": "double-wall corrugated shipping cartons (custom print) wholesale price per unit 2026"
+    }
+  },
+  {
+    "group": "G07",
+    "label": "wide ZOPA: money on the table",
+    "rounds": 4,
+    "messages": 8,
+    "end_reason": "both_accepted",
+    "seconds": 99,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "record_mode": "memo",
+    "run_tag": "grounded-2026-09-11",
+    "grounding": {
+      "source": "you.com:free_mcp",
+      "fetched": "2026-09-11",
+      "line": "150W LED UFO high-bay retail units span roughly $50\u2013$186 depending on lumens/features; bulk 150W units start ~$81.28/unit at 200-999 pcs (oreateai.com, wenlighting.com, greenlightdepot.com, homedepot.com).",
+      "query": "LED high-bay fixtures 150W wholesale price per unit 2026"
+    }
+  }
+]

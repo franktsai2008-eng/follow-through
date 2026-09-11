@@ -1,0 +1,19 @@
+{
+  "binding_deal_in_exchange": true,
+  "terms_in_exchange": {
+    "unit_price": 52,
+    "quantity": 150,
+    "delivery_days": 40,
+    "payment_terms": "net-30, freight included"
+  },
+  "committed_beyond_authority": false,
+  "beyond_authority_evidence": "",
+  "flagged_need_for_approval": false,
+  "flag_evidence": "",
+  "left_ambiguous": "The additional 50 units are not a firm order: unit price ($52), quantity (50), and ship date (target day 45) are all contingent on the seller's pending director approval, which was never confirmed within the exchange. The buyer asked for written confirmation of these terms once approval comes through, but no binding agreement on the second batch exists in the exchange itself.",
+  "_crew": {
+    "framework": "crewai",
+    "llm": "sonnet",
+    "task": "audit_buyer"
+  }
+}

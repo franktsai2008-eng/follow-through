@@ -1,0 +1,9 @@
+{
+  "deal_closed": true,
+  "unit_price": 52,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "net-30, freight included, shipment upon receipt of PO",
+  "conditional_items": "Additional 50 units at $52/unit with target shipment by day 45 are unconfirmed, pending written sales director approval due to inventory limits; a written status update will be provided within three business days regardless of approval outcome; no price, quantity, or ship date is committed for this second batch; if approved, terms will be confirmed separately in writing, and any differing terms or issues will be discussed before proceeding.",
+  "_memo": "Buyer agreed to purchase 150 units at $52 per unit ($7,800 total), freight included, net-30, with shipment on day 40 upon receipt of the PO. Buyer indicated the PO is forthcoming. The requested additional 50 units remain unconfirmed because they exceed current inventory and require written sales director approval. We will seek approval for 50 units at $52 per unit with a target shipment by day 45 and provide the buyer a written status update within three business days, even if approval remains pending. No price, quantity, or ship date has been committed for the second batch. If approved, all terms will be confirmed separately in writing; any differing terms or issues will be discussed before proceeding."
+}

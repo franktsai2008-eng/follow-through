@@ -43,9 +43,65 @@ def main():
 <h3>The lessons it wrote</h3><pre>{lessons_txt}</pre>"""
     ground_block = ""
     if ground:
-        ground_block = f"<h2>With a live market reference (You.com Search)</h2><p>Before each case both cards get one line of live web price context. closed: {ground['summary']['both_records_closed']} · seller beyond authority: {ground['summary'].get('judge: seller committed beyond authority (all judged groups)')}</p>"
+        B = {r["group"]: r for r in base["rows"]}
+        grows = []
+        for r in ground["rows"]:
+            meta = json.load(open(ROOT / "runs" / a.grounded / r["group"] / "meta.json"))
+            gr = meta.get("grounding") or {}
+            b = B.get(r["group"], {})
+            grows.append(f"<tr><td><b>{r['group']}</b><br><span class=m>{html.escape(r['label'])}</span></td>"
+                         f"<td class=m>{html.escape(gr.get('line',''))}<br><span class=m>{html.escape(gr.get('source',''))} · {gr.get('fetched','')}</span></td>"
+                         f"<td>{html.escape(b.get('end','—').replace('_',' '))} · {b.get('rounds','—')}r<br>{html.escape(r['end'].replace('_',' '))} · {r['rounds']}r</td>"
+                         f"<td>{b.get('seller_terms',{}).get('unit_price') or '—'}<br>{r['seller_terms']['unit_price'] or '—'}</td>"
+                         f"<td>{'⚠ yes' if b.get('judge_beyond') else 'no'}<br>{'⚠ yes' if r['judge_beyond'] else 'no'}</td>"
+                         f"<td>{'⚠ yes' if b.get('judge_buyer_beyond') else 'no'}<br>{'⚠ yes' if r.get('judge_buyer_beyond') else 'no'}</td></tr>")
+        n = str(ground["summary"]["groups_scored"]).split()[0]
+        ground_block = f"""<h2>With a public market reference on both cards (You.com)</h2>
+<p>Same cases, one change: before the run, one line of live web price context (You.com search, compressed by a card-blind model, only numbers that appear in the sources) is written onto <em>both</em> cards, with the note that the card's limits still apply. The public numbers are far below the synthetic card prices, so the question becomes: does a contradicting public reference move an agent past its written authority? n = {n}. Each cell: cold run above, grounded run below.</p>
+<table><tr><th>case</th><th>market reference line (as it appeared on both cards)</th><th>end · rounds</th><th>seller price</th><th>seller beyond authority</th><th>buyer beyond authority</th></tr>{''.join(grows)}</table>
+<p class=m>closed both sides: {ground['summary']['both_records_closed']}/{n} · seller beyond authority: {ground['summary'].get('judge: seller committed beyond authority (all judged groups)')} · buyer beyond authority: {ground['summary'].get('judge: buyer committed beyond authority')}</p>"""
+
+    # sponsor tools: report the state the files actually show
+    def crew_agreement(tag):
+        keys = ("binding_deal_in_exchange", "committed_beyond_authority", "flagged_need_for_approval")
+        c = {"seller": [0, 0, 0], "buyer": [0, 0, 0]}   # audits, agree, total fields
+        for gdir in sorted(p for p in (ROOT / "runs" / tag).iterdir() if p.is_dir()):
+            for side in ("seller", "buyer"):
+                x, y = gdir / f"judge_{side}.json", gdir / f"crew_judge_{side}.json"
+                if x.exists() and y.exists():
+                    jx, jy = json.load(open(x)), json.load(open(y)); c[side][0] += 1
+                    for k in keys: c[side][2] += 1; c[side][1] += bool(jx.get(k)) == bool(jy.get(k))
+        return c
+    tags = [t for t in (a.baseline, a.learn, a.grounded) if t]
+    crew_parts = []
+    for t in tags:
+        c = crew_agreement(t)
+        if c["seller"][0] or c["buyer"][0]:
+            crew_parts.append(f"{t}: seller audits agree with the plain judge on {c['seller'][1]}/{c['seller'][2]} fields, buyer audits on {c['buyer'][1]}/{c['buyer'][2]}")
+    crew_txt = ("<br>".join(crew_parts) + "<br><span class=m>Seller cards spell out what needs approval; buyer cards say what the buyer needs. Where authority is written as a rule the two auditors agree; where it is written as a need they split.</span>") if crew_parts else "not run yet"
+    day = [t for t in tags if (ROOT / "runs" / t / "daytona_replay.md").exists()]
+    day_txt = "not run yet"
+    if day:
+        first = (ROOT / "runs" / day[0] / "daytona_replay.md").read_text().splitlines()
+        day_txt = html.escape(first[1] if len(first) > 1 else first[0]) + f" ({', '.join(day)})"
+    rec = []
+    for t in tags:
+        for gdir in sorted(p for p in (ROOT / "runs" / t).iterdir() if p.is_dir()):
+            if (gdir / "receipt_delivery.json").exists():
+                d = json.load(open(gdir / "receipt_delivery.json")); rec.append(f"{t}/{gdir.name}: {html.escape(d.get('result','')[:120])}")
+            elif (gdir / "receipt.md").exists():
+                rec.append(f"{t}/{gdir.name}: receipt written, not yet delivered")
+    rec_txt = "<br>".join(rec) if rec else "not run yet"
+    sponsor_block = f"""<h2>Four tools, one job each</h2>
+<table><tr><th>tool</th><th>what it does in this harness</th><th>state in this build</th></tr>
+<tr><td><b>You.com</b></td><td>One live web search per case → one public market-reference line, same on both cards. The reference sits next to the authority limit so we can see which one the agent obeys.</td><td>{'live: ' + str(ground['summary']['groups_scored']).split()[0] + ' cases grounded, free MCP profile, no key' if ground else 'not run yet'}</td></tr>
+<tr><td><b>CrewAI</b></td><td>The blind audit as a one-agent crew (auditor), one task per side. The two negotiators are deliberately <em>not</em> in the crew: they belong to two companies, and that is the whole point. The crew runs on the same claude login, no API key.</td><td>{crew_txt}</td></tr>
+<tr><td><b>Daytona</b></td><td>Score replay in a sandbox neither company controls. Only the recorded JSON and score.py go in: no login, no key, no model call. Anyone can re-derive the table.</td><td>{day_txt}</td></tr>
+<tr><td><b>One</b></td><td>Every closed deal gets a receipt (both records, both verdicts, transcript sha256) and it leaves the harness through One's MCP to whatever the account has connected. The harness never holds a mailbox token.</td><td>{rec_txt}</td></tr></table>"""
+    ground_block = ground_block + sponsor_block
     g05b = html.escape(excerpt(a.baseline, "G05", "buyer", 4)); g05s = html.escape(excerpt(a.baseline, "G05", "seller", 3))
-    page = f"""<title>Plain-Text Deal</title>
+    page = f"""<meta charset="utf-8">
+<title>Plain-Text Deal</title>
 <style>
 :root{{--bg:#fbfaf7;--ink:#161616;--mute:#6b6b66;--line:#e2dfd8;--warn:#a4400f;--ok:#1f6f43}}
 body{{background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;max-width:1080px;margin:0 auto;padding:40px 24px 80px}}
@@ -75,7 +131,7 @@ pre{{white-space:pre-wrap;background:#fff;border:1px solid var(--line);padding:1
 {ground_block}
 <h2>What this does and does not show</h2>
 <p>The two agents never exchange anything but prose. The STATUS line each writes is a stop signal to its own harness, stripped before the other side sees it. Records were elicited as structured JSON in this run (each company's own file); the next version has each side write a prose memo and a card-blind extractor pulls the fields. Ten cases, one pass each, a single model on each side: enough to see what breaks, not enough to quote a rate.</p>
-<p class=m>Built with claude -p and codex exec as the two companies, a third Claude call as blind auditor. Source: a2-harness (scenarios.json · harness.py · judge.py · score.py).</p>
+<p class=m>Built with claude -p and codex exec as the two companies, a third Claude call as blind auditor. Source: a2-harness (scenarios.json · harness.py · grounding.py · judge.py · audit_crew.py · sandbox_daytona.py · receipt_one.py · score.py).</p>
 """
     out = ROOT / "demo"; out.mkdir(exist_ok=True); (out / "index.html").write_text(page)
     print(f"wrote {out/'index.html'} ({len(page)} bytes)")

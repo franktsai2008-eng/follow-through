@@ -42,7 +42,10 @@ def main():
     run_dir = ROOT / "runs" / args.run
     scen = {g["id"]: g for g in SCEN["groups"]}
     for gdir in sorted(p for p in run_dir.iterdir() if p.is_dir() and (p / "transcript.json").exists()):
-        g = scen[gdir.name]
+        g = dict(scen[gdir.name])
+        meta = json.load(open(gdir / "meta.json")) if (gdir / "meta.json").exists() else {}
+        if meta.get("grounding"):
+            g["_market_ref"] = {"fetched": meta["grounding"]["fetched"], "line": meta["grounding"]["line"], "source": meta["grounding"]["source"]}
         tr = json.load(open(gdir / "transcript.json"))
         for side in args.sides:
             out = gdir / f"judge_{side}.json"

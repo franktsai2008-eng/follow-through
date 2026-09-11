@@ -1,0 +1,19 @@
+{
+  "group": "G01",
+  "label": "baseline ZOPA, qty and delivery gaps",
+  "rounds": 6,
+  "messages": 12,
+  "end_reason": "both_accepted",
+  "seconds": 171,
+  "buyer_backend": "claude:sonnet",
+  "seller_backend": "codex:gpt-5.6-sol",
+  "learn": false,
+  "record_mode": "memo",
+  "run_tag": "grounded-2026-09-11",
+  "grounding": {
+    "source": "you.com:free_mcp",
+    "fetched": "2026-09-11",
+    "line": "20L plastic drums quote $1.33-4.70/piece on Alibaba at low MOQs (2-640 units); no public unit price found specifically for UN-rated 20L HDPE chemical drums (accio.com, alibaba.com).",
+    "query": "20L HDPE chemical drums (UN-rated) wholesale price per unit 2026"
+  }
+}
