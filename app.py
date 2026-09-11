@@ -493,7 +493,7 @@ def one_send(to, subject, body):
         got = one_probe()
         if not got.get("ok"):
             return {"error": f"One not ready: {got.get('detail')}"}
-    payload = json.dumps({"to": to, "subject": subject, "body": body})
+    payload = json.dumps({"connectionKey": ONE["connection"], "to": to, "subject": subject, "body": body})
     cmd = ["one", "--agent", "actions", "execute", "gmail", ONE["action_id"], ONE["connection"], "-d", payload]
     try:
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
