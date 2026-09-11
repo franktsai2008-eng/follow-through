@@ -15,3 +15,7 @@ runs/**/receipt_delivery.json
 app/BRIEF-FRONTEND.md
 app/DESIGN-REFERENCE.md
 .crew_model
+demo/*.webm
+demo/follow-through-demo-raw-cut.mp4
+demo/timeline-*.txt
+demo/frames/

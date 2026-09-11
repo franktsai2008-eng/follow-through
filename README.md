@@ -3,7 +3,7 @@
 Every deal leaves a tail that crosses a company line: confirm terms, chase delivery, chase payment. Follow-Through lets each company run that tail with its own agent, in plain prose, inside a written authority limit, with a human approving anything that actually leaves.
 
 **Website**: https://follow-through-omega.vercel.app
-**Live app**: https://donald-patch-grace-clearing.trycloudflare.com
+**Live app**: https://outputs-wisconsin-produce-bibliography.trycloudflare.com
 **Demo video**: `TODO_YOUTUBE_LINK`
 
 ![How it runs](docs/how-it-runs.png)
