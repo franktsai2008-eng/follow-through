@@ -178,11 +178,11 @@ pre.out{font:16px/1.6 var(--mono);color:var(--ink);background:var(--surface2);bo
   </div>
   <details class="sec"><summary>Their card (optional &mdash; written for you if empty)</summary>
    <textarea id="other" style="min-height:72px"></textarea></details>
-  <div class="sec"><label for="rcpt">Follow-up goes to</label><input id="rcpt" type="email" value="franktsai.2008@gmail.com"></div>
+  <div class="sec"><label for="rcpt">Follow-up goes to</label><input id="rcpt" type="email" value=""></div>
   <div class="sec row">
    <div><label for="model">Their agent runs on</label>
     <select id="model"><option value="gpt">GPT (Codex)</option><option value="claude">Claude</option></select></div>
-   <div><label for="rounds">Max rounds</label><input id="rounds" type="number" value="6" min="2" max="8"></div>
+   <div><label for="rounds">Max rounds</label><input id="rounds" type="number" value="3" min="2" max="8"></div>
   </div>
   <div class="sec">
    <label class="tog"><input type="checkbox" id="useLessons" checked> use lessons from earlier cases</label>
@@ -194,7 +194,6 @@ pre.out{font:16px/1.6 var(--mono);color:var(--ink);background:var(--surface2);bo
    <span class="eyebrow">RECALLED &middot; USED AT THE START OF THIS RUN <span class="chip" id="lessonCount">0</span></span>
    <ol class="lessonlist" id="lessonList"></ol>
    <div class="muted" id="lessonNone" style="font-size:16px">No lessons yet. The first run writes one.</div>
-   <button class="btn ghost sm" id="clearLessons" style="margin-top:12px">clear lessons</button>
    <div class="err" id="lessonErr"></div>
   </div>
   <div class="card">
@@ -224,7 +223,7 @@ price:"I'm the procurement manager. I need 200 units of 20L UN-rated HDPE drums.
 invoice:"I'm the accounts receivable specialist at the supplier. Invoice #4519 for PoE switches, $9,400, is 20 days overdue. I must get a committed payment date. On my own I can extend up to 15 days and offer 2% off for payment within 7 days. Anything above 2%, or waiving the $150 late fee, needs my finance manager. Hidden: quarter closes in 6 days and collecting this week matters to my team.",
 delivery:"I'm the project lead at the buyer. The supplier promised 150 fixtures by day 40; it's day 38 and I have no shipping confirmation. I need a firm ship date and tracking. I can accept a split shipment if the first 100 ship by day 42. I cannot agree to any price change or extra fees without my director. Hidden: our install crew is booked for day 45 and every day of delay after that costs $800.",
 blank:""};
-var DEF_RCPT="franktsai.2008@gmail.com";
+var DEF_RCPT="";
 var $=function(s){return document.querySelector(s);};
 var esc=function(s){return String(s===null||s===undefined?"":s).replace(/[&<>"']/g,function(c){
  return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});};
@@ -408,6 +407,12 @@ function actCard(J){
       (a.sent.at?" · "+esc(a.sent.at):"")+"</div>";
   }else if(a.state==="rejected"){
    h+='<div class="learned">Learned: '+esc(a.learned||a.reject_reason||"noted")+"</div>";
+  }else if(!a.draft){
+   h+='<div class="why muted">internal action, no message to send</div>'+
+      '<div class="acts"><button class="btn ghost sm" data-rj="'+i+'">Reject</button></div>'+
+      '<div id="rj'+i+'" hidden><label for="rr'+i+'">Why not</label><input id="rr'+i+'" placeholder="what was wrong with it">'+
+      '<div class="acts"><button class="btn ghost sm" data-rs="'+i+'">Submit reason</button></div></div>'+
+      '<div class="err" id="ae'+i+'"></div>';
   }else{
    h+='<label for="to'+i+'">To</label><input id="to'+i+'" type="email">'+
       '<label for="su'+i+'">Subject</label><input id="su'+i+'">'+
@@ -426,7 +431,7 @@ function replayCard(J){
  var r=J.replay||null;
  var h='<div class="card"><span class="eyebrow">THIRD-PARTY REPLAY · DAYTONA</span>'+
    '<div class="muted" style="font-size:16px">Replay the scoring in a box neither company controls. Only the records go in.</div>';
- if(!r||r.status==="waiting_for_key"){
+ if(!r||r.status==="waiting_for_key"||r.status==="idle"){
   h+='<div class="acts"><button class="btn ghost sm" id="replayBtn">Replay in a Daytona sandbox</button></div>';
   if(r&&r.status==="waiting_for_key"){
    h+='<div class="chip warn" style="margin-top:10px">waiting for key</div>'+
@@ -552,10 +557,6 @@ $("#run").onclick=function(){
   if(r.error||!r.id){err.textContent=r.error||"the server did not return a run id";$("#run").disabled=false;setState("","idle");return;}
   curId=r.id;poll(r.id);
  });
-};
-$("#clearLessons").onclick=function(){
- var e=$("#lessonErr");e.textContent="";
- jpost("/lessons/clear",{}).then(function(r){if(r&&r.error)e.textContent=r.error;loadLessons();});
 };
 var segs=$("#seg").querySelectorAll("button");
 for(var si=0;si<segs.length;si++)segs[si].onclick=function(){

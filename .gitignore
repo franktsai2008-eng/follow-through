@@ -10,3 +10,7 @@ app/*.log
 app/test-job.json
 app/lessons.md
 .env
+runs/**/receipt.md
+runs/**/receipt_delivery.json
+app/BRIEF-FRONTEND.md
+app/DESIGN-REFERENCE.md

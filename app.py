@@ -52,9 +52,21 @@ JOBS = {}
 LOCK = threading.Lock()
 CLAUDE_MODEL = os.environ.get("FT_CLAUDE_MODEL", "sonnet")
 CODEX_MODEL = os.environ.get("FT_CODEX_MODEL", "gpt-5.6-sol")
-ALLOWED = [a.strip().lower() for a in os.environ.get("FT_ALLOWED_RECIPIENTS", "franktsai.2008@gmail.com").split(",") if a.strip()]
+def one_account_email():
+    """The email of the One account this machine is logged into (the demo's default recipient); no address is hardcoded."""
+    try:
+        cfg = json.loads((Path.home() / ".one" / "config.json").read_text())
+        return (cfg.get("whoami", {}).get("user", {}).get("email") or "").strip().lower()
+    except Exception:  # noqa
+        return ""
+
+
+ALLOWED = [a.strip().lower() for a in os.environ.get("FT_ALLOWED_RECIPIENTS", one_account_email()).split(",") if a.strip()]
 SEND_TIMES = []
 SEND_LIMIT = 10
+RUN_TIMES = []
+RUN_LIMIT = int(os.environ.get("FT_RUN_LIMIT", "12"))
+os.environ.setdefault("A2_CREW_LLM", os.environ.get("FT_CREW_MODEL", "haiku"))  # crew audits with a different model than the single judge
 JID_RE = re.compile(r"^[0-9a-f]{10}$")
 APPROVAL_RE = re.compile(r"\b(approval|approve|sign[- ]?off|director|manager|authoriz|not able to|can't commit|cannot commit|can’t commit|outside my|beyond my)\b", re.I)
 PROBE = {"youcom": {"ok": False, "detail": "checking"}, "one": {"ok": False, "detail": "checking"},
@@ -113,9 +125,9 @@ def one_probe():
         acts = parse_json(r2.stdout).get("actions", [])
         act = next((a for a in acts if a.get("path") == "/v1/gmail/send-email"), None)
         if not act:
-            return {"ok": False, "detail": "gmail connected but no send-email action", "connection": ONE["connection"]}
+            return {"ok": False, "detail": "gmail connected but no send-email action"}
         ONE["action_id"] = act.get("actionId")
-        return {"ok": True, "detail": "gmail operational", "connection": ONE["connection"], "action": act.get("title", "Send Email")}
+        return {"ok": True, "detail": "gmail operational", "connection": "…" + str(ONE["connection"])[-6:], "action": act.get("title", "Send Email")}
     except Exception as e:  # noqa
         return {"ok": False, "detail": f"one cli: {str(e)[:160]}"}
 
@@ -596,12 +608,18 @@ class H(BaseHTTPRequestHandler):
     def do_POST(self):
         path = self.path.split("?")[0]
         if path == "/run":
+            with LOCK:
+                cut = time.time() - 3600
+                RUN_TIMES[:] = [t for t in RUN_TIMES if t > cut]
+                if len(RUN_TIMES) >= RUN_LIMIT:
+                    return self._send(429, {"error": f"run rate limit reached ({RUN_LIMIT} per hour); try again later"})
+                RUN_TIMES.append(time.time())
             b = self._body()
             p = {"company_me": (b.get("company_me") or "Northline Procurement").strip(),
                  "company_other": (b.get("company_other") or "Harbor Packaging").strip(),
                  "flow": b.get("flow", "custom"), "my_card": (b.get("my_card") or "").strip(),
                  "other_card": b.get("other_card", "") or "", "other_model": b.get("other_model", "gpt"),
-                 "max_rounds": max(2, min(8, int(b.get("max_rounds", 6) or 6))),
+                 "max_rounds": max(2, min(8, int(b.get("max_rounds", 3) or 3))),
                  "use_lessons": bool(b.get("use_lessons", True)), "ground": bool(b.get("ground", True)),
                  "recipient_email": (b.get("recipient_email") or (ALLOWED[0] if ALLOWED else "")).strip()}
             if not p["my_card"]:
@@ -712,6 +730,9 @@ class H(BaseHTTPRequestHandler):
             return self._send(200, J["replay"])
 
         if path == "/lessons/clear":
+            tok = os.environ.get("FT_ADMIN_TOKEN")
+            if not tok or self.headers.get("X-FT-Token") != tok:
+                return self._send(403, {"error": "clearing lessons needs FT_ADMIN_TOKEN (header X-FT-Token)"})
             LESSONS.write_text("")
             return self._send(200, {"ok": True, "lessons": ""})
         return self._send(404, {"error": "not found"})

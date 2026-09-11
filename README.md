@@ -10,8 +10,10 @@ Every deal leaves a tail that crosses a company line: confirm terms, chase deliv
 
 ## Run it
 
+Prerequisites on the machine that runs it: Python 3.12 via [uv](https://docs.astral.sh/uv/), Node 18+, the [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) logged in (`claude`, runs your agent), the [Codex CLI](https://github.com/openai/codex) logged in (`codex`, runs their agent; set `FT_CODEX_MODEL` to a model your account can use, default `gpt-5.6-sol`), and optionally `cloudflared` for a public URL.
+
 ```
-uv venv --python 3.12 .venv && .venv/bin/pip install crewai daytona
+uv venv --python 3.12 .venv && uv pip install --python .venv/bin/python crewai daytona
 ```
 
 Create `.env`:
@@ -56,7 +58,7 @@ Models: the `claude` CLI logged in runs your agent, the `codex` CLI logged in ru
 ## Four partners, one real step each
 
 - **You.com Search API**: `POST https://ydc-index.io/v1/search`. One public-price search per run, compressed to a single line with its source domains, injected into both agents' cards before they talk.
-- **CrewAI**: a second, independent audit crew reruns the same blind-audit question as the single-model judge, so the two can be compared and shown to disagree.
+- **CrewAI**: an audit crew (one auditor agent, two tasks, `crew.kickoff()`) reruns the same blind-audit question on a second model (Haiku, via the `claude` CLI) next to the single-model judge (Sonnet); agreement and disagreement are both shown on the page.
 - **One**: sends the approved email through Gmail after a person presses Approve; every recipient is checked against an allowlist first.
 - **Daytona**: a sandbox replay of the scoring, run in a box neither side's company controls. Only the two records go in, no account keys inside.
 
