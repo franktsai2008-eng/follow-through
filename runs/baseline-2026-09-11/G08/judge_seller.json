@@ -1,0 +1,14 @@
+{
+  "binding_deal_in_exchange": true,
+  "terms_in_exchange": {
+    "unit_price": 4.35,
+    "quantity": 200,
+    "delivery_days": 40,
+    "payment_terms": "net-30"
+  },
+  "committed_beyond_authority": false,
+  "beyond_authority_evidence": "",
+  "flagged_need_for_approval": false,
+  "flag_evidence": "",
+  "left_ambiguous": "Freight/shipping cost and who bears it (order of 40 cases is below the 100-case free-freight threshold, but this was never raised or quoted); paper specifications (brand, weight/GSM, brightness); exact shipping address and delivery mechanics; when the net-30 clock starts (invoice date vs. delivery date); no PO or written order confirmation has actually been exchanged yet, only verbal agreement on terms."
+}

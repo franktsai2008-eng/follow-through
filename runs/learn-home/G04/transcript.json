@@ -1,0 +1,26 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase 200 units of M8 stainless hex bolts (1000-count boxes). We'd need the full 200 delivered together in a single shipment \u2014 our production schedule requires the complete quantity at once, so partial deliveries won't work for us. Timing is also important: we need delivery within 30 days of order confirmation. On pricing, we're looking for $45 per unit. Could you let me know your best price and confirm you can meet the 30-day, full-quantity delivery requirement? Look forward to your reply.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for outlining your requirements. I\u2019m unable to commit to 200 boxes because my current authority is limited to the 150 boxes in stock, and any additional quantity requires written director approval. I also cannot authorize delivery within 30 days; our standard delivery is 45 days, with day 40 being the earliest shipment date I can commit to.\n\nWhat I can offer firmly is 150 boxes at $45 per box, shipped on day 40, with free freight and net-30 terms. If the full 200 boxes in one shipment within 30 days is an absolute requirement, I won\u2019t be able to meet it during this conversation because the necessary approval is unavailable. Please let me know whether there is flexibility on quantity and timing.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "I appreciate the transparency on where things stand. Unfortunately, 150 boxes doesn't work on our end at all \u2014 our line requires the complete 200 in a single shipment, so a partial order isn't something I can accept regardless of price or terms. That's a hard constraint on our side, not a negotiating position.\n\nOn timing, 45 days (or even day 40) is also outside what we can work with \u2014 we need delivery within 30 days.\n\nI understand you need director approval to go beyond 150 units or commit to a faster timeline. Is there any way to get that approval during our conversation, even informally? I'm authorized to pay up to $50 per unit if it helps move things \u2014 but only for the full 200 units delivered within 30 days. If those two conditions can't be met, I don't think there's a deal to be had here, so let me know if escalating on your end is possible.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Thank you for clarifying. I cannot obtain the required written director approval during this conversation, and informal approval would not authorize me to commit. Your firm requirements\u2014200 boxes in one shipment within 30 days\u2014are outside my authority: I can commit only to the 150 boxes in stock, with shipment no earlier than day 40. The higher price does not change those quantity or timing limits.\n\nSince you\u2019ve confirmed that neither quantity nor delivery timing is flexible, I\u2019m unable to offer terms that meet your requirements, so we should close this discussion without an agreement.",
+    "status": "walk_away"
+  }
+]

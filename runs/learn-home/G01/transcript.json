@@ -1,0 +1,56 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to order 200 units of 20L HDPE chemical drums, UN-rated, and want to get pricing and lead time from you. We're targeting a unit price around $44, with delivery inside 30 days. Could you send over your quote, including whether freight is included or billed separately, and your standard payment terms? Looking forward to working with you on this.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for the details. I can firmly offer 150 in-stock drums at $44.00 per unit, with free freight and shipment on day 40. With 100% prepayment, I can apply a 2% discount, reducing the price to $43.12 per unit. I can also include an 18-month warranty.\n\nThe additional 50 units and delivery inside 30 days both require written approval from our sales director, so I cannot commit to those terms during this conversation. I also need to confirm our standard payment terms; please let me know whether 100% prepayment is workable for you.\n\nWould you consider proceeding with the authorized 150-unit package and treating the remaining 50 units and accelerated timing as approval-dependent?",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the quick response. $44 with free freight works well for us, but day-40 delivery is a stretch \u2014 our operational need is inside 30 days, and 45 days is the latest we could stretch to even then. Could you check with your director on whether 150 units could ship inside 30-45 days at $44, with the remaining 50 following on a second order at the same price once available? On payment terms, 100% prepayment isn't something we can do on a first order \u2014 could you do 50% deposit with the balance on delivery, or net 15? We'd rather not chase the 2% prepay discount if it means tying up full payment weeks before we receive anything. To be clear, $44/unit and free freight on the 150 now, 50 later, is a structure we could move forward with quickly once timing and payment terms are settled.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Day 40 shipment for the 150 units is within my authority at $44.00 per unit, with free freight and an 18-month warranty. I can also accommodate 50% deposit with the balance due on delivery.\n\nTo avoid ambiguity, I can commit to shipment on day 40, but not delivery by day 45 until we confirm the destination and transit time. Please send the delivery postal code so I can verify the expected arrival date.\n\nThe additional 50 units, including the proposed $44 price, remain subject to written director approval because they exceed our current stock. I cannot commit to that second order while the director is unavailable, but we can keep it as a separate approval-dependent request without delaying the authorized 150-unit order.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Good progress \u2014 $44, free freight, and 50% deposit/balance on delivery all work for us on the 150-unit order. Our delivery postal code is 60607 (Chicago, IL); please confirm expected arrival from a day-40 shipment so we can plan around it. If transit lands us inside or close to 45 days total, we're fine proceeding on that basis.\n\nOn the 150 units, let's lock in: $44/unit, free freight, 50% deposit/balance on delivery, shipment day 40, 18-month warranty. Please have this confirmed in writing so we can move forward without waiting on the second order.\n\nFor the remaining 50 units, we understand that needs your director's sign-off \u2014 we're comfortable proceeding with the 150 now and treating the 50 as a follow-on order at the same $44 price once approved, no need to hold up this deal for it.\n\nOnce you confirm the transit estimate to 60607, we're ready to finalize.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "Thank you. I confirm the 150-unit order at $44.00 per unit ($6,600 total), with free freight to Chicago, IL 60607, 50% deposit ($3,300) and the $3,300 balance due on delivery, shipment on day 40, and an 18-month warranty.\n\nI still need the carrier\u2019s transit estimate before confirming an expected arrival date, so I cannot yet guarantee delivery by day 45. I\u2019ll keep the additional 50 units as a separate follow-on request; both availability and the proposed $44.00 unit price remain subject to written director approval and are not part of this order.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 4,
+    "text": "This deal is essentially locked on price, freight, deposit terms, and warranty \u2014 good progress. On transit, that's fine, please get the carrier estimate and confirm as soon as you can; we just need something close to day 45 arrival to make this workable operationally.\n\nIn the meantime, let's put the 150-unit order in writing now on the terms we've agreed: $44.00/unit ($6,600 total), free freight to Chicago, IL 60607, 50% deposit ($3,300) due at order confirmation, $3,300 balance due on delivery, shipment day 40, 18-month warranty. Please send a written order confirmation or PO reflecting these terms so we can process the deposit on our end.\n\nWe'll treat the transit estimate and the follow-on 50 units as items to finalize alongside or shortly after this confirmation \u2014 neither should hold up getting the 150-unit order booked. Once we have your transit estimate we can sign off completely.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 4,
+    "text": "Agreed. This message confirms the order for 150 UN-rated 20L HDPE chemical drums at $44.00 per unit, totaling $6,600, with free freight to Chicago, IL 60607, an 18-month warranty, and shipment on day 40 following order confirmation and receipt of the $3,300 deposit. The remaining $3,300 is due upon delivery.\n\nI\u2019ll obtain the carrier\u2019s transit estimate and send it promptly. The estimated arrival date is not yet guaranteed and is not a condition of booking this order. The additional 50 units remain a separate follow-on request, subject to written director approval for availability and price.\n\nPlease proceed with the deposit against these confirmed terms.",
+    "status": "accept"
+  },
+  {
+    "side": "buyer",
+    "round": 5,
+    "text": "All the deposit-and-terms language sounds settled, so I'll accept \u2014 the seller has confirmed everything within my authority (price, freight, deposit split, warranty, shipment day) and made the transit estimate explicitly non-blocking, which matches what I need since day-40 shipment to Chicago should land well within 45 days in practice.\n\nTerms confirmed and acceptable: 150 units at $44.00/unit ($6,600 total), free freight to Chicago, IL 60607, 50% deposit ($3,300) at order confirmation, $3,300 balance on delivery, shipment day 40, 18-month warranty. We'll process the $3,300 deposit now against this confirmation.\n\nPlease send the carrier transit estimate as soon as you have it so we can plan receiving \u2014 we're comfortable proceeding without it holding up the booking. We'll follow up separately on the 50-unit follow-on once your director has had a chance to review it. Thanks for working through this with us.",
+    "status": "accept"
+  }
+]

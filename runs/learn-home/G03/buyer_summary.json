@@ -1,0 +1,9 @@
+{
+  "deal_closed": true,
+  "unit_price": 43,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "net-30, free freight",
+  "conditional_items": "Additional 50 units at $43/unit not yet committed; seller verbally agreed but requires written sales director approval on their end, no timeline given. If approval falls through or price shifts, buyer may need to source the 50-unit shortfall elsewhere.",
+  "_memo": "Internal Memo \u2014 9/11/2026\n\nClosed a firm order with the supplier for 150 units of 24-port managed PoE switches at $43/unit (our ceiling), free freight, net-30 terms, shipping day 40. This is within budget and delivery is acceptable (45-day window). Issuing PO now to lock in terms.\n\nThe remaining 50 units are NOT yet committed. Seller verbally agreed to the same $43/unit but needs written sales director approval on their end before confirming; no timeline given. We should follow up proactively to keep this moving and avoid a supply gap. If their approval falls through or price shifts, we may need to source the 50-unit shortfall elsewhere \u2014 flagging for visibility, no action needed from leadership yet."
+}

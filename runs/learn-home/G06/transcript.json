@@ -1,0 +1,26 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase industrial nitrile gloves, 200 units, and want to get a sense of your pricing and terms. Our target is $43 per unit, with delivery within 30 days. On payment, our standard company policy is net-60 \u2014 we're not able to do any prepayment. Could you send over your best pricing and confirm lead time for an order of this size? Happy to discuss further once I see your numbers.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for outlining your requirements. I can offer 150 units at $43 per unit, with shipment on day 40 and free freight. As you\u2019re a new customer, our firm payment terms require 30% upfront, with the balance due under agreed credit terms.\n\nThe requested 200-unit quantity, 30-day delivery, and waiver of prepayment are outside my authorization and would require written sales director approval, which I\u2019m unable to obtain during this conversation. I don\u2019t want to overpromise on those points.\n\nIf 150 units at $43, shipping on day 40 with 30% upfront could work, we can discuss the balance terms and a split-shipment structure for the remaining 50, subject to written approval and availability.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the numbers \u2014 price at $43 works for us, and 150 units as a first order is fine on our end.\n\nTwo things I can't move on: prepayment and the 40-day ship date. Net-60 is a firm company policy across all our vendors, not a negotiating position \u2014 we're not able to do any upfront percentage regardless of customer status, but we're a reliable payer on terms and happy to provide references if that helps your director's review. On timing, we need delivery within 30 days; day 40 doesn't work for our schedule. If you could get the remaining 50 units out sooner, even day 30, that would help too.\n\nSo to confirm what we could sign today: 150 units at $43/unit, delivery by day 30, net-60 payment, free freight. If your director can approve net-60 for this order, we're ready to move quickly. Let me know what's possible.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Thanks for confirming. I can commit to 150 units at $43 per unit with free freight, but the earliest authorized ship date is day 40, and payment requires 30% upfront for a new customer. Delivery by day 30 and net-60 with no prepayment both require written director approval, which I cannot obtain during this conversation.\n\nSince those are firm requirements on your side and I cannot authorize them, I\u2019m unable to accept the proposed order. I appreciate the opportunity and your candid communication.",
+    "status": "walk_away"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase 200 units of your 24-port managed PoE switches. We'd want delivery completed within 30 days, or split into a first shipment of 150 units with the remaining 50 to follow shortly after if that's easier on your end. Could you send over your best per-unit pricing for a 200-unit order, along with your standard lead times? Looking forward to working something out.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. We currently have 150 units available; any commitment for the additional 50 requires written sales director approval, which I can\u2019t obtain during this conversation. Our standard lead time is 45 days, and the earliest shipment I\u2019m authorized to commit to is day 40, so I can\u2019t promise delivery within 30 days.\n\nFor the 150 in-stock units, I can offer $48 per unit with free freight and net-30 terms, shipping on day 40. Alternatively, prepayment would receive an additional 3% discount, bringing the price to $46.56 per unit. If 150 units on that schedule could work, I\u2019d be glad to continue.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the details, but $48 is well above where we need to be \u2014 our budget for this order caps well below that, and $46.56 with prepayment still doesn't get us there. To be transparent, we can't go above $43 per unit under any structure, and that's a hard limit on our end.\n\nOn timing, 45 days with a 150 now / 50 later split is workable for us if the pricing works. So the structure you proposed (150 then 50) is fine \u2014 it's really the price that's the gap we need to close.\n\nIs there room to move closer to $43 per unit for the 150-unit shipment, with the remaining 50 to follow once you have director sign-off? If we can land at or under $43, we're ready to move quickly and get a PO over to you.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "We can meet your $43 cap for the 150 units currently in stock. I\u2019m authorized to offer $43 per unit with free freight and net-30 terms, shipping on day 40.\n\nI can\u2019t commit to the additional 50 units until we have written sales director approval, and that approval isn\u2019t available during this conversation. If you\u2019re comfortable issuing a PO for the firm 150-unit shipment on these terms, we can move forward promptly.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Great, $43 per unit at day 40 for the 150-unit shipment works for us. Please go ahead and send over the PO paperwork or confirm next steps, and we'll get it signed and returned promptly.\n\nOn the remaining 50 units, let's keep that moving in parallel \u2014 please loop in your sales director as soon as possible for approval at the same $43 per unit, so we can lock in the second shipment without delay. Let me know if there's anything you need from us to help that approval move faster.\n\nTo confirm: 150 units at $43/unit, free freight, net-30, shipping day 40. We're ready to proceed on that basis now.",
+    "status": "accept"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "Confirmed: 150 units at $43 per unit, free freight, net-30 terms, shipping on day 40. Please issue your PO reflecting these terms, and we\u2019ll process the order promptly.\n\nI\u2019ll submit the additional 50-unit request at $43 per unit for written sales director approval as soon as the director is available. Until that approval is received, the second shipment remains uncommitted. No additional information is needed from you at this time.",
+    "status": "accept"
+  }
+]

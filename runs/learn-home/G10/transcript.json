@@ -1,0 +1,26 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase 200 units of commercial vinyl flooring rolls and want to get a sense of your pricing and lead times. Delivery within 30 days is important for our project timeline. Could you send over your best per-unit price for a 200-unit order, along with your standard lead time? Looking forward to working something out.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. Our standard lead time is 45 days. I can currently commit 150 units at $47 per unit, with free freight and net-30 terms, shipping as early as day 40.\n\nThe additional 50 units and delivery within 30 days would both require written sales director approval, which I\u2019m unable to obtain during this conversation, so I don\u2019t want to overpromise. If day 40 works for the initial 150 units, we could also structure a split shipment and leave the remaining 50 units subject to availability and written approval.\n\nPlease let me know whether the 150-unit, day-40 option could fit your project.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the detail. Unfortunately $47 and a day-40 delivery don't work on our end \u2014 we have another supplier offering $45 per unit with 32-day delivery for the full 200 units, so that's the benchmark we're measuring against. To make this work, we'd need either the full 200 units at a price that beats $45, or if you can only commit to 150 units up front, that would need to come in meaningfully below $45 to be worth the reduced quantity and split shipment risk. On timing, 32 days is about as far out as we can go \u2014 40 days is too late for our project.\n\nIs there any flexibility on price or timeline from your side without needing director sign-off? If you can get closer to $42-43 per unit and shave the lead time down toward 30-32 days, even for a 150-unit first shipment, we'd be glad to structure the remaining 50 units as a follow-on order once you have approval.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "I understand the benchmark. Without director sign-off, my strongest authorized offer is 150 units at $44 per unit, with free freight and net-30 terms, shipping no earlier than day 40. I cannot commit to the remaining 50 units, a price below $44, or shipment within 30\u201332 days.\n\nSince day 32 is a firm project deadline, we can\u2019t meet your requirements within my authority, and I don\u2019t want to hold up your procurement process. Thank you for the opportunity and the candid discussion.",
+    "status": "walk_away"
+  }
+]

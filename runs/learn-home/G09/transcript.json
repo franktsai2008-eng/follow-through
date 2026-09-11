@@ -1,0 +1,26 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase 200 units of your 12V 100Ah LiFePO4 battery packs. Could you send over your best pricing for this volume, along with lead time to delivery? We'd need the full order delivered within 30 days of order confirmation. Let me know what you can offer and we can move quickly from there.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. I can firmly offer 150 units from current stock at $49 per unit, with free freight and net-30 terms, for delivery within 45 days of order confirmation. Our earliest authorized ship date is day 40.\n\nThe additional 50 units and full delivery within 30 days would both require written director approval, which I\u2019m unable to obtain during this discussion, so I can\u2019t commit to either. If you have flexibility on quantity and timing, I\u2019d be glad to work toward closing the 150-unit order now and keep the additional 50 units open pending approval.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Appreciate the quick response, but 150 units and 45 days don't work for us \u2014 this is a 200-unit requirement with a hard 30-day delivery window on our end, so a partial order with the balance \"pending approval\" leaves us exposed. I'd rather find a path that gets the full 200 units confirmed now.\n\nOn price, $49 is above where we need to land for a 200-unit order \u2014 we were expecting volume pricing closer to $44-45 given the size of this commitment. If you can get to $45 per unit for the full 200, and either pull the delivery timeline in to 30 days or split shipments so we have at least 100-120 units in hand within 30 days and the remainder shortly after, we can move forward without needing further approvals on our side.\n\nIf your stock position genuinely caps you at 150 units right now, let me know what it would take to get written approval on the additional 50 \u2014 I'd rather solve this together than walk into a wall on quantity.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Thank you for clarifying. While $45 per unit is within my pricing authority, I cannot confirm 200 units or any shipment within 30 days without written director approval. My firm authority is limited to 150 units, with the earliest shipment on day 40. The director is unavailable during this conversation, so I cannot provide the approval needed for either exception.\n\nSince your 200-unit quantity and 30-day delivery window are both firm, I\u2019m not able to offer a compliant solution or responsibly confirm the order. I appreciate the opportunity and your directness.",
+    "status": "walk_away"
+  }
+]

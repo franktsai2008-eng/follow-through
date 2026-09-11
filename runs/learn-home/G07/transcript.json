@@ -1,0 +1,56 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase 200 LED high-bay fixtures, 150W, and need delivery within 30 days. Could you send over your best pricing per unit for this quantity, along with your standard lead time? Happy to discuss volume or scheduling flexibility if it helps get us a better number.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for the details. Our list price is $58 per unit, and our standard lead time is 45 days. We currently have 150 units available; I can offer those at $52 per unit with free freight and shipment by day 40.\n\nThe requested 200-unit quantity and delivery within 30 days both require written sales director approval, which I\u2019m unable to obtain during this conversation, so I can\u2019t commit to those terms. If you have flexibility to proceed with 150 units shipping by day 40, we can continue discussing pricing and payment terms. Alternatively, we could keep the additional 50 units and accelerated schedule open pending approval.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "That $52 price on 150 units works well for us, so let's lock that in now: 150 units at $52/unit, free freight, shipped by day 40.\n\nOn the remaining 50 units, can you get director sign-off in parallel while we move forward with the first order? We'd want those on the same $52 pricing and shipped within a similar window. If that's not feasible, let me know a rough timeline for when you'd have an answer so we can plan around it.",
+    "status": "accept"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Agreed\u2014I can lock in 150 units at $52 per unit, with free freight and shipment by day 40. Please send the purchase order reflecting those terms so we can proceed.\n\nI\u2019ll submit the additional 50 units at $52 per unit with the requested similar shipping window for written director approval. That portion is not yet committed, and because the director is currently unreachable, I can\u2019t provide a reliable approval timeline during this conversation. We\u2019ll keep the confirmed 150-unit order separate so it can move forward without delay.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Sounds good\u2014confirming the 150-unit order now: 150 units at $52/unit, free freight, shipped by day 40. I'll get the PO over shortly.\n\nOn the remaining 50 units, understood on the approval process. To help move things along once you hear back, our preference is $52/unit with shipment within 45 days of order. If your director comes back with different terms, let us know and we'll take a look. In the meantime, please keep us posted as soon as you have any update, even informal, so we can plan our schedule accordingly.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "Confirmed: 150 units at $52 per unit, free freight, shipping by day 40. We\u2019ll proceed upon receipt of your purchase order.\n\nI\u2019ve also noted your preference for the additional 50 units at $52 per unit, shipping within 45 days of order. Both the additional quantity and its delivery schedule remain subject to written sales director approval and are not part of the confirmed order. Since the director is currently unreachable, I can\u2019t commit to an approval timeline or provide an informal indication. I\u2019ll share an update as soon as written approval or alternative terms are available.",
+    "status": "accept"
+  },
+  {
+    "side": "buyer",
+    "round": 4,
+    "text": "Got it, thanks for confirming the 150-unit order\u2014PO is on its way. We'll plan around the 50-unit piece being pending approval and appreciate you flagging it as soon as anything comes through.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 4,
+    "text": "Thank you. We\u2019ll process the confirmed order for 150 units at $52 per unit, with free freight and shipment by day 40, upon receipt of the PO. The additional 50 units remain separate and subject to written director approval; I\u2019ll notify you promptly when a formal decision or alternative terms are available.",
+    "status": "accept"
+  },
+  {
+    "side": "buyer",
+    "round": 5,
+    "text": "The confirmed 150-unit order (at $52/unit within my $60 ceiling) has already been agreed and the PO sent, so this deal is locked in. The remaining 50 units are still pending the seller's director approval with no timeline\u2014nothing new to negotiate until they respond.\n\nPO for the 150 units is on its way\u2014confirming that's now locked in on our end: 150 units at $52/unit, free freight, shipped by day 40.\n\nNo rush on the remaining 50, just keep us in the loop whenever you hear back. In the meantime, could you let us know roughly how often these director approvals typically turn around, just so we can set expectations internally? Appreciate the help getting the first order squared away.",
+    "status": "accept"
+  }
+]

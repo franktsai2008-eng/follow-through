@@ -1,0 +1,3 @@
+Confirmed sale of 150 LED high-bay fixtures, 150W, at $52 per unit ($7,800 total), with free freight and shipment by day 40. Buyer stated the PO has been sent/on its way; order processing remains contingent on receipt and verification of the PO. No payment terms or warranty terms were agreed.
+
+The buyer’s remaining 50-unit request is separate and uncommitted. Their preferred terms are $52 per unit with shipment within 45 days of order, but quantity exceeds current stock and requires written sales director approval. The director is currently unreachable, so no approval or turnaround timeline was provided. Notify the buyer promptly when a formal decision or alternative terms become available.

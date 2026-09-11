@@ -1,36 +1,39 @@
 # Field notes — Build with YOU hackathon, 2026-09-11, Civic Hall
 
-The one question (ask ten people, write the answer in their words, not yours):
-> "Has your agent ever had to go back and forth with another company's agent or person — a supplier, a customer, a partner? Where did it break: getting the other side to answer, knowing what it was allowed to agree to, or proving afterwards what was agreed?"
+The one question (≤25 words, ask ten people, write their words not yours):
+> "Has your agent ever had to deal with someone outside your company? What broke: getting a reply, knowing what it could promise, or proving it later?"
 
-Score each answer: T = transport (getting a reply), A = authorization (what it may agree to), R = record (proving it afterwards), N = never happened.
+If the answer is "never" (it will be, most of the time), the rescue question:
+> "What would have to be true before you'd let it reply outside the company without you reading it first?"
 
-| # | who (name / company / role) | answer in their words | T/A/R/N | follow-up? |
-|---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
-| 9 | | | | |
-| 10 | | | | |
+Code: T = transport (getting a reply) · A = authorization (what it may promise) · R = record (proving it later) · N = never happened
 
-## Sponsor leads (each one sits on a different candidate "missing layer")
-- Tom Haddock — Head of Forward Deployed Engineering, CrewAI (orchestration; sees enterprise agents in production every day)
-  - answer:
-  - what he said doesn't work today:
-  - agreed to follow-up? (yes / no / maybe — what exactly)
-- Jacob Rissman — Head of GTM, One (managed authentication + 729 integrations = the authorization layer)
-  - answer:
-- Vedran Jukic — Co-founder & CTO, Daytona (sandboxes = where another company's agent can run safely)
-  - answer:
-- Michael Munson — Founder, Clean Data Alliance (cross-company data governance standards = the record layer)
-  - answer:
-- You.com engineers (Brian Sparker PM / Edward Irby / Akhil Pothana)
-  - API notes:
+| # | who (name / company / role) | answer in their words | T/A/R/N | what would have to be true | follow-up? |
+|---|---|---|---|---|---|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
+| 4 | | | | | |
+| 5 | | | | | |
+| 6 | | | | | |
+| 7 | | | | | |
+| 8 | | | | | |
+| 9 | | | | | |
+| 10 | | | | | |
+
+## Sponsor leads — same question, one hook each (verified 9/11 00:40)
+- **Tom Haddock** — Head of Forward Deployed Engineering, CrewAI (NYC). Hook: his 2026-04-02 "MCP in the Wild" talk, "agentic systems that actually hold up in production".
+  - his answer:
+  - what he said breaks first:
+  - pointed me at anyone?
+- **Jacob Rissman** — Head of GTM & Revenue, One (formerly Pica). Hook: his 9/2 post for this event: "The harder test starts when they have to authenticate, call real tools with the right permissions, recover from a failure." One Remote MCP shipped 7/30 (592+ apps).
+  - his answer:
+- **Vedran Jukic** — Co-founder & CTO, Daytona. Hook: Launch Week 10 (July 2026) shipped Secrets Manager + domain-level egress control; his line: agents need environments that "execute potentially untrusted code safely".
+  - his answer:
+- **Michael Munson** — Founder, Clean Data Alliance (501(c)(6), launched 2026-02-11; also CEO of Dāginty). Hook: "Shield of Approval" certification idea; claims clean data cuts model cost up to 90%.
+  - his answer:
+- **You.com engineers** (Brian Sparker PM / Edward Irby / Akhil Pothana). Search API: `POST https://ydc-index.io/v1/search`, header `X-API-Key`, docs you.com/docs/guides/search. MCP: `https://api.you.com/mcp?profile=free` (100/day, no key).
+  - API notes / key received at:
 
 ## What the top-5 demos had in common
 -
@@ -38,11 +41,16 @@ Score each answer: T = transport (getting a reply), A = authorization (what it m
 ## What the judges rewarded / punished
 -
 
-## Tools people actually used (CrewAI vs hand-rolled vs LangGraph vs other)
+## Tools people actually used (CrewAI vs hand-rolled vs other)
 -
 
 ## Solo vs team count, and who I'd want to build with again
 -
 
-## Reminder
-Verbal feedback ≠ traction. Do not record anyone. Credits prizes are fine; anything with a tax form → ask before signing.
+## Check-in questions (ask at the desk)
+- Judging rubric? Can a submission be edited after submitting?
+- Is Tom Haddock here all day or for the finals?
+- Partner codes: You.com key, Daytona, CrewAI, One
+
+## Reminders
+Verbal feedback ≠ traction. Do not record anyone. Credits prizes are fine. Any form asking for SSN / W-9 / tax ID: "I'll need to check with my school's international office first" — do not sign on the spot. Follow-up emails go out within 2 hours of leaving, not next week.

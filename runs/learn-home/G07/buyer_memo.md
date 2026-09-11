@@ -1,0 +1,3 @@
+Internal Memo – LED High-Bay Fixture Purchase (150W)
+
+Confirmed order: 150 units at $52/unit, free freight, shipment by day 40. Well within our $60 ceiling and target of $50; PO has been issued. Remaining 50 units (to reach our full 200-unit need) are not yet secured — seller requires internal director sign-off on both quantity and schedule, which was unavailable during negotiation. No committed price, timeline, or delivery window exists for this portion; seller proposed $52/unit and ~45-day shipment informally, pending approval. We should follow up periodically for status and be prepared to source the shortfall elsewhere if approval is delayed, since current lead time already pushes close to our 45-day acceptable limit for the confirmed batch.

@@ -1,0 +1,26 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to place an order for 200 double-wall corrugated shipping cartons, custom print. Could you send over your pricing and lead time for this quantity? We're hoping to land around $44 per unit, and delivery within 30 days is important on our end. Let me know what you can do and we can move quickly from there.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for the details. I can firmly offer 150 custom-printed double-wall cartons at $44 per unit, with free freight and net-30 terms, shipping on day 40. I can also arrange a split shipment if that helps your receiving schedule.\n\nI can\u2019t commit during this conversation to the additional 50 units or delivery within 30 days; both require written sales director approval, and the director is currently unavailable. If 150 units shipping on day 40 could work, we can move forward immediately on those terms.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Appreciate the quick response, but 150 units on day 40 doesn't work for us \u2014 we need the full 200, and the 30-day window is firm on our end due to a downstream production schedule.\n\nI understand your director isn't reachable right now, but I'd rather find a path that doesn't require waiting on that approval if possible. Is there any way to source the remaining 50 units from a different line or partner facility to hit 200 total? And separately, is day 40 a hard constraint, or is that just the standard lead time \u2014 could an expedited run get any portion of this to us closer to day 30, even at a modest premium?\n\nI'm flexible on price if it helps solve the timeline \u2014 I can move up from $44 if that unlocks faster delivery or the full quantity. But I do need both the full 200 units and a delivery date meaningfully closer to 30 days to make this work on my end. Let me know what flexibility exists outside the director approval track.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "I understand, and I don\u2019t want to overpromise against your production schedule. Day 40 is the earliest shipment I can commit to, and 150 units is the maximum quantity available within my authority. Sourcing the additional 50 elsewhere or expediting any portion before day 40 would still require written director approval, regardless of the price premium, and I can\u2019t obtain that approval during this conversation.\n\nSince 200 units and delivery meaningfully closer to day 30 are both firm requirements, I\u2019m unable to offer a compliant solution. Thank you for the opportunity, and I hope we can work together on a future requirement with more lead time.",
+    "status": "walk_away"
+  }
+]

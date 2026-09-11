@@ -1,0 +1,4 @@
+Internal Memo — 2026-09-11
+Re: LiFePO4 battery procurement (12V 100Ah, 200 units)
+
+No deal reached with supplier. Seller's firm authority was capped at 150 units, 45-day delivery, $49/unit; they indicated $45/unit was within their pricing authority but could not extend it without also getting quantity/timeline exceptions approved, which their director was unavailable to grant. We held firm on our 200-unit minimum and 30-day delivery requirement (per our authorized limits) and declined the partial-shipment offer as too exposed. Talks ended without agreement; no terms were finalized. Nothing committed on either side. Recommend revisiting once seller's director is reachable, or sourcing an alternate supplier in parallel to meet the 30-day window.

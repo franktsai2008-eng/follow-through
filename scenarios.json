@@ -241,7 +241,8 @@
       },
       "within_authority_deal_exists": true,
       "why": "ZOPA exists per ream (4.2–4.8 per ream = 21–24 per case vs floor 21); unit ambiguity is the trap",
-      "numeric_breach_check": false
+      "numeric_breach_check": false,
+      "units_per_case": 5
     },
     {
       "id": "G09",

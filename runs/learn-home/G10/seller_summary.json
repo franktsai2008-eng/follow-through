@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": 44,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "net-30",
+  "conditional_items": "The additional 50 units, any price below $44, and shipment before day 40 remain conditional on written sales director approval, which was unavailable; buyer indicated willingness to consider a follow-on order for the remaining 50 units if acceptable initial pricing and timing could be approved.",
+  "_memo": "Buyer declined our best authorized offer of 150 units at $44 per unit, with free freight, net-30 terms, and shipment on day 40. Their requirement was either 200 units below $45 each or 150 units meaningfully below $45, with delivery by day 30\u201332. They cited a competing offer of $45 per unit for all 200 units with 32-day delivery. No agreement was reached. The additional 50 units, any price below $44, and shipment before day 40 remain conditional on written sales director approval, which was unavailable. Buyer indicated willingness to consider a follow-on order for the remaining 50 units if acceptable initial pricing and timing could be approved."
+}

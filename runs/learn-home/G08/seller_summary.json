@@ -1,0 +1,9 @@
+{
+  "deal_closed": true,
+  "unit_price": 21,
+  "quantity": 40,
+  "delivery_days": 45,
+  "payment_terms": "net-30",
+  "conditional_items": "Freight cost is pending; if quote is $120 or less, ship without further approval (total capped at $960); if freight exceeds $120, shipment must be held pending buyer's written approval, and landed cost may not exceed $960 without that approval.",
+  "_memo": "Buyer accepted 40 cases (200 reams) at $21 per case, totaling $840, net-30, delivered to ZIP 60601. Schedule is 30 cases shipping on day 40 and 10 cases by day 45. Freight remains pending. Buyer has preauthorized actual freight up to $120; if the quote is $120 or less, proceed without further buyer approval and invoice no more than $960 total. If freight exceeds $120, hold shipment and obtain the buyer\u2019s written approval before proceeding. No shipment may result in a landed cost above $960 without that approval. Send the freight figure promptly when received."
+}

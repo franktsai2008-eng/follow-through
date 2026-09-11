@@ -1,0 +1,3 @@
+Internal memo — M8 stainless hex bolts negotiation, 2026-09-11
+
+No deal reached. Supplier's rep could offer only 150 boxes (vs. our required 200 in a single shipment) and a 40-day earliest ship date (vs. our 30-day requirement). I offered up to $50/unit to secure the full quantity and timeline, but the rep lacked authority to exceed 150 units or accelerate delivery, and could not obtain director approval during the call. Since our production line cannot use a partial shipment and 45 units of price flexibility didn't move quantity or timing, we closed without terms. Nothing is pending on our side; if we want to revisit, we'd need the supplier to come back after securing internal approval for higher stock and faster delivery, or we source elsewhere.
