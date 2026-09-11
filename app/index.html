@@ -1,87 +1,570 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Follow-Through</title>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Follow-Through</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbfaf7;--ink:#161616;--mute:#6b6b66;--line:#e2dfd8;--warn:#a4400f;--ok:#1f6f43;--a:#f3efe6;--b:#eef2f5}
-body{background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;margin:0;padding:28px 20px 80px}
-.wrap{max-width:1180px;margin:0 auto} h1{font-size:28px;margin:0 0 4px;letter-spacing:-.01em} h2{font-size:18px;margin:26px 0 8px} .m{color:var(--mute);font-size:13px}
-.grid{display:grid;grid-template-columns:400px 1fr;gap:22px;margin-top:18px} @media(max-width:900px){.grid{grid-template-columns:1fr}}
-label{display:block;font-size:13px;color:var(--mute);margin:12px 0 4px} textarea,select,input{width:100%;box-sizing:border-box;border:1px solid var(--line);background:#fff;padding:8px 10px;font:14px/1.45 inherit;color:var(--ink)} textarea{min-height:150px;resize:vertical}
-button{border:1px solid var(--ink);background:var(--ink);color:#fff;padding:9px 16px;font:14px inherit;cursor:pointer;margin-top:14px} button.ghost{background:#fff;color:var(--ink)} button:disabled{opacity:.5;cursor:default}
-.preset{display:flex;gap:6px;flex-wrap:wrap} .preset button{margin:0;padding:5px 10px;font-size:13px}
-.msg{border:1px solid var(--line);padding:10px 12px;margin:8px 0;max-width:86%;background:var(--a)} .msg.other{background:var(--b);margin-left:auto} .who{font-size:12px;color:var(--mute);margin-bottom:4px}
-.tag{display:inline-block;border:1px solid var(--line);padding:0 7px;border-radius:999px;font-size:11px;color:var(--mute);margin-left:6px;background:#fff} .tag.need{color:var(--warn);border-color:var(--warn)} .tag.ok{color:var(--ok);border-color:var(--ok)}
-.stage{font-size:13px;color:var(--mute);padding:8px 0} .stage.live::before{content:"● ";color:var(--warn)}
-.x{display:grid;grid-template-columns:1fr 1fr;gap:12px} .x>div,.card{background:#fff;border:1px solid var(--line);padding:12px} @media(max-width:700px){.x{grid-template-columns:1fr}}
-.act{border:1px solid var(--line);background:#fff;padding:10px 12px;margin:8px 0} .act .draft{display:none;white-space:pre-wrap;background:var(--a);padding:10px;margin-top:8px;font-size:13px} .act.open .draft{display:block}
-pre{white-space:pre-wrap;background:#fff;border:1px solid var(--line);padding:10px;font-size:13px}
-</style></head><body><div class=wrap>
-<h1>Follow-Through</h1>
-<div class=m>The tail of a deal, run by each side's own agent. Type your side. The other company's agent is simulated (GPT or Claude). They talk in plain prose. Each keeps its own record, a blind audit runs, and next actions wait for your approval.</div>
-<div class=grid>
-<div>
-<label>Flow</label>
-<div class=preset><button class=ghost data-p="price">agree a price</button><button class=ghost data-p="invoice">chase an invoice</button><button class=ghost data-p="delivery">chase a delivery</button><button class=ghost data-p="blank">blank</button></div>
-<label>Your side — role, what you want, your limits, one thing the other side can't see</label>
-<textarea id=my></textarea>
-<label>Their side (optional — leave empty and it will be written for you, hidden from your agent)</label>
-<textarea id=other style="min-height:90px"></textarea>
-<label>Their agent runs on</label>
-<select id=model><option value=gpt>GPT (codex)</option><option value=claude>Claude</option></select>
-<label>Max rounds</label>
-<input id=rounds type=number value=6 min=2 max=8>
-<label><input id=uselessons type=checkbox checked style="width:auto"> use lessons from earlier cases</label>
-<button id=run>Run</button> <button class=ghost id=clear>clear lessons</button>
-<div id=err class=m style="color:var(--warn)"></div>
-<h2>Lessons your agent has written so far</h2>
-<pre id=lessons class=m>(none yet)</pre>
-</div>
-<div>
-<div id=stage class=stage>idle</div>
-<div id=thread></div>
-<div id=after hidden>
-<h2>Their card (written for this run)</h2><div id=othercard class="card m"></div>
-<h2>Two records of the same conversation</h2>
-<div class=x><div><b>your record</b><div id=recme class=m></div></div><div><b>their record</b><div id=recother class=m></div></div></div>
-<h2>Blind audit</h2>
-<div class=x><div><b>your agent</b><div id=audme class=m></div></div><div><b>their agent</b><div id=audother class=m></div></div></div>
-<h2>Next actions — nothing leaves without you</h2>
-<div id=actions></div>
-<h2>Lesson written after this case</h2><div id=lesson class=card></div>
-</div>
-</div>
-</div></div>
+:root{
+--bg:#000;--surface:#0a0a0a;--surface2:#111;--hairline:#1f1f1f;--hairline2:#2a2a2a;
+--ink:#f2f2f2;--muted:#8c8c8c;--faint:#4d4d4d;
+--me:#fff;--them:#6b7cff;--ok:#3ddc84;--warn:#ffb020;--bad:#ff5c5c;
+--mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;--ui:"Helvetica Neue","Inter",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;max-width:100%}
+body{background:var(--bg);color:var(--ink);font-family:"JetBrains Mono",ui-monospace,monospace;font-size:16px;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h2,h3{margin:0;font-weight:500}
+button{font:inherit}
+::placeholder{color:var(--faint)}
+/* ---------- top bar ---------- */
+.bar{position:sticky;top:0;z-index:20;min-height:56px;display:flex;align-items:center;gap:16px;
+ padding:0 20px;border-bottom:1px solid var(--hairline);background:var(--bg);flex-wrap:wrap}
+.mark{font-size:26px;font-weight:600;letter-spacing:-.012em;white-space:nowrap}
+.tagline{font-family:var(--ui);font-size:16px;color:var(--muted);border-left:1px solid var(--hairline2);padding-left:16px}
+.grow{flex:1 1 24px}
+.state{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--hairline2);border-radius:999px;
+ padding:5px 16px;font:12px/1 var(--mono);color:var(--muted);white-space:nowrap;max-width:46vw;overflow:hidden;text-overflow:ellipsis}
+.state .dot{background:var(--faint)}
+.state.live .dot{background:var(--warn);animation:blink 1.4s ease-out infinite}
+.state.done .dot{background:var(--ok)}.state.bad .dot{background:var(--bad)}
+.state.done,.state.live,.state.bad{color:var(--ink)}
+.tools{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.tool{display:flex;align-items:center;gap:6px;font:12px/1 var(--mono);color:var(--muted);cursor:default}
+.dot{width:7px;height:7px;border-radius:999px;background:var(--faint);flex:none}
+.dot.ok{background:var(--ok)}.dot.warn{background:var(--warn)}.dot.bad{background:var(--bad)}
+.tool .det{display:none;color:var(--muted);font-size:12px}
+/* ---------- shell ---------- */
+.shell{display:grid;grid-template-columns:320px minmax(0,1fr) 400px;grid-template-areas:"form thread rail"}
+.pane{min-width:0;padding:20px;height:calc(100vh - 57px);overflow-y:auto;overflow-x:hidden}
+.form{grid-area:form;border-right:1px solid var(--hairline)}
+.thread{grid-area:thread}
+.rail{grid-area:rail;border-left:1px solid var(--hairline)}
+@media(max-width:1279px){
+ .shell{grid-template-columns:300px minmax(0,1fr);grid-template-areas:"form thread" "form rail"}
+ .pane{height:auto;overflow:visible}
+ .rail{border-left:0;border-top:1px solid var(--hairline)}
+}
+@media(max-width:899px){
+ .shell{grid-template-columns:minmax(0,1fr);grid-template-areas:"form" "thread" "rail"}
+ .form{border-right:0;border-bottom:1px solid var(--hairline)}
+ .tagline{display:none}.tool .det{display:inline;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .bar{position:static;padding:12px 16px;gap:12px}.mark{font-size:16px}.grow{flex-basis:100%}.pane{padding:16px}
+}
+/* ---------- primitives ---------- */
+.eyebrow{font:500 12px/1.4 var(--mono);letter-spacing:.04em;color:var(--muted)}
+.card{border:1px solid var(--hairline);border-radius:12px;background:var(--surface);padding:16px;margin:0 0 16px}
+.card>.eyebrow{margin-bottom:12px;display:block}
+.muted{color:var(--muted)}
+.err{color:var(--bad);font-size:16px;margin-top:8px;word-break:break-word}
+.sec{margin:0 0 18px}
+.sec>label,.row>div>label{display:block;font-size:12px;letter-spacing:.04em;color:var(--muted);margin:0 0 6px}
+input,select,textarea{width:100%;background:var(--surface2);color:var(--ink);border:1px solid var(--hairline2);
+ border-radius:6px;padding:8px 12px;font:16px/1.5 var(--ui);min-width:0}
+textarea{resize:vertical;min-height:92px}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--muted);outline-offset:-1px;border-color:var(--muted)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{background:var(--me);color:#000;border:1px solid var(--me);border-radius:999px;padding:9px 18px;
+ font:500 16px var(--ui);cursor:pointer;transition:opacity .16s ease-out,transform .16s ease-out}
+.btn:hover{opacity:.85}.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.4;cursor:default;transform:none}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--hairline2)}
+.btn.sm{padding:6px 16px;font-size:16px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{background:transparent;color:var(--muted);border:1px solid var(--hairline2);border-radius:999px;
+ padding:5px 11px;font:16px var(--ui);cursor:pointer;transition:opacity .16s ease-out}
+.seg button:hover{opacity:.8}
+.seg button[aria-pressed=true]{background:var(--me);color:#000;border-color:var(--me)}
+.tog{display:flex;align-items:center;gap:8px;font-family:var(--ui);font-size:16px;color:var(--muted);margin:0 0 8px;cursor:pointer}
+.tog input{width:auto;accent-color:var(--me);margin:0}
+summary{cursor:pointer;font-family:var(--ui);font-size:16px;color:var(--muted);list-style:none;margin-bottom:6px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ ";color:var(--muted)}
+details[open] summary::before{content:"- "}
+.chip{display:inline-block;border:1px solid var(--hairline2);border-radius:4px;padding:1px 7px;
+ font:16px/1.5 var(--mono);color:var(--muted);white-space:nowrap}
+.chip.ok{color:var(--ok)}.chip.warn{color:var(--warn)}.chip.bad{color:var(--bad)}.chip.on{color:var(--ink)}
+.mono{font:16px/1.6 var(--mono);color:var(--ink)}
+pre.out{font:16px/1.6 var(--mono);color:var(--ink);background:var(--surface2);border-radius:6px;padding:12px 12px;
+ margin:8px 0 0;overflow-x:auto;white-space:pre;max-height:220px;overflow-y:auto}
+/* ---------- left rail ---------- */
+.lessonlist{margin:0;padding:0 0 0 18px;font-family:var(--ui);font-size:16px;color:var(--muted)}
+.lessonlist li{margin:0 0 6px}
+.runs{list-style:none;margin:0;padding:0}
+.runs li{border-top:1px solid var(--hairline);padding:8px 0}
+.runitem{display:block;width:100%;text-align:left;background:transparent;border:0;color:var(--ink);
+ padding:0;cursor:pointer;font:16px var(--ui);transition:opacity .16s ease-out}
+.runitem:hover{opacity:.7}
+.runitem .m{font:12px/1.5 var(--mono);color:var(--muted);display:block}
+/* ---------- thread ---------- */
+.empty{color:var(--muted);font-family:var(--ui);font-size:26px;max-width:17em;line-height:1.5;margin-top:8px}
+.empty b{color:var(--ink);font-weight:500}
+.strip{border:1px solid var(--hairline);border-radius:12px;background:var(--surface);padding:14px 16px;margin:0 0 16px}
+.strip p{margin:4px 0 0;font-family:var(--ui);font-size:16px;color:var(--ink);word-break:break-word}
+.strip p+.eyebrow{margin-top:12px;display:block}
+.ref{border:1px solid var(--hairline);border-radius:12px;background:var(--surface2);padding:14px 16px;margin:0 0 16px}
+.ref .line{font:16px/1.65 var(--mono);color:var(--ink);margin:8px 0}
+.msg{border:1px solid var(--hairline);border-left:2px solid var(--me);border-radius:8px;background:var(--surface);
+ padding:12px 14px;margin:0 0 12px;max-width:92%;word-break:break-word}
+.msg.other{border-left:1px solid var(--hairline);border-right:2px solid var(--them);margin-left:auto}
+.who{font:12px/1.5 var(--mono);color:var(--muted);margin-bottom:6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.msg.other .who .nm{color:var(--them)}
+.msg .who .nm{color:var(--ink)}
+.txt{white-space:pre-wrap;font-family:var(--ui);font-size:16px;line-height:1.65}
+.typing{font:12px/1.5 var(--mono);color:var(--muted);padding:6px 2px}
+.typing i{display:inline-block;width:4px;height:4px;border-radius:999px;background:var(--muted);margin-right:4px;
+ animation:blink 1.2s ease-out infinite}
+.typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+@keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}
+.banner{border:1px solid var(--hairline2);border-radius:8px;padding:12px 14px;font:16px/1.6 var(--mono);margin:4px 0 12px}
+.banner.ok{color:var(--ok)}.banner.bad{color:var(--bad)}.banner.warn{color:var(--warn)}
+/* ---------- records / audit ---------- */
+.rgrid{border-top:1px solid var(--hairline)}
+.rrow{display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1fr);border-bottom:1px solid var(--hairline)}
+.rrow>div{padding:7px 8px;font:12px/1.5 var(--mono);overflow-wrap:break-word;min-width:0}
+.rrow .k{color:var(--muted)}
+.rrow.head>div{color:var(--muted);font-size:12px;letter-spacing:.04em}
+.rrow.identical{background:rgba(61,220,132,.07)}
+.rrow.equivalent{background:rgba(255,176,32,.08)}
+.rrow.conflict{background:rgba(255,92,92,.1)}
+.tagend{font-size:12px;color:var(--muted);display:block;margin-top:3px}
+.arow{display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1fr);border-bottom:1px solid var(--hairline)}
+.arow>div{padding:8px;min-width:0;font:12px/1.6 var(--mono);overflow-wrap:break-word}
+.arow.head>div{color:var(--muted);font-size:12px;letter-spacing:.04em}
+.arow .k{color:var(--muted)}
+.arow .chip,.rrow .chip{font-size:12px;margin:0 4px 3px 0;white-space:normal;display:inline-block;max-width:100%}
+/* ---------- actions ---------- */
+.act{border-top:1px solid var(--hairline);padding:14px 0 4px}
+.act:first-of-type{border-top:0;padding-top:0}
+.act h3{font-family:var(--ui);font-size:16px;margin:0 0 6px}
+.act .why{font-family:var(--ui);font-size:16px;color:var(--muted);margin:6px 0 12px}
+.act label{display:block;font-size:12px;color:var(--muted);margin:8px 0 4px;font-family:var(--mono);letter-spacing:.04em}
+.act textarea{min-height:120px;font:16px/1.6 var(--mono)}
+.act input{font:16px var(--mono)}
+.acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.receipt{font:16px/1.6 var(--mono);color:var(--ok);word-break:break-word}
+.learned{font:16px/1.6 var(--mono);color:var(--warn);word-break:break-word;margin-top:8px}
+#learnedBox{font-family:var(--ui);font-size:26px;line-height:1.6}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head>
+<body>
+<header class="bar">
+ <span class="mark">Follow-Through</span>
+ <span class="tagline">the tail of a deal, run by each side&#39;s own agent</span>
+ <span class="grow"></span>
+ <span class="state" id="state"><span class="dot"></span><span id="stateTxt">idle</span></span>
+ <span class="grow"></span>
+ <div class="tools" id="tools"></div>
+</header>
+
+<main class="shell">
+ <section class="pane form">
+  <div class="sec row">
+   <div><label for="coMe">Your company</label><input id="coMe" value="Northline Procurement"></div>
+   <div><label for="coOther">Their company</label><input id="coOther" value="Harbor Packaging"></div>
+  </div>
+  <div class="sec">
+   <label>Flow</label>
+   <div class="seg" id="seg">
+    <button type="button" data-p="price" aria-pressed="true">agree a price</button>
+    <button type="button" data-p="invoice" aria-pressed="false">chase an invoice</button>
+    <button type="button" data-p="delivery" aria-pressed="false">chase a delivery</button>
+    <button type="button" data-p="blank" aria-pressed="false">blank</button>
+   </div>
+  </div>
+  <div class="sec">
+   <label for="my">Your card &mdash; role, what you want, your limits, one thing the other side cannot see</label>
+   <textarea id="my"></textarea>
+  </div>
+  <details class="sec"><summary>Their card (optional &mdash; written for you if empty)</summary>
+   <textarea id="other" style="min-height:72px"></textarea></details>
+  <div class="sec"><label for="rcpt">Follow-up goes to</label><input id="rcpt" type="email" value="franktsai.2008@gmail.com"></div>
+  <div class="sec row">
+   <div><label for="model">Their agent runs on</label>
+    <select id="model"><option value="gpt">GPT (Codex)</option><option value="claude">Claude</option></select></div>
+   <div><label for="rounds">Max rounds</label><input id="rounds" type="number" value="6" min="2" max="8"></div>
+  </div>
+  <div class="sec">
+   <label class="tog"><input type="checkbox" id="useLessons" checked> use lessons from earlier cases</label>
+   <label class="tog"><input type="checkbox" id="ground" checked> ground both cards with a You.com search</label>
+  </div>
+  <button class="btn" id="run">Run</button>
+  <div class="err" id="runErr"></div>
+  <div class="card" style="margin-top:20px">
+   <span class="eyebrow">RECALLED &middot; USED AT THE START OF THIS RUN <span class="chip" id="lessonCount">0</span></span>
+   <ol class="lessonlist" id="lessonList"></ol>
+   <div class="muted" id="lessonNone" style="font-size:16px">No lessons yet. The first run writes one.</div>
+   <button class="btn ghost sm" id="clearLessons" style="margin-top:12px">clear lessons</button>
+   <div class="err" id="lessonErr"></div>
+  </div>
+  <div class="card">
+   <span class="eyebrow">PAST RUNS</span>
+   <ul class="runs" id="runsList"></ul>
+   <div class="muted" id="runsNone" style="font-size:16px">None yet.</div>
+  </div>
+ </section>
+
+ <section class="pane thread">
+  <div id="summary"></div>
+  <div id="refBox"></div>
+  <div id="threadBox"><div class="empty">
+   <b>Type your side</b> &mdash; your role, what you want, and the limit you cannot cross.<br>
+   <b>Two agents talk in plain prose</b> &mdash; yours and the other company&#39;s, each with its own card.<br>
+   <b>You approve what leaves</b> &mdash; nothing is sent until you press the button.</div></div>
+  <div id="bannerBox"></div>
+ </section>
+
+ <section class="pane rail" id="rail"></section>
+</main>
 <script>
-const P={
+(function(){
+"use strict";
+var PRESET={
 price:"I'm the procurement manager. I need 200 units of 20L UN-rated HDPE drums. Target $44/unit, ceiling $48. Delivery within 30 days preferred; up to 45 days is fine if the price is at or below $44. I can take 150 now and 50 later if the price holds. Hidden: my total approved budget is $9,600; anything above needs the CFO and that takes two weeks. My card says nothing about payment terms or freight.",
 invoice:"I'm the accounts receivable specialist at the supplier. Invoice #4519 for PoE switches, $9,400, is 20 days overdue. I must get a committed payment date. On my own I can extend up to 15 days and offer 2% off for payment within 7 days. Anything above 2%, or waiving the $150 late fee, needs my finance manager. Hidden: quarter closes in 6 days and collecting this week matters to my team.",
 delivery:"I'm the project lead at the buyer. The supplier promised 150 fixtures by day 40; it's day 38 and I have no shipping confirmation. I need a firm ship date and tracking. I can accept a split shipment if the first 100 ship by day 42. I cannot agree to any price change or extra fees without my director. Hidden: our install crew is booked for day 45 and every day of delay after that costs $800.",
 blank:""};
-const $=s=>document.querySelector(s); let timer=null;
-document.querySelectorAll('.preset button').forEach(b=>b.onclick=()=>{$('#my').value=P[b.dataset.p]; $('#other').value='';});
-$('#my').value=P.price;
-async function loadLessons(){const r=await fetch('/lessons').then(r=>r.json()); $('#lessons').textContent=r.lessons.trim()||'(none yet)';}
-loadLessons();
-$('#clear').onclick=async()=>{await fetch('/lessons/clear',{method:'POST'}); loadLessons();};
-function tag(b){const c=b==='names its limit'?'need':(b==='accepts'?'ok':''); return `<span class="tag ${c}">${b}</span>`;}
-function rec(r){if(!r) return '—'; if(r.parse_error) return 'could not parse'; return `deal closed: <b>${r.deal_closed}</b><br>amount/price: ${r.amount_or_price??'—'}<br>quantity/scope: ${r.quantity_or_scope??'—'}<br>date/delivery: ${r.date_or_delivery??'—'}<br>payment: ${r.payment_terms??'—'}<br>conditional: ${r.conditional_items||'—'}`;}
-function aud(a){if(!a) return '—'; return `binding deal in exchange: <b>${a.binding_deal_in_exchange}</b><br>committed beyond authority: <b style="color:${a.committed_beyond_authority?'var(--warn)':'var(--ok)'}">${a.committed_beyond_authority}</b> ${a.beyond_authority_evidence?'— '+a.beyond_authority_evidence:''}<br>flagged need for approval: <b>${a.flagged_need_for_approval}</b> ${a.flag_evidence?'— '+a.flag_evidence:''}<br>left ambiguous: ${a.left_ambiguous||'—'}`;}
-function render(J){
-  $('#stage').textContent=J.status==='running'?J.stage:(J.status==='error'?'error: '+J.error:'done — '+(J.end||'').replace(/_/g,' '));
-  $('#stage').className='stage'+(J.status==='running'?' live':'');
-  $('#thread').innerHTML=(J.messages||[]).map(m=>`<div class="msg ${m.side}"><div class=who>${m.side==='me'?'your agent (Claude)':'their agent'} · round ${m.round} ${tag(m.badge)}</div>${m.text.replace(/</g,'&lt;')}</div>`).join('');
-  if(J.status==='done'){
-    $('#after').hidden=false; $('#othercard').textContent=J.other_card||'';
-    $('#recme').innerHTML=rec(J.records?.me); $('#recother').innerHTML=rec(J.records?.other);
-    $('#audme').innerHTML=aud(J.audit?.me); $('#audother').innerHTML=aud(J.audit?.other);
-    $('#actions').innerHTML=(J.actions||[]).map((a,i)=>`<div class=act id=act${i}><b>${a.action}</b> ${a.needs_approval?'<span class="tag need">requires your approval</span>':'<span class=tag>no approval needed</span>'}<div class=m>${a.why||''}</div>${a.draft?`<button class=ghost onclick="document.getElementById('act${i}').classList.toggle('open')">show draft</button><div class=draft>${a.draft.replace(/</g,'&lt;')}</div>`:''} <button onclick="this.textContent='approved (nothing sent — this is where One would carry it out)';this.disabled=true">approve</button></div>`).join('');
-    $('#lesson').textContent=J.lesson||''; loadLessons();
-  }
+var DEF_RCPT="franktsai.2008@gmail.com";
+var $=function(s){return document.querySelector(s);};
+var esc=function(s){return String(s===null||s===undefined?"":s).replace(/[&<>"']/g,function(c){
+ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});};
+var JOB=null,curId=null,timer=null,crewUntil=0,finished=false,actKey="",flow="price",MODELS={me:"Claude",other:"GPT"};
+var LESSONS=[],startLessons=[];
+
+function jget(u){return fetch(u).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});}
+function jpost(u,b){return fetch(u,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)})
+ .then(function(r){return r.json().catch(function(){return {error:"server returned a non-JSON response ("+r.status+")"};});})
+ .catch(function(e){return {error:"could not reach the server: "+e.message};});}
+function short(n){return String(n||"").split(/\s+/)[0]||"";}
+
+/* ---------- top bar ---------- */
+var TOOLS=[["youcom","You.com"],["crewai","CrewAI"],["one","One"],["one_memory","One memory"],["daytona","Daytona"]];
+function paintTools(s){
+ var h="";
+ for(var i=0;i<TOOLS.length;i++){
+  var k=TOOLS[i][0],t=(s&&s[k])||null,cls="",det="";
+  if(t){cls=t.ok?"ok":"warn";det=t.detail||"";}
+  h+='<span class="tool" title="'+esc(TOOLS[i][1]+(det?": "+det:": status unknown"))+'">'+
+     '<span class="dot '+cls+'"></span>'+esc(TOOLS[i][1])+
+     (det?'<span class="det">'+esc(det)+'</span>':'')+'</span>';
+ }
+ $("#tools").innerHTML=h;
 }
-$('#run').onclick=async()=>{
-  $('#err').textContent=''; $('#after').hidden=true; $('#thread').innerHTML=''; $('#run').disabled=true;
-  const body={flow:document.activeElement?.dataset?.p||'custom',my_card:$('#my').value,other_card:$('#other').value,other_model:$('#model').value,max_rounds:+$('#rounds').value,use_lessons:$('#uselessons').checked};
-  const r=await fetch('/run',{method:'POST',body:JSON.stringify(body)}).then(r=>r.json());
-  if(r.error){$('#err').textContent=r.error;$('#run').disabled=false;return;}
-  clearInterval(timer); timer=setInterval(async()=>{const J=await fetch('/job?id='+r.id).then(r=>r.json()); render(J); if(J.status!=='running'){clearInterval(timer);$('#run').disabled=false;}},1500);
+function loadStatus(){
+ jget("/status").then(function(s){
+  paintTools(s);
+  if(!s)return;
+  if(s.models){MODELS.me=s.models.me||MODELS.me;MODELS.other=s.models.other||MODELS.other;}
+  var r=s.recipient||s.recipient_default||(s.recipients&&s.recipients[0])||"";
+  if(r&&!$("#rcpt").value)$("#rcpt").value=r;
+ });
+}
+function setState(cls,txt){
+ var e=$("#state");e.className="state"+(cls?" "+cls:"");$("#stateTxt").textContent=txt;
+}
+
+/* ---------- lessons ---------- */
+function normLessons(d){
+ if(!d)return[];
+ var raw=Array.isArray(d)?d:(Array.isArray(d.lessons)?d.lessons:(typeof d.lessons==="string"?d.lessons.split("\n"):[]));
+ var out=[];
+ for(var i=0;i<raw.length;i++){var t=String(raw[i]||"").replace(/^\s*-\s*/,"").trim();if(t)out.push(t);}
+ return out;
+}
+function paintLessons(list){
+ LESSONS=list;
+ $("#lessonCount").textContent=list.length;
+ $("#lessonNone").style.display=list.length?"none":"block";
+ var h="";for(var i=0;i<list.length;i++)h+="<li>"+esc(list[i])+"</li>";
+ $("#lessonList").innerHTML=h;
+}
+function loadLessons(){jget("/lessons").then(function(d){paintLessons(normLessons(d));});}
+
+/* ---------- past runs ---------- */
+function loadRuns(){
+ jget("/runs").then(function(d){
+  var rows=Array.isArray(d)?d:[];
+  $("#runsNone").style.display=rows.length?"none":"block";
+  var h="";
+  for(var i=0;i<rows.length&&i<12;i++){var r=rows[i]||{};
+   h+='<li><button class="runitem" type="button" data-id="'+esc(r.id)+'">'+
+      esc((r.flow||"run")+" · "+(short(r.company_me)||"")+" / "+(short(r.company_other)||""))+
+      '<span class="m">'+esc((r.id||"")+(r.created_at?" · "+String(r.created_at).replace("T"," ").slice(5,16):"")+" · "+String(r.end||r.status||"").replace(/_/g," "))+'</span></button></li>';}
+  $("#runsList").innerHTML=h;
+  var bs=$("#runsList").querySelectorAll(".runitem");
+  for(var j=0;j<bs.length;j++)bs[j].onclick=function(){openRun(this.getAttribute("data-id"));};
+ });
+}
+function openRun(id){
+ if(timer){clearInterval(timer);timer=null;}
+ curId=id;actKey="";
+ jget("/job?id="+encodeURIComponent(id)).then(function(J){if(J){finished=J.status!=="running";render(J);} });
+}
+
+/* ---------- render: thread ---------- */
+function badgeChip(b){
+ if(!b)return"";
+ var c=b==="accepts"?"ok":(b==="walked away"?"bad":(b==="names its limit"?"warn":""));
+ return '<span class="chip '+c+'">'+esc(b)+"</span>";
+}
+function renderThread(J){
+ var msgs=J.messages||[],h="",i,m;
+ var nm=short(J.params&&J.params.company_me)||"you",no=short(J.params&&J.params.company_other)||"them";
+ var mm=MODELS.me,mo=(J.params&&J.params.other_model==="claude")?"Claude":MODELS.other;
+ for(i=0;i<msgs.length;i++){m=msgs[i]||{};
+  h+='<div class="msg '+(m.side==="other"?"other":"me")+'"><div class="who"><span class="nm">'+
+     esc((m.side==="other"?no:nm)+" · "+(m.side==="other"?"their agent":"your agent")+" · "+(m.side==="other"?mo:mm))+
+     "</span><span>round "+esc(m.round)+"</span>"+badgeChip(m.badge)+"</div>"+
+     '<div class="txt">'+esc(m.text)+"</div></div>";
+ }
+ if(J.status==="running")h+='<div class="typing"><i></i><i></i><i></i>'+
+   esc((msgs.length&&msgs[msgs.length-1].side==="me")?no+" agent is writing":nm+" agent is writing")+"…</div>";
+ $("#threadBox").innerHTML=h||'<div class="empty">No messages in this run.</div>';
+ /* reference */
+ if(J.reference&&J.reference.line){
+  var r=J.reference,src="",k;
+  for(k=0;k<(r.sources||[]).length;k++)src+='<span class="chip">'+esc(r.sources[k])+"</span> ";
+  $("#refBox").innerHTML='<div class="ref"><span class="eyebrow">PUBLIC MARKET REFERENCE · '+
+    esc(r.via||"You.com Search API")+(r.fetched?" · fetched "+esc(r.fetched):"")+'</span>'+
+    '<div class="line">'+esc(r.line)+"</div>"+src+
+    '<div class="muted" style="font-size:12px;margin-top:8px">same line on both cards</div></div>';
+ }else $("#refBox").innerHTML="";
+ /* banner */
+ var b="";
+ if(J.status==="error")b='<div class="banner bad">error · '+esc(J.error||"run failed")+"</div>";
+ else if(J.status==="done"&&J.end){
+  var cls=J.end==="both_accepted"?"ok":(J.end==="max_rounds"?"warn":"bad");
+  b='<div class="banner '+cls+'">'+esc(String(J.end).replace(/_/g," "))+"</div>";
+ }
+ $("#bannerBox").innerHTML=b;
+ /* summary strip: Recalled / Learned always in view */
+ var rec=J.recalled||((J.params&&J.params.use_lessons)?startLessons:[]),lrn=J.learned||J.lesson||"",s="";
+ if(rec.length||lrn){
+  s='<div class="strip">';
+  s+='<span class="eyebrow">RECALLED · LESSONS IN PLAY FOR THIS RUN</span>';
+  var om=J.one_memory||{};
+  var head=[],hi;
+  for(hi=0;hi<rec.length&&hi<2;hi++)head.push(rec[hi].length>150?rec[hi].slice(0,150)+"…":rec[hi]);
+  s+="<p>Recalled: "+(rec.length?esc(head.join("  │  "))+(rec.length>2?esc("  │  +"+(rec.length-2)+" more"):""):"none — first case")+
+   (om.recalled_records?' <span class="chip">'+esc(om.recalled_records)+" records in One memory</span>":"")+"</p>";
+  if(lrn){s+='<span class="eyebrow">LEARNED · USED ON THE NEXT RUN</span><p>Learned: '+esc(lrn)+"</p>";}
+  s+="</div>";
+ }
+ $("#summary").innerHTML=s;
+}
+
+/* ---------- render: right rail ---------- */
+var R_ROWS=[["amount_or_price","amount / price"],["quantity_or_scope","quantity / scope"],
+ ["date_or_delivery","date / delivery"],["payment_terms","payment terms"],["conditional_items","conditional"]];
+function recCard(J){
+ var a=(J.records&&J.records.me)||null,b=(J.records&&J.records.other)||null,d=J.record_diff||{};
+ if(!a&&!b)return"";
+ var h='<div class="card"><span class="eyebrow">RECORDS · TWO RECORDS OF ONE DEAL</span>';
+ h+='<div class="rrow head"><div>field</div><div>your record</div><div>their record</div></div>';
+ h+='<div class="rrow"><div class="k">deal closed</div><div>'+
+    '<span class="chip '+((a&&a.deal_closed)?"ok":"")+'">'+esc(a?String(a.deal_closed):"—")+"</span></div><div>"+
+    '<span class="chip '+((b&&b.deal_closed)?"ok":"")+'">'+esc(b?String(b.deal_closed):"—")+"</span></div></div>";
+ for(var i=0;i<R_ROWS.length;i++){
+  var k=R_ROWS[i][0],v=d[k]||"",cls=(v==="identical"||v==="equivalent"||v==="conflict")?v:"";
+  h+='<div class="rrow '+cls+'"><div class="k">'+esc(R_ROWS[i][1])+"</div>"+
+     "<div>"+esc((a&&a[k])||"—")+"</div><div>"+esc((b&&b[k])||"—")+
+     (v?'<span class="tagend">'+esc(v)+"</span>":"")+"</div></div>";
+ }
+ return h+"</div>";
+}
+function audCell(x){
+ if(!x)return'<span class="chip">—</span>';
+ return '<span class="chip '+(x.committed_beyond_authority?"bad":"ok")+'">beyond authority: '+(x.committed_beyond_authority?"yes":"no")+"</span>"+
+  '<span class="chip '+(x.flagged_need_for_approval?"ok":"warn")+'">named its limit: '+(x.flagged_need_for_approval?"yes":"no")+"</span>";
+}
+function crewCell(c,side){
+ if(!c)return'<span class="chip">not run</span>';
+ if(c.status==="running")return'<span class="chip warn">running…</span>';
+ if(c.status==="skipped")return'<span class="chip">not run</span>';
+ if(c.status==="error")return'<span class="chip bad">error</span>';
+ var agree=c.agrees&&c.agrees[side]===false?'<span class="chip bad">disagree</span>':"";
+ return audCell(c[side])+agree;
+}
+function audCard(J){
+ if(!J.audit)return"";
+ var h='<div class="card"><span class="eyebrow">BLIND AUDIT · TWO MODELS, SAME QUESTIONS</span>';
+ h+='<div class="arow head"><div></div><div>single model</div><div>CrewAI crew</div></div>';
+ h+='<div class="arow"><div class="k">your agent</div><div>'+audCell(J.audit.me)+"</div><div>"+crewCell(J.crew_audit,"me")+"</div></div>";
+ h+='<div class="arow"><div class="k">their agent</div><div>'+audCell(J.audit.other)+"</div><div>"+crewCell(J.crew_audit,"other")+"</div></div>";
+ var ev=(J.audit.me&&J.audit.me.left_ambiguous)||"";
+ if(ev)h+='<div class="muted" style="font-size:16px;margin-top:10px">left ambiguous: '+esc(ev)+"</div>";
+ return h+"</div>";
+}
+function actCard(J){
+ var acts=J.actions||[];
+ if(!acts.length)return"";
+ var h='<div class="card"><span class="eyebrow">NEXT ACTIONS · NOTHING LEAVES WITHOUT YOU</span>';
+ for(var i=0;i<acts.length;i++){var a=acts[i]||{};
+  h+='<div class="act" id="act'+i+'"><h3>'+esc(a.action)+"</h3>"+
+     (a.needs_approval?'<span class="chip warn">requires your approval</span>':'<span class="chip">no approval needed</span>')+
+     (a.why?'<div class="why">'+esc(a.why)+"</div>":'<div class="why"></div>');
+  if(a.state==="sent"&&a.sent){
+   h+='<div class="receipt">sent via One · Gmail message id '+esc(a.sent.message_id)+
+      (a.sent.at?" · "+esc(a.sent.at):"")+"</div>";
+  }else if(a.state==="rejected"){
+   h+='<div class="learned">Learned: '+esc(a.learned||a.reject_reason||"noted")+"</div>";
+  }else{
+   h+='<label for="to'+i+'">To</label><input id="to'+i+'" type="email">'+
+      '<label for="su'+i+'">Subject</label><input id="su'+i+'">'+
+      '<label for="bd'+i+'">Body</label><textarea id="bd'+i+'"></textarea>'+
+      '<div class="acts"><button class="btn sm" data-ap="'+i+'">Approve &amp; send</button>'+
+      '<button class="btn ghost sm" data-rj="'+i+'">Reject</button></div>'+
+      '<div id="rj'+i+'" hidden><label for="rr'+i+'">Why not</label><input id="rr'+i+'" placeholder="what was wrong with it">'+
+      '<div class="acts"><button class="btn ghost sm" data-rs="'+i+'">Submit reason</button></div></div>'+
+      '<div class="err" id="ae'+i+'"></div>';
+  }
+  h+="</div>";
+ }
+ return h+"</div>";
+}
+function replayCard(J){
+ var r=J.replay||null;
+ var h='<div class="card"><span class="eyebrow">THIRD-PARTY REPLAY · DAYTONA</span>'+
+   '<div class="muted" style="font-size:16px">Replay the scoring in a box neither company controls. Only the records go in.</div>';
+ if(!r||r.status==="waiting_for_key"){
+  h+='<div class="acts"><button class="btn ghost sm" id="replayBtn">Replay in a Daytona sandbox</button></div>';
+  if(r&&r.status==="waiting_for_key"){
+   h+='<div class="chip warn" style="margin-top:10px">waiting for key</div>'+
+      '<pre class="out">'+esc((r.files||[]).join("\n")+"\n$ "+(r.command||""))+"</pre>";
+  }
+ }else if(r.status==="running"){h+='<div class="chip warn" style="margin-top:10px">running…</div>';}
+ else if(r.status==="done"){
+  h+='<div style="margin-top:10px"><span class="chip '+(r.exit_code===0?"ok":"bad")+'">exit '+esc(r.exit_code)+"</span>"+
+     (r.sandbox_id?'<span class="chip">'+esc(r.sandbox_id)+"</span>":"")+"</div>"+
+     '<pre class="out">'+esc(r.output||"")+"</pre>";
+ }else if(r.status==="error"){h+='<div class="err">'+esc(r.error||r.output||"replay failed")+"</div>";}
+ return h+'<div class="err" id="replayErr"></div></div>';
+}
+function memLine(J){
+ var m=(J.one_memory||{}).learned;
+ if(!m||!m.id)return"";
+ return '<div class="muted" style="font-size:12px;margin-top:10px">also stored in One memory · id '+
+  esc(m.id)+(m.at?" · "+esc(m.at):"")+"</div>";
+}
+function learnCard(J){
+ var lrn=J.learned||J.lesson||"";
+ if(!lrn)return"";
+ return '<div class="card"><span class="eyebrow">LEARNED · USED ON THE NEXT RUN</span>'+
+  '<div id="learnedBox">Learned: '+esc(lrn)+"</div>"+memLine(J)+"</div>";
+}
+function renderRail(J){
+ if(J.status==="running"&&!(J.messages||[]).length){$("#rail").innerHTML="";return;}
+ var key=curId+"|"+((J.actions||[]).length)+"|"+(J.actions||[]).map(function(a){return a.state||"p";}).join(",");
+ var keepActs=(key===actKey);
+ var pre=keepActs?document.querySelectorAll("#rail .act input,#rail .act textarea"):[];
+ var saved={};for(var i=0;i<pre.length;i++)saved[pre[i].id]=pre[i].value;
+ $("#rail").innerHTML=recCard(J)+audCard(J)+actCard(J)+replayCard(J)+learnCard(J);
+ actKey=key;
+ var acts=J.actions||[];
+ for(var j=0;j<acts.length;j++){
+  var a=acts[j]||{},to=$("#to"+j),su=$("#su"+j),bd=$("#bd"+j);
+  if(to)to.value=saved["to"+j]!==undefined?saved["to"+j]:(a.to||$("#rcpt").value||DEF_RCPT);
+  if(su)su.value=saved["su"+j]!==undefined?saved["su"+j]:(a.subject||a.action||"");
+  if(bd)bd.value=saved["bd"+j]!==undefined?saved["bd"+j]:(a.draft||"");
+ }
+ wireRail();
+}
+function wireRail(){
+ var i,b,bs=$("#rail").querySelectorAll("[data-ap]");
+ for(i=0;i<bs.length;i++)bs[i].onclick=function(){approve(+this.getAttribute("data-ap"),this);};
+ bs=$("#rail").querySelectorAll("[data-rj]");
+ for(i=0;i<bs.length;i++)bs[i].onclick=function(){var n=this.getAttribute("data-rj");$("#rj"+n).hidden=false;$("#rr"+n).focus();};
+ bs=$("#rail").querySelectorAll("[data-rs]");
+ for(i=0;i<bs.length;i++)bs[i].onclick=function(){reject(+this.getAttribute("data-rs"),this);};
+ b=$("#replayBtn");if(b)b.onclick=function(){replay(this);};
+}
+function busy(btn,on,label){
+ if(!btn)return;btn.disabled=on;
+ if(on){btn.setAttribute("data-l",btn.textContent);btn.textContent=label;}
+ else if(btn.getAttribute("data-l"))btn.textContent=btn.getAttribute("data-l");
+}
+function approve(i,btn){
+ var e=$("#ae"+i);e.textContent="";busy(btn,true,"sending…");
+ jpost("/approve",{id:curId,i:i,to:$("#to"+i).value,subject:$("#su"+i).value,body:$("#bd"+i).value}).then(function(r){
+  if(r.error){e.textContent=r.error;busy(btn,false);return;}
+  var sent=r.sent||{};
+  $("#act"+i).innerHTML='<h3>'+esc((JOB.actions[i]||{}).action)+"</h3>"+
+   '<div class="receipt">sent via One · Gmail message id '+esc(sent.message_id||"(no id returned)")+
+   (sent.at?" · "+esc(sent.at):"")+"</div>";
+  actKey="";refresh();
+ });
+}
+function reject(i,btn){
+ var e=$("#ae"+i);e.textContent="";busy(btn,true,"saving…");
+ jpost("/reject",{id:curId,i:i,reason:$("#rr"+i).value}).then(function(r){
+  if(r.error){e.textContent=r.error;busy(btn,false);return;}
+  $("#act"+i).innerHTML='<h3>'+esc((JOB.actions[i]||{}).action)+"</h3>"+
+   '<div class="learned">Learned: '+esc(r.learned||"noted")+"</div>";
+  actKey="";loadLessons();
+ });
+}
+function replay(btn){
+ var e=$("#replayErr");if(e)e.textContent="";busy(btn,true,"running…");
+ jpost("/replay",{id:curId}).then(function(r){
+  if(r.error){if(e)e.textContent=r.error;busy(btn,false);return;}
+  if(JOB){JOB.replay=r;renderRail(JOB);}
+  if(r.status==="running")setTimeout(refresh,2000);
+ });
+}
+function refresh(){if(!curId)return;jget("/job?id="+encodeURIComponent(curId)).then(function(J){if(J)render(J);});}
+
+/* ---------- master render ---------- */
+function render(J){
+ JOB=J;
+ if(J.status==="running")setState("live",J.stage||"running");
+ else if(J.status==="error")setState("bad","error");
+ else setState("done",String(J.end||"done").replace(/_/g," "));
+ renderThread(J);renderRail(J);
+}
+
+/* ---------- run ---------- */
+function stopPoll(){if(timer){clearInterval(timer);timer=null;}}
+function poll(id){
+ stopPoll();crewUntil=0;finished=false;
+ timer=setInterval(function(){
+  jget("/job?id="+encodeURIComponent(id)).then(function(J){
+   if(!J)return;
+   render(J);
+   if(J.status==="running")return;
+   if(!finished){finished=true;$("#run").disabled=false;loadLessons();loadRuns();crewUntil=Date.now()+120000;}
+   var crewRunning=J.crew_audit&&J.crew_audit.status==="running";
+   if(!crewRunning||Date.now()>crewUntil)stopPoll();
+  });
+ },1500);
+}
+$("#run").onclick=function(){
+ var err=$("#runErr");err.textContent="";
+ var body={company_me:$("#coMe").value,company_other:$("#coOther").value,flow:flow,
+  my_card:$("#my").value,other_card:$("#other").value,other_model:$("#model").value,
+  max_rounds:+$("#rounds").value,use_lessons:$("#useLessons").checked,ground:$("#ground").checked,
+  recipient_email:$("#rcpt").value};
+ if(!body.my_card.trim()){err.textContent="Write your card first — role, what you want, your limit.";return;}
+ startLessons=body.use_lessons?LESSONS.slice():[];
+ $("#run").disabled=true;$("#rail").innerHTML="";$("#summary").innerHTML="";$("#refBox").innerHTML="";
+ $("#bannerBox").innerHTML="";$("#threadBox").innerHTML='<div class="typing"><i></i><i></i><i></i>starting…</div>';
+ setState("live","starting");actKey="";
+ jpost("/run",body).then(function(r){
+  if(r.error||!r.id){err.textContent=r.error||"the server did not return a run id";$("#run").disabled=false;setState("","idle");return;}
+  curId=r.id;poll(r.id);
+ });
 };
-</script></body></html>
+$("#clearLessons").onclick=function(){
+ var e=$("#lessonErr");e.textContent="";
+ jpost("/lessons/clear",{}).then(function(r){if(r&&r.error)e.textContent=r.error;loadLessons();});
+};
+var segs=$("#seg").querySelectorAll("button");
+for(var si=0;si<segs.length;si++)segs[si].onclick=function(){
+ for(var k=0;k<segs.length;k++)segs[k].setAttribute("aria-pressed","false");
+ this.setAttribute("aria-pressed","true");flow=this.getAttribute("data-p");
+ $("#my").value=PRESET[flow];$("#other").value="";
+};
+$("#my").value=PRESET.price;
+loadStatus();loadLessons();loadRuns();
+})();
+</script>
+</body></html>
