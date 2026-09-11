@@ -3,7 +3,7 @@
 You paste what happened in a meeting. The agent structures it, works out the follow-up strategy with you, drafts the email, you edit and send it, and every edit you make becomes a lesson it recalls next time.
 
 **Website**: https://follow-through-omega.vercel.app
-**Live app**: `TODO_LIVE_URL`
+**Live app**: https://outputs-wisconsin-produce-bibliography.trycloudflare.com
 **Demo video**: `TODO_YOUTUBE_LINK`
 
 ![How it runs](docs/how-it-runs.png)
