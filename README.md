@@ -4,7 +4,7 @@ You paste what happened in a meeting. The agent structures it, works out the fol
 
 **Website**: https://follow-through-omega.vercel.app
 **Live app**: https://outputs-wisconsin-produce-bibliography.trycloudflare.com
-**Demo video**: `TODO_YOUTUBE_LINK`
+**Demo video**: [demo/follow-through-demo.mp4](demo/follow-through-demo.mp4) (105 s, recorded on the earlier two-agent build; the app now follows the six steps below)
 
 ![How it runs](docs/how-it-runs.png)
 
