@@ -16,28 +16,29 @@ ul{max-width:76ch} details{margin:10px 0} summary{cursor:pointer;color:var(--mut
 </style>
 
 <h1>Follow-Through</h1>
-<p>The tail of a deal, run by each side's own agent. After the handshake someone still has to confirm the terms, chase the delivery and chase the money across a company line. Here each company's own agent does it in plain text, stays inside its written authority, keeps its own record, and gets more explicit about its limits with every case.</p>
-
+<p>After the meeting, the follow-up that learns from your edits. You paste what happened in a meeting. The agent structures it, works out the follow-up strategy with you, drafts the email, you edit and send it, and every edit you make becomes a lesson it recalls next time.</p>
 <div class=card style="margin:14px 0 6px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:14px">
 <b>Try it</b>
-<a href="https://outputs-wisconsin-produce-bibliography.trycloudflare.com">Live app (type your side, watch two agents run the tail)</a>
+<a href="https://outputs-wisconsin-produce-bibliography.trycloudflare.com">Live app (paste a meeting, agree the strategy, edit the draft, send)</a>
 <a href="https://github.com/franktsai2008-eng/follow-through">Code and README</a>
 <a href="#demo-video">Demo video (105 s)</a>
 </div>
 <img src="how-it-runs.png" alt="How a run works: task card, two agents talk, two records, blind audit, human approves, learn" style="width:100%;height:auto;border:1px solid var(--line);margin:8px 0 4px">
 <div class=flow>
-<div><b>① look up</b>one public reference line on both cards · You.com</div>
-<div><b>② talk</b>my agent ⇄ their agent, plain prose, each inside its authority</div>
-<div><b>③ reconcile</b>two records compared · blind audit, CrewAI crew</div>
-<div><b>④ propose → approve → act</b>actions drafted, a person edits and approves, One sends the email</div>
-<div><b>⑤ re-check</b>scoring replayed in a box neither company controls · Daytona</div>
-<div><b>⑥ learn</b>one lesson per case, read before the next</div>
+<div><b>① meeting in</b>notes or transcript, your role, your authority limits</div>
+<div><b>② digest</b>summary, decisions, commitments, open items, risks · public context from You.com</div>
+<div><b>③ strategy talk</b>a CrewAI crew proposes three approaches, you and the agent settle it in a short chat</div>
+<div><b>④ draft → you edit → send</b>you change what you want, press Send, One sends it</div>
+<div><b>⑤ learn</b>every place you touched becomes a lesson · lessons.md + One memory</div>
+<div><b>⑥ harness</b>how much you had to change, case after case · replayed in a Daytona sandbox</div>
 </div>
 
 
 <h2 id="demo-video">Demo video</h2>
 <video controls preload="metadata" style="width:100%;max-width:960px;border:1px solid var(--line);background:#000" src="follow-through-demo.mp4"></video>
-<p class=m>105 seconds, one real run: You.com line on both cards, two agents in plain prose, records diffed, blind audit, a person approves and One sends the email, a rejection becomes a lesson, Daytona replays the scoring.</p>
+<p class=m>Recorded on the earlier two-agent build. The current app follows the six steps above; a new video is coming.</p>
+<h2>Appendix: the two-agent research harness this started from</h2>
+<p class=m>Before the app, ten negotiation cases were run between a buyer agent and a seller agent with private cards and written authority limits. It is the experiment behind the authority-limit idea and is not part of the app.</p>
 <div class=stats>
 <div class=stat><div class=big>0/10</div><div class=m>seller went past its written authority (blind audit)</div></div>
 <div class=stat><div class=big>8/10→10/10</div><div class=m>cases where the seller names its limit, cold → with lessons</div></div>
