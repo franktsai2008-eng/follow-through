@@ -1,0 +1,10 @@
+{
+  "deal_closed": true,
+  "unit_price": 51,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "net-30",
+  "other_terms": "Free freight. Remaining 50 units documented as a provisional target ship date of day 60 from order, explicitly non-firm, subject to seller's replenishment availability and internal director approval. Second batch to be handled as a separate release once confirmed. No firm commitment yet on full 200-unit order.",
+  "outside_authorization": false,
+  "notes": "Firm order placed for 150 units at $51/unit, within target price and ceiling, delivery within acceptable window. Remaining 50 units not yet firm \u2014 only a provisional, non-binding target date obtained. Since we have no alternative supplier this quarter, need to actively follow up with seller to convert the day-60 provisional target into a firm commitment before end of quarter. No deviation from authorized limits; overall outcome favorable (below ceiling, first batch faster than 45-day acceptable threshold)."
+}

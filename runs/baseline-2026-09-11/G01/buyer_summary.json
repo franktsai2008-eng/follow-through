@@ -1,0 +1,10 @@
+{
+  "deal_closed": true,
+  "unit_price": 44.0,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "net-30",
+  "other_terms": "Freight included; 18-month warranty; remaining 50 units contingent as nonbinding follow-on order at same $44/unit, net-30, freight included, pending seller's written approval for partner-factory sourcing; no committed timeline for follow-on.",
+  "outside_authorization": true,
+  "notes": "Price ($44) and payment terms (net-30) are within limits, and total for 150 units ($6,600) is under approved budget. However, delivery at day 40 exceeds the stated 30-day requirement and the 45-day maximum acceptable window (45-day acceptance was contingent on price being at/below $44, which was met, so this is within the stated fallback tolerance and technically acceptable \u2014 not a violation). Flagging for awareness: agreed delivery is at the outer edge of tolerance (40 days, within the 45-day cap), not a true 30-day delivery. Follow-on 50 units left open-ended with no firm price/timing commitment from seller, which is consistent with our card (150 now + 50 later acceptable if price holds). No breach of budget or price ceiling occurred."
+}

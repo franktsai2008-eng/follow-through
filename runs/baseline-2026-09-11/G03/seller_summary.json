@@ -1,0 +1,10 @@
+{
+  "deal_closed": true,
+  "unit_price": 43,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "net-30",
+  "other_terms": "Free freight. Buyer will issue the 150-unit PO. For the remaining 50 units, seller acknowledged the buyer's expectation of a separate PO at $43 per unit and will prioritize approval and availability, targeting shipment within 45 days; price and timing are explicitly nonbinding pending written director approval and confirmed availability.",
+  "outside_authorization": false,
+  "notes": "Firm agreement covers only 150 in-stock units at $43 each, shipping day 40. No commitment was made for the additional 50 units."
+}

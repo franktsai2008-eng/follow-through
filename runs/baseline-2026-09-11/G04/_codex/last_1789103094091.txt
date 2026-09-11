@@ -1,0 +1,3 @@
+I’ve confirmed that I can’t commit to a single shipment of 200 boxes delivered within 30 days. Since both requirements are firm on your side, I don’t want to delay your sourcing process or suggest availability I can’t guarantee. We’ll have to step back from this opportunity.
+
+STATUS: walk_away

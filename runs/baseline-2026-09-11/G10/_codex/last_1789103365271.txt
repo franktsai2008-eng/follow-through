@@ -1,0 +1,5 @@
+I understand the schedule is decisive. Unfortunately, I can’t commit to shipping any portion before day 40 without written director approval, which isn’t available during this discussion. Splitting the shipment would not accelerate the first release, so it wouldn’t solve your requirement.
+
+Since your firm outside limit is day 32, I don’t have an executable offer within my authority that meets your needs. I appreciate the opportunity and understand your decision to proceed with the other supplier.
+
+STATUS: walk_away

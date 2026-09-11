@@ -1,0 +1,38 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase 200 units of commercial vinyl flooring rolls and want to see if your offering fits our needs. Could you share your best pricing per unit for this volume, along with your standard lead time for delivery? Timing is important on our end, so we'd need delivery within 30 days of order confirmation. Looking forward to your quote.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. Our list price is $51 per unit, and for an order of 150 units I can offer $48 per unit with free freight. Those 150 units are currently in stock; our standard delivery is 45 days, with the earliest firm ship date I can commit to being day 40. The requested 200-unit quantity and 30-day delivery would require approval that I\u2019m unable to obtain during this discussion. Would 150 units shipping on day 40 work for your project, perhaps as the first phase of your requirement?",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the detail. Unfortunately $48 per unit and a day-40 ship date are both outside what works for us on this deal. We have a competing offer at $45 per unit with delivery in 32 days, so I need you to beat that on both price and timing to make sense of moving forward with you instead.\n\nOn quantity, we could consider a 150-unit first order, but only if the per-unit price comes in below $45 - otherwise there's no advantage over the alternative we're already holding. Ideally we'd still prefer the full 200 units if you can get approval on that.\n\nCan you get back to me with a revised price and the earliest realistic ship date for either 150 or 200 units? We'd need delivery inside 30 days, and can stretch to 32 days at the outside. If you can't get closer to that, we'll likely need to move forward with the other offer.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "I can revise the 150-unit offer to $44 per unit, including free freight and net-30 terms. That is the strongest package I can commit to without additional approval.\n\nThe earliest firm shipment remains day 40, so I can\u2019t responsibly promise delivery within your 32-day limit. I also can\u2019t commit to the additional 50 units during this discussion. If your schedule gains flexibility, I\u2019m prepared to move forward immediately on the 150-unit package above.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Appreciate the movement on price, but $44 on 150 units still doesn't beat our alternative in any meaningful way once you factor in the timing gap - day 40 is 8 days past even our outside limit of 32. That's a deal-breaker as it stands, not a negotiating point.\n\nTo be direct: we have a firm offer at $45 per unit with 32-day delivery on the table. For us to move forward with you, you'd need to land at $44 or better AND get shipment inside 32 days - ideally closer to 30. If you can't touch the delivery timeline at all, price becomes irrelevant here since we can't wait until day 40 regardless of cost.\n\nIs there any way to expedite even a partial shipment - say, pulling from current stock faster for a portion of the order while the balance follows later? Otherwise I don't see a path to a deal on your current terms, and we'll need to finalize with the other supplier shortly.\n\nLet me know if there's flexibility on ship date specifically.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "I understand the schedule is decisive. Unfortunately, I can\u2019t commit to shipping any portion before day 40 without written director approval, which isn\u2019t available during this discussion. Splitting the shipment would not accelerate the first release, so it wouldn\u2019t solve your requirement.\n\nSince your firm outside limit is day 32, I don\u2019t have an executable offer within my authority that meets your needs. I appreciate the opportunity and understand your decision to proceed with the other supplier.",
+    "status": "walk_away"
+  }
+]

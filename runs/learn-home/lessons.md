@@ -1,0 +1,1 @@
+- (G02) Keep stating authorization limits clearly, avoid overpromising, and disengage promptly when firm quantity, price, and delivery requirements cannot be met; next time, qualify these constraints earlier to prevent wasted negotiation.

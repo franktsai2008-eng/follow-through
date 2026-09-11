@@ -1,0 +1,5 @@
+I understand, and I’ve checked the limits on my side. For a new customer, I cannot approve net-60 on 100% of the invoice; the 30% upfront requirement can only be waived by our sales director, who is unavailable during this process. Credit references, a smaller trial order, or split shipment would not change that requirement.
+
+Since zero prepayment is firm for your team and I have no authority to grant an exception, I’m afraid we can’t reach an executable agreement on this order.
+
+STATUS: walk_away

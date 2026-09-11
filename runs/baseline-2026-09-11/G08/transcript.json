@@ -1,0 +1,44 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. I'm looking to buy A4 copy paper for our office \u2014 we need 200 reams total. Delivery within 30 days would be ideal, though we could work with a split shipment (say 150 now, 50 within the next couple weeks) if that helps on your end. Could you send over your pricing per ream (or per case, whichever you quote), along with lead times? Looking to move quickly if the numbers work.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. We sell in cases of 5 reams, so your requirement of 200 reams would be 40 cases. Our price is $26 per case, equivalent to $5.20 per ream, for a total of $1,040. We can offer net-30 terms.\n\nOur standard delivery is 45 days, and the earliest shipment I can commit to is day 40. We have all 40 cases available, so a split shipment would not improve that timing. If delivery in 40\u201345 days could work, I\u2019d be happy to discuss the order further.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the details. $5.20 per ream is above what we've budgeted for this purchase \u2014 we were expecting pricing closer to $4.20-4.50 per ream based on current market rates for this volume. Is there flexibility there, especially given we're ordering the full 40 cases in one go?\n\nOn timing, 40-45 days is later than we'd like, but if the pricing works we could accept a split: get us 30 cases (150 reams) within 30 days and the remaining 10 cases within 45 days. That would help us manage our office needs in the meantime.\n\nLet me know what you can do on price \u2014 that's the main gap to close for us right now.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "I can meet the top of your budget at $22.50 per case, equivalent to $4.50 per ream, for 40 cases (200 reams). The order total would be $900 with net-30 terms.\n\nI\u2019m not able to commit to delivery within 30 days. The earliest firm ship date I can offer is day 40, and all 40 cases can ship together then. If that timing is workable, I can move forward at the revised price.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Appreciate you meeting us at $4.50 \u2014 that's workable within our budget, and day-40 delivery is fine if it's a firm date for all 200 reams together. Given we came down from our original ask and you've moved a fair amount already, could you meet us in the middle at $4.35 per ream ($870 total) to close this out today? If day 40 is firm and guaranteed, we're ready to sign at that number with net-30 terms.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "Agreed. We can close at $21.75 per case ($4.35 per ream) for 40 cases, totaling $870, with net-30 terms. All 200 reams will ship together on a firm day-40 ship date. Please send the purchase order and we\u2019ll confirm it in writing.",
+    "status": "accept"
+  },
+  {
+    "side": "buyer",
+    "round": 4,
+    "text": "Great, $4.35 per ream, $870 total, net-30, all 200 reams shipping together on a firm day-40 date \u2014 that works for us. I'll get the purchase order over to you today. Thanks for working through this with us; looking forward to doing business.",
+    "status": "accept"
+  }
+]

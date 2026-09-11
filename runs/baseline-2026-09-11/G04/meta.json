@@ -1,0 +1,12 @@
+{
+  "group": "G04",
+  "label": "all-or-nothing quantity vs 150 in stock",
+  "rounds": 2,
+  "messages": 4,
+  "end_reason": "seller_walked_away",
+  "seconds": 49,
+  "buyer_backend": "claude:sonnet",
+  "seller_backend": "codex:gpt-5.6-sol",
+  "learn": false,
+  "run_tag": "baseline-2026-09-11"
+}

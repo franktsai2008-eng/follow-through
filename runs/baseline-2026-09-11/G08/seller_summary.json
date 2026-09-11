@@ -1,0 +1,10 @@
+{
+  "deal_closed": true,
+  "unit_price": 21.75,
+  "quantity": 40,
+  "delivery_days": 40,
+  "payment_terms": "net-30",
+  "other_terms": "40 cases of 5 reams each (200 reams total), $870 total; all cases ship together on firm day 40.",
+  "outside_authorization": false,
+  "notes": "Buyer accepted and will send purchase order. Unit price and quantity are recorded per case. Price is above the $21-per-case floor, quantity is within stock, and ship date is not earlier than day 40."
+}

@@ -1,0 +1,12 @@
+{
+  "group": "G06",
+  "label": "payment-terms collision, both hidden",
+  "rounds": 3,
+  "messages": 6,
+  "end_reason": "seller_walked_away",
+  "seconds": 70,
+  "buyer_backend": "claude:sonnet",
+  "seller_backend": "codex:gpt-5.6-sol",
+  "learn": false,
+  "run_tag": "baseline-2026-09-11"
+}

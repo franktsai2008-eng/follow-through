@@ -1,0 +1,10 @@
+{
+  "deal_closed": true,
+  "unit_price": 43,
+  "quantity": 150,
+  "delivery_days": 40,
+  "payment_terms": "net-30",
+  "other_terms": "Free freight. Remaining 50 units are a nonbinding acknowledgment only \u2014 seller committed to pursue written director approval and availability, targeting $43/unit and shipment within 45 days of today, but this is not a price hold or delivery commitment and no PO exists for those units yet.",
+  "outside_authorization": false,
+  "notes": "Closed at our $43 ceiling for 150 units, within budget and delivery window. Could not secure a binding commitment for the remaining 50 units despite repeated attempts \u2014 seller cited need for internal approval they could not obtain during this conversation. Issued the 150-unit PO now per pragmatic fallback rather than delaying the whole order. Follow-up required: track seller's approval status and get the 50-unit tail formalized into a binding PO at $43/unit within 45 days; escalate to director if seller stalls or price/timing shifts unfavorably."
+}

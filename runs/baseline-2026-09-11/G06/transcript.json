@@ -1,0 +1,38 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase industrial nitrile gloves, roughly 200 units, and wanted to get your best pricing on a case of 1000. Could you send over your quote per unit? For reference, we'd want delivery within 30 days of order confirmation. Also worth flagging upfront\u2014our standard payment terms are net-60, no prepayment or deposit, so if that's workable on your end it'll help us move quickly. Looking forward to your numbers.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for the details. We can currently offer 150 cases from stock at $53 per case, with shipment on day 40 after order confirmation. For an order of 150 cases, we can include freight at no charge.\n\nAs this would be a new account, we require 30% upfront, with the remaining balance on net-60 terms. We can\u2019t commit at this stage to the additional 50 cases, delivery within 30 days, or zero prepayment, but the 150-case structure above is immediately workable. Would that quantity and payment framework allow us to keep moving?",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the quick response. A few things won't work for us, though. Prepayment of any kind is off the table on our end\u2014it's a firm company policy, not a negotiating position, so 30% upfront isn't something we can do regardless of quantity or price. Net-60 on the full amount is what we need.\n\nOn price, $53/unit is well above what we budgeted for this purchase; we were expecting something closer to the low-to-mid $40s per unit. On timing, day 40 is workable for us if needed, but we'd prefer closer to 30 days if you can manage it.\n\n150 units as a first order is fine on our end. So to summarize what we're asking: 150 units, net-60 with zero prepayment, delivery in the 30-40 day range, at a price closer to $43-45/unit. Can you rework the offer along those lines? Happy to talk through what's driving the $53 number if it helps get us there.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "I can rework the commercial side to $45 per case for 150 cases, including freight, with shipment on day 40. I can also include an extended warranty at no additional charge.\n\nThe 30% upfront requirement is mandatory for new accounts, so I\u2019m unable to approve net-60 on the full amount. The remaining 70% can be paid net-60. If your team can make an exception on the deposit, I can hold the 150-case allocation and move forward on these revised terms.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Appreciate the movement on price, and $45/unit is within range for us. But I need to be really clear on the deposit: this isn't a preference we can trade against price, it's a hard company policy\u2014we cannot send any prepayment or deposit, period, regardless of quantity, price, or account status. There's no version of this deal that includes a 30% upfront payment, even a small one. That's not me pushing for a better position, it's genuinely outside what I'm able to sign off on.\n\nWhat I can offer instead: net-60 on the full 150-case order, no deposit, at $45/unit including freight, with delivery on day 40. If your concern is new-account risk, I'm open to alternatives that don't involve prepayment\u2014for example a smaller trial order, or credit references from our side\u2014but the payment structure itself has to be net-60 on 100% of the invoice.\n\nCan you take that back and see if there's a path to approve net-60 without the deposit?",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "I understand, and I\u2019ve checked the limits on my side. For a new customer, I cannot approve net-60 on 100% of the invoice; the 30% upfront requirement can only be waived by our sales director, who is unavailable during this process. Credit references, a smaller trial order, or split shipment would not change that requirement.\n\nSince zero prepayment is firm for your team and I have no authority to grant an exception, I\u2019m afraid we can\u2019t reach an executable agreement on this order.",
+    "status": "walk_away"
+  }
+]

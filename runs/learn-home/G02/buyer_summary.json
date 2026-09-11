@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": null,
+  "quantity": null,
+  "delivery_days": null,
+  "payment_terms": null,
+  "conditional_items": "Supplier's terms ($42/unit, capped at 150 units, 40-day earliest shipment/45-day standard) required director-level approval on supplier's side that was unavailable during the discussion; supplier may be revisited if their internal approvals change.",
+  "_memo": "Internal Memo \u2013 Procurement File\nDate: 2026-09-11\nRe: 4-inch thermal label rolls (1000/roll), 200 units\n\nNegotiation with [Supplier] did not result in a deal. Supplier's best terms were $42/unit minimum, capped at 150 units, with a 40-day earliest shipment (45-day standard lead time) \u2014 all requiring director-level approval on their side that was unavailable during this discussion. This falls short of our requirements (200 units, 30-day delivery, ceiling $38/unit) and is worse than our standing fallback quote of $39/unit with 35-day delivery from [Alternate Vendor]. No terms were agreed upon; no order was placed. Recommend proceeding with the $39/unit alternate vendor quote unless a better option emerges. Supplier may be revisited if their internal approvals change."
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to purchase LED high-bay fixtures, 150W, for a facility upgrade \u2014 total volume of 200 units. Could you send over your pricing for that quantity, along with your standard lead time for delivery? We'd need product delivered within 30 days ideally, so please flag if that's workable. Also let us know if there's a MOQ or if you can accommodate a phased delivery if needed. Looking forward to your quote.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. We can offer 150 units from current stock at $54 per unit, with free freight and net-30 terms. Our standard delivery is 45 days, though we can ship these 150 units on day 40. There is no MOQ.\n\nFor the full 200 units and delivery within 30 days, I would need additional written approval, so I can\u2019t commit to those terms at this time. Would a phased delivery work, with 150 units shipping on day 40 and the remaining 50 scheduled once replenishment timing is confirmed?",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the quick response. $54/unit is a bit above where we'd hoped to land, but it's within a workable range if we can settle the volume and timing. A 150-unit first shipment on day 40 is acceptable to us as a starting point, provided we have firm confirmation on the remaining 50 units \u2014 could you give us a committed date for that second batch rather than leaving it open-ended? We'd want that within 45 days of order if at all possible.\n\nOn price, given we're committing to the full 200 units across two shipments, could you do $51 per unit for the total order? That would help us make the numbers work internally and get this moving quickly on our end.\n\nLet us know if that's something you can approve, or what flexibility you have.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Thanks. I can approve $51 per unit for the 150 units currently in stock, shipping on day 40, with free freight and net-30 terms.\n\nI can\u2019t commit to the additional 50 units or guarantee their delivery within 45 days without written director approval, which isn\u2019t currently available. To keep the project moving, we could firm up the initial 150-unit order now and treat the remaining 50 as a separate, contingent release once replenishment timing and approval are confirmed. Alternatively, if a firm 200-unit commitment is essential, I\u2019ll need to hold the quotation open pending that approval.\n\nWould you be able to proceed with the confirmed 150 units at $51 under those terms?",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Good, $51/unit works for us on the 150-unit shipment at day 40, free freight, net-30 \u2014 let's lock that in now so we can get it moving.\n\nOn the remaining 50 units, I understand you can't guarantee a date without approval, but I'd like to get as close to firm as possible on our end. Could you commit to a target ship date, even if it's provisional pending your internal sign-off \u2014 say, day 55 or 60 from order? We're flexible on the exact date, but we do need this second batch to happen this quarter since we don't have another supplier lined up right now. If you can send something in writing on that target, even with a caveat that it's pending confirmation, that would let us move forward with the full order today.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "Thank you. I\u2019ll confirm the 150 units at $51 per unit, shipping on day 40, with free freight and net-30 terms.\n\nFor the remaining 50 units, I can document day 60 from order as a provisional target ship date, subject to replenishment availability and written sales director approval. This is not a firm commitment, so I\u2019m unable to accept or book the full 200-unit order today. We can place the initial 150-unit order now and add the remaining 50 as a separate release once approval and timing are confirmed.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 4,
+    "text": "That works \u2014 let's move forward on that basis. Please confirm the 150-unit order at $51/unit, day 40 shipping, free freight, net-30, and put day 60 in writing as the provisional target for the remaining 50 units, with the caveat noted. We'll place the initial order today and plan for the second release to follow as discussed. Please keep us posted as soon as you have confirmation on the approval and replenishment timing for that second batch, since this quarter's timeline matters on our end.",
+    "status": "accept"
+  },
+  {
+    "side": "seller",
+    "round": 4,
+    "text": "Confirmed: 150 LED high-bay fixtures, 150W, at $51 per unit, shipping on day 40, with free freight and net-30 payment terms.\n\nFor the remaining 50 units, day 60 from order is documented as a provisional target ship date, subject to replenishment availability and written sales director approval. This is not a firm commitment, and the additional units will be handled as a separate release once approval and timing are confirmed.\n\nPlease send the purchase order for the initial 150 units, and I\u2019ll keep you updated as soon as we have confirmation regarding the second batch.",
+    "status": "accept"
+  }
+]

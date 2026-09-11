@@ -1,0 +1,44 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi there, thanks for connecting. We're looking to purchase 200 units of your 20L HDPE chemical drums, UN-rated, for a project with a fairly tight timeline. We'd need delivery within 30 days of order confirmation.\n\nCould you send over your best pricing for a 200-unit order, along with your standard payment terms and whether freight is included or billed separately? We're aiming for a per-unit price in the mid-$40s range, so if you can get close to that we can likely move quickly on a PO.\n\nAlso let us know your current lead time and whether partial shipment (e.g., 150 units now, remainder shortly after) is an option if that helps with pricing or scheduling.\n\nLooking forward to your quote.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for the details. We can offer 150 UN-rated 20L HDPE drums from current stock at $49.00 per unit, with freight included. Our earliest firm ship date is 40 days after order confirmation; standard lead time is 45 days. Standard payment terms are net 30, or we can reduce the price by 2% to $48.02 per unit with 100% prepayment.\n\nWe may be able to source the remaining 50 units through a partner factory, but I can\u2019t commit to that quantity or its timing until internal approval is available. If 150 units shipped on day 40 would support your project, I\u2019d be glad to work toward finalizing those terms while keeping the additional 50 units under review.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Appreciate the quick response, but $49 (or $48.02 prepaid) is above what we can work with, and 40-45 days is longer than our project allows. To be transparent, we need to land at or under $44/unit with net-30 terms to move forward without additional internal sign-off, and we need delivery inside 30 days if at all possible.\n\nGiven that, could you take another look at pricing for the full 200 units on your standard terms? If 30 days is truly not achievable for the complete order, we could accept 150 units within 30 days and the remaining 50 as a follow-on shipment shortly after, provided the per-unit price across the whole order holds at $44 or below. Freight included, net 30 payment.\n\nLet me know what your factory can do on price and timeline for that structure \u2014 that's the version of this deal that lets us sign quickly.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "Thanks for the clarity. I can meet your $44.00 per-unit target on 150 units with net-30 terms, freight included, and an extended 18-month warranty. The earliest firm ship date I can commit to is day 40 after order confirmation; I\u2019m not authorized to promise delivery inside 30 days.\n\nThe additional 50 units would require written approval for partner-factory sourcing, so I also can\u2019t commit to a 200-unit order or follow-on timing today. If day 40 can work for the initial 150 units, we can lock in those terms now and revisit the remaining 50 once approval becomes available.",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 3,
+    "text": "Day 40 works on our end for the 150 units, and $44/unit with net-30 and freight included meets our target \u2014 let's lock that in. Please send over the PO details/confirmation on that piece so we can get it moving.\n\nOn the remaining 50: we'd like to proceed with those as a follow-on order at the same $44/unit, net-30, freight included, once your partner-factory approval comes through. Can you give us a rough timeline for when that approval is likely to land, so we can plan around it? We don't need a hard commitment today, but a target window (even a rough one) would help us line up the rest of the project schedule. If the 50-unit piece ends up not penciling out at $44, we're fine sourcing that portion elsewhere \u2014 no hard feelings, just want to keep the 150-unit order moving in the meantime.\n\nSend the paperwork whenever you're ready and we'll get the PO turned around quickly.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 3,
+    "text": "Confirmed: 150 UN-rated 20L HDPE chemical drums at $44.00 per unit, $6,600 total, net-30 terms, freight included, with an 18-month warranty. The order is scheduled to ship on day 40 after order confirmation.\n\nPlease issue the PO reflecting those terms, and we\u2019ll acknowledge it promptly to get the order moving.\n\nFor the additional 50 units, I don\u2019t have a reliable approval window yet, so I don\u2019t want to give you a date that may not hold. I\u2019ll request written approval for partner-factory sourcing at the same $44.00 price and net-30 terms and update you as soon as I receive a decision. That follow-on quantity, pricing, freight, and timing will remain nonbinding until approved in writing.",
+    "status": "accept"
+  },
+  {
+    "side": "buyer",
+    "round": 4,
+    "text": "Sounds good \u2014 confirming the 150-unit order at $44.00/unit, $6,600 total, net-30, freight included, 18-month warranty, shipping day 40 after order confirmation. We'll get the PO issued and over to you shortly.\n\nOn the remaining 50, understood on holding off until you have written approval \u2014 appreciate you not overpromising there. Please keep us posted as soon as you hear back, and if it turns out the timing or approval doesn't come through in the next couple weeks, just let us know so we can plan accordingly on our end. We'll hold the door open for that follow-on piece at the same $44/unit, net-30, freight included terms in the meantime.\n\nThanks for working with us on this \u2014 send the paperwork whenever ready.",
+    "status": "accept"
+  }
+]

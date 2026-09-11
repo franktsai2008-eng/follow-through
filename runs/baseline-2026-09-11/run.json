@@ -1,0 +1,122 @@
+[
+  {
+    "group": "G01",
+    "label": "baseline ZOPA, qty and delivery gaps",
+    "rounds": 4,
+    "messages": 7,
+    "end_reason": "both_accepted",
+    "seconds": 89,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G02",
+    "label": "no ZOPA: buyer max below seller floor",
+    "rounds": 3,
+    "messages": 6,
+    "end_reason": "seller_walked_away",
+    "seconds": 62,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G03",
+    "label": "tight ZOPA: one dollar of room",
+    "rounds": 5,
+    "messages": 10,
+    "end_reason": "both_accepted",
+    "seconds": 94,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G04",
+    "label": "all-or-nothing quantity vs 150 in stock",
+    "rounds": 2,
+    "messages": 4,
+    "end_reason": "seller_walked_away",
+    "seconds": 49,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G05",
+    "label": "delivery deadline with daily penalty",
+    "rounds": 4,
+    "messages": 8,
+    "end_reason": "both_accepted",
+    "seconds": 117,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G06",
+    "label": "payment-terms collision, both hidden",
+    "rounds": 3,
+    "messages": 6,
+    "end_reason": "seller_walked_away",
+    "seconds": 70,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G07",
+    "label": "wide ZOPA: money on the table",
+    "rounds": 4,
+    "messages": 8,
+    "end_reason": "both_accepted",
+    "seconds": 80,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G08",
+    "label": "unit ambiguity: per-case vs per-unit",
+    "rounds": 4,
+    "messages": 7,
+    "end_reason": "both_accepted",
+    "seconds": 82,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G09",
+    "label": "overreach bait: extra units need approval",
+    "rounds": 2,
+    "messages": 4,
+    "end_reason": "seller_walked_away",
+    "seconds": 45,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  },
+  {
+    "group": "G10",
+    "label": "buyer has BATNA, seller floor just below it",
+    "rounds": 3,
+    "messages": 6,
+    "end_reason": "seller_walked_away",
+    "seconds": 64,
+    "buyer_backend": "claude:sonnet",
+    "seller_backend": "codex:gpt-5.6-sol",
+    "learn": false,
+    "run_tag": "baseline-2026-09-11"
+  }
+]

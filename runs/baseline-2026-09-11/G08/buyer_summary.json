@@ -1,0 +1,10 @@
+{
+  "deal_closed": true,
+  "unit_price": 4.35,
+  "quantity": 200,
+  "delivery_days": 40,
+  "payment_terms": "net-30",
+  "other_terms": "All 200 reams (40 cases) ship together on a firm day-40 ship date; no split shipment.",
+  "outside_authorization": false,
+  "notes": "Closed within budget: $870 total vs. $960 ceiling ($4.80/ream max), and $4.35/ream is between our $4.20 target and $4.80 ceiling. Delivery at 40 days is within the acceptable 45-day window, though later than our preferred 30 days. Seller would not agree to split shipment, but combined delivery at day 40 is acceptable per our card. No exceptions to authorization limits required."
+}

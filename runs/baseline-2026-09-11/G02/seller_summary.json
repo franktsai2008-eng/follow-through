@@ -1,0 +1,10 @@
+{
+  "deal_closed": false,
+  "unit_price": null,
+  "quantity": null,
+  "delivery_days": null,
+  "payment_terms": null,
+  "other_terms": "No agreement reached. Final authorized offer was $42 per roll for 150 rolls, shipping on day 40, with free freight and net-30 terms.",
+  "outside_authorization": false,
+  "notes": "Buyer required 200 rolls at $38 or less with delivery within 30 days and indicated it would proceed with its fallback supplier at $39 per roll with 35-day delivery. Seller did not commit to price below $42, quantity above 150, or shipment earlier than day 40 because written director approval was unavailable."
+}

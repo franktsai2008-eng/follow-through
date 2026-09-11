@@ -1,0 +1,10 @@
+{
+  "deal_closed": false,
+  "unit_price": null,
+  "quantity": null,
+  "delivery_days": null,
+  "payment_terms": null,
+  "other_terms": "Seller could only offer 150 units firm, shipping day 40, with remaining 50 units contingent on separate approval, timing, and pricing. This did not meet our firm requirement of 200 units within 30 days, so no agreement was reached.",
+  "outside_authorization": false,
+  "notes": "Supplier unable to meet minimum quantity (200 units) or delivery window (30 days) despite our offer of a price premium above $44 target (within our $50 ceiling) to expedite. Supplier cited lack of authorization for larger/faster commitment during our window. No terms were agreed upon. Recommend sourcing from an alternative supplier for this order; revisit this supplier for future orders with longer lead times."
+}

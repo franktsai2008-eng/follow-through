@@ -1,0 +1,9 @@
+{
+  "deal_closed": false,
+  "unit_price": 46,
+  "quantity": 150,
+  "delivery_days": 45,
+  "payment_terms": "net-30",
+  "conditional_items": "Quantity above 150 units, shipment before day 40, and pricing below $42 per unit require written sales director approval, which was unavailable during negotiations; the offer was authorized only up to these limits and no commitments were made beyond it. The opportunity may be reopened only if the buyer relaxes its requirements or director approval becomes available.",
+  "_memo": "The opportunity was closed without agreement. The buyer required 200 units delivered within 30 days and pricing in the mid-$30s, citing a competing offer of $39 per unit with 35-day delivery. We offered 150 in-stock units at $46 per unit, free freight, net-30 terms, and no-charge split shipment, with earliest shipment on day 40 and standard delivery in 45 days. Buyer rejected these terms. Quantity above 150, shipment before day 40, and pricing below $42 require written sales director approval, which was unavailable during negotiations. No commitments were made beyond our authorized offer. The opportunity may be reopened only if the buyer relaxes its requirements or director approval becomes available."
+}

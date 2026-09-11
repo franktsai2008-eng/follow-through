@@ -1,0 +1,10 @@
+{
+  "deal_closed": false,
+  "unit_price": null,
+  "quantity": null,
+  "delivery_days": null,
+  "payment_terms": null,
+  "other_terms": "Seller's best offer was $44/unit for 150 units with free freight and net-30 terms, but earliest ship date was day 40 \u2014 outside our 32-day outside limit. No path to partial/expedited shipment was available without seller's director approval.",
+  "outside_authorization": false,
+  "notes": "Walked away per plan since seller could not meet the 32-day delivery ceiling under any pricing scenario, and delivery was a hard constraint. Proceeding with alternate supplier at $45/unit, 32-day delivery, 200 units. No terms outside authorization were offered or accepted."
+}

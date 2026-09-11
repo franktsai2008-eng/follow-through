@@ -1,0 +1,26 @@
+[
+  {
+    "side": "buyer",
+    "round": 1,
+    "text": "Hi, thanks for connecting. We're looking to place an order for M8 stainless hex bolts, 1000-count boxes \u2014 quantity 200 boxes. Could you send over pricing per unit, and confirm lead time to delivery? We'd need the full order delivered within 30 days as a single complete shipment; partial shipments won't work for us since our production line requires the full quantity at once. Looking forward to your quote.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 1,
+    "text": "Thanks for reaching out. Our price is $56 per 1,000-count box. We currently have 150 boxes available and can offer free freight on that quantity, shipped as one complete lot with delivery targeted for 40\u201345 days.\n\nI\u2019m unable to commit to 200 boxes delivered within 30 days without additional approval. Would you have flexibility to revise the order to 150 boxes with a 40-day delivery commitment?",
+    "status": "continue"
+  },
+  {
+    "side": "buyer",
+    "round": 2,
+    "text": "Thanks for the quick response, but the 150-unit/40-day option won't work on our end \u2014 our line needs all 200 boxes delivered together as a single shipment, and partials aren't something we can accept per our internal policy, regardless of quantity. The 30-day window is also firm for us.\n\nOn price, $56/unit is well above where we need to be \u2014 we were targeting closer to $45/unit for a 200-box order, and we do have some room to move but not up near $56.\n\nCan you check with your team on getting the full 200 boxes sourced in time for a 30-day delivery? If there's a path to that, we'd want to talk price from there. If 200 within 30 days genuinely isn't available at all, let us know now so we can plan accordingly.",
+    "status": "continue"
+  },
+  {
+    "side": "seller",
+    "round": 2,
+    "text": "I\u2019ve confirmed that I can\u2019t commit to a single shipment of 200 boxes delivered within 30 days. Since both requirements are firm on your side, I don\u2019t want to delay your sourcing process or suggest availability I can\u2019t guarantee. We\u2019ll have to step back from this opportunity.",
+    "status": "walk_away"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "group": "G08",
+  "label": "unit ambiguity: per-case vs per-unit",
+  "rounds": 4,
+  "messages": 7,
+  "end_reason": "both_accepted",
+  "seconds": 82,
+  "buyer_backend": "claude:sonnet",
+  "seller_backend": "codex:gpt-5.6-sol",
+  "learn": false,
+  "run_tag": "baseline-2026-09-11"
+}
