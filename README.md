@@ -1,3 +1,16 @@
+# Follow-Through — the tail of a deal, run by each side's own agent
+
+Hackathon submission, Build with YOU (You.com), NYC, 2026-09-11. Start here:
+- **Demo page**: `demo/index.html` (open locally) — five screens, three minutes
+- **Written report (300 words)**: `REPORT.md`
+- **Storyboard and narration**: `PRESENTATION.md`
+- **Results**: `results/baseline-2026-09-11.md`, `results/learn-home.md`, `results/grounded-2026-09-11.md`, `results/invoice-2026-09-11.md`
+- **Reproduce**: `python3 harness.py --all --parallel 2` → `python3 judge.py --run <tag>` → `python3 score.py --run <tag>`; `--learn` for the lessons run, `--grounded` for the You.com line, `A2_SCENARIOS=scenarios-invoice.json` for the invoice pack
+
+Everything below is the research harness the submission is built on.
+
+---
+
 # A2 harness v0 — do two companies' AIs need a layer beyond email?
 
 Test for assumption A2 (interco AI comms panel, 2026-09-10): "two companies' AIs talking to each other need a new layer beyond plain text." If plain prose between two frontier models already closes deals with matching records and no unreported overreach, the layer isn't needed. If deals close but records diverge or the seller quietly commits beyond its authority without saying so, the missing layer is authorization + record, not transport.
