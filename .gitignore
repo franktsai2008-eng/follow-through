@@ -5,3 +5,7 @@ __pycache__/
 .venv/
 .venv-install.log
 demo/.playwright-mcp/
+app/runs/
+app/*.log
+app/test-job.json
+app/lessons.md

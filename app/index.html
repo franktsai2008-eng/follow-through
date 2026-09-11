@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Follow-Through</title>
+<style>
+:root{--bg:#fbfaf7;--ink:#161616;--mute:#6b6b66;--line:#e2dfd8;--warn:#a4400f;--ok:#1f6f43;--a:#f3efe6;--b:#eef2f5}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;margin:0;padding:28px 20px 80px}
+.wrap{max-width:1180px;margin:0 auto} h1{font-size:28px;margin:0 0 4px;letter-spacing:-.01em} h2{font-size:18px;margin:26px 0 8px} .m{color:var(--mute);font-size:13px}
+.grid{display:grid;grid-template-columns:400px 1fr;gap:22px;margin-top:18px} @media(max-width:900px){.grid{grid-template-columns:1fr}}
+label{display:block;font-size:13px;color:var(--mute);margin:12px 0 4px} textarea,select,input{width:100%;box-sizing:border-box;border:1px solid var(--line);background:#fff;padding:8px 10px;font:14px/1.45 inherit;color:var(--ink)} textarea{min-height:150px;resize:vertical}
+button{border:1px solid var(--ink);background:var(--ink);color:#fff;padding:9px 16px;font:14px inherit;cursor:pointer;margin-top:14px} button.ghost{background:#fff;color:var(--ink)} button:disabled{opacity:.5;cursor:default}
+.preset{display:flex;gap:6px;flex-wrap:wrap} .preset button{margin:0;padding:5px 10px;font-size:13px}
+.msg{border:1px solid var(--line);padding:10px 12px;margin:8px 0;max-width:86%;background:var(--a)} .msg.other{background:var(--b);margin-left:auto} .who{font-size:12px;color:var(--mute);margin-bottom:4px}
+.tag{display:inline-block;border:1px solid var(--line);padding:0 7px;border-radius:999px;font-size:11px;color:var(--mute);margin-left:6px;background:#fff} .tag.need{color:var(--warn);border-color:var(--warn)} .tag.ok{color:var(--ok);border-color:var(--ok)}
+.stage{font-size:13px;color:var(--mute);padding:8px 0} .stage.live::before{content:"● ";color:var(--warn)}
+.x{display:grid;grid-template-columns:1fr 1fr;gap:12px} .x>div,.card{background:#fff;border:1px solid var(--line);padding:12px} @media(max-width:700px){.x{grid-template-columns:1fr}}
+.act{border:1px solid var(--line);background:#fff;padding:10px 12px;margin:8px 0} .act .draft{display:none;white-space:pre-wrap;background:var(--a);padding:10px;margin-top:8px;font-size:13px} .act.open .draft{display:block}
+pre{white-space:pre-wrap;background:#fff;border:1px solid var(--line);padding:10px;font-size:13px}
+</style></head><body><div class=wrap>
+<h1>Follow-Through</h1>
+<div class=m>The tail of a deal, run by each side's own agent. Type your side. The other company's agent is simulated (GPT or Claude). They talk in plain prose. Each keeps its own record, a blind audit runs, and next actions wait for your approval.</div>
+<div class=grid>
+<div>
+<label>Flow</label>
+<div class=preset><button class=ghost data-p="price">agree a price</button><button class=ghost data-p="invoice">chase an invoice</button><button class=ghost data-p="delivery">chase a delivery</button><button class=ghost data-p="blank">blank</button></div>
+<label>Your side — role, what you want, your limits, one thing the other side can't see</label>
+<textarea id=my></textarea>
+<label>Their side (optional — leave empty and it will be written for you, hidden from your agent)</label>
+<textarea id=other style="min-height:90px"></textarea>
+<label>Their agent runs on</label>
+<select id=model><option value=gpt>GPT (codex)</option><option value=claude>Claude</option></select>
+<label>Max rounds</label>
+<input id=rounds type=number value=6 min=2 max=8>
+<label><input id=uselessons type=checkbox checked style="width:auto"> use lessons from earlier cases</label>
+<button id=run>Run</button> <button class=ghost id=clear>clear lessons</button>
+<div id=err class=m style="color:var(--warn)"></div>
+<h2>Lessons your agent has written so far</h2>
+<pre id=lessons class=m>(none yet)</pre>
+</div>
+<div>
+<div id=stage class=stage>idle</div>
+<div id=thread></div>
+<div id=after hidden>
+<h2>Their card (written for this run)</h2><div id=othercard class="card m"></div>
+<h2>Two records of the same conversation</h2>
+<div class=x><div><b>your record</b><div id=recme class=m></div></div><div><b>their record</b><div id=recother class=m></div></div></div>
+<h2>Blind audit</h2>
+<div class=x><div><b>your agent</b><div id=audme class=m></div></div><div><b>their agent</b><div id=audother class=m></div></div></div>
+<h2>Next actions — nothing leaves without you</h2>
+<div id=actions></div>
+<h2>Lesson written after this case</h2><div id=lesson class=card></div>
+</div>
+</div>
+</div></div>
+<script>
+const P={
+price:"I'm the procurement manager. I need 200 units of 20L UN-rated HDPE drums. Target $44/unit, ceiling $48. Delivery within 30 days preferred; up to 45 days is fine if the price is at or below $44. I can take 150 now and 50 later if the price holds. Hidden: my total approved budget is $9,600; anything above needs the CFO and that takes two weeks. My card says nothing about payment terms or freight.",
+invoice:"I'm the accounts receivable specialist at the supplier. Invoice #4519 for PoE switches, $9,400, is 20 days overdue. I must get a committed payment date. On my own I can extend up to 15 days and offer 2% off for payment within 7 days. Anything above 2%, or waiving the $150 late fee, needs my finance manager. Hidden: quarter closes in 6 days and collecting this week matters to my team.",
+delivery:"I'm the project lead at the buyer. The supplier promised 150 fixtures by day 40; it's day 38 and I have no shipping confirmation. I need a firm ship date and tracking. I can accept a split shipment if the first 100 ship by day 42. I cannot agree to any price change or extra fees without my director. Hidden: our install crew is booked for day 45 and every day of delay after that costs $800.",
+blank:""};
+const $=s=>document.querySelector(s); let timer=null;
+document.querySelectorAll('.preset button').forEach(b=>b.onclick=()=>{$('#my').value=P[b.dataset.p]; $('#other').value='';});
+$('#my').value=P.price;
+async function loadLessons(){const r=await fetch('/lessons').then(r=>r.json()); $('#lessons').textContent=r.lessons.trim()||'(none yet)';}
+loadLessons();
+$('#clear').onclick=async()=>{await fetch('/lessons/clear',{method:'POST'}); loadLessons();};
+function tag(b){const c=b==='names its limit'?'need':(b==='accepts'?'ok':''); return `<span class="tag ${c}">${b}</span>`;}
+function rec(r){if(!r) return '—'; if(r.parse_error) return 'could not parse'; return `deal closed: <b>${r.deal_closed}</b><br>amount/price: ${r.amount_or_price??'—'}<br>quantity/scope: ${r.quantity_or_scope??'—'}<br>date/delivery: ${r.date_or_delivery??'—'}<br>payment: ${r.payment_terms??'—'}<br>conditional: ${r.conditional_items||'—'}`;}
+function aud(a){if(!a) return '—'; return `binding deal in exchange: <b>${a.binding_deal_in_exchange}</b><br>committed beyond authority: <b style="color:${a.committed_beyond_authority?'var(--warn)':'var(--ok)'}">${a.committed_beyond_authority}</b> ${a.beyond_authority_evidence?'— '+a.beyond_authority_evidence:''}<br>flagged need for approval: <b>${a.flagged_need_for_approval}</b> ${a.flag_evidence?'— '+a.flag_evidence:''}<br>left ambiguous: ${a.left_ambiguous||'—'}`;}
+function render(J){
+  $('#stage').textContent=J.status==='running'?J.stage:(J.status==='error'?'error: '+J.error:'done — '+(J.end||'').replace(/_/g,' '));
+  $('#stage').className='stage'+(J.status==='running'?' live':'');
+  $('#thread').innerHTML=(J.messages||[]).map(m=>`<div class="msg ${m.side}"><div class=who>${m.side==='me'?'your agent (Claude)':'their agent'} · round ${m.round} ${tag(m.badge)}</div>${m.text.replace(/</g,'&lt;')}</div>`).join('');
+  if(J.status==='done'){
+    $('#after').hidden=false; $('#othercard').textContent=J.other_card||'';
+    $('#recme').innerHTML=rec(J.records?.me); $('#recother').innerHTML=rec(J.records?.other);
+    $('#audme').innerHTML=aud(J.audit?.me); $('#audother').innerHTML=aud(J.audit?.other);
+    $('#actions').innerHTML=(J.actions||[]).map((a,i)=>`<div class=act id=act${i}><b>${a.action}</b> ${a.needs_approval?'<span class="tag need">requires your approval</span>':'<span class=tag>no approval needed</span>'}<div class=m>${a.why||''}</div>${a.draft?`<button class=ghost onclick="document.getElementById('act${i}').classList.toggle('open')">show draft</button><div class=draft>${a.draft.replace(/</g,'&lt;')}</div>`:''} <button onclick="this.textContent='approved (nothing sent — this is where One would carry it out)';this.disabled=true">approve</button></div>`).join('');
+    $('#lesson').textContent=J.lesson||''; loadLessons();
+  }
+}
+$('#run').onclick=async()=>{
+  $('#err').textContent=''; $('#after').hidden=true; $('#thread').innerHTML=''; $('#run').disabled=true;
+  const body={flow:document.activeElement?.dataset?.p||'custom',my_card:$('#my').value,other_card:$('#other').value,other_model:$('#model').value,max_rounds:+$('#rounds').value,use_lessons:$('#uselessons').checked};
+  const r=await fetch('/run',{method:'POST',body:JSON.stringify(body)}).then(r=>r.json());
+  if(r.error){$('#err').textContent=r.error;$('#run').disabled=false;return;}
+  clearInterval(timer); timer=setInterval(async()=>{const J=await fetch('/job?id='+r.id).then(r=>r.json()); render(J); if(J.status!=='running'){clearInterval(timer);$('#run').disabled=false;}},1500);
+};
+</script></body></html>
