@@ -3,7 +3,7 @@
 You paste what happened in a meeting. The agent structures it, works out the follow-up strategy with you, drafts the email, you edit and send it, and every edit you make becomes a lesson it recalls next time.
 
 **Website**: https://follow-through-omega.vercel.app
-**Live app**: https://outputs-wisconsin-produce-bibliography.trycloudflare.com
+**Live app**: run it locally (see below); the hackathon-day public tunnel is no longer up
 **Demo video**: [demo/follow-through-demo.mp4](demo/follow-through-demo.mp4) (105 s, recorded on the earlier two-agent build; the app now follows the six steps below)
 
 ![How it runs](docs/how-it-runs.png)
